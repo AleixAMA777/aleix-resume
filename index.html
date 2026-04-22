@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aleix Moya - Resume</title>
+  <title>Aleix Moya Araujo | System & Network Administrator</title>
 
   <meta name="description" content="System and Network Administrator focused on Azure, Zero Trust, infrastructure, networking, virtualization, automation, and hybrid cloud operations.">
   <link rel="canonical" href="https://resume.aleix-moya.net/">
@@ -46,6 +46,7 @@
       color: var(--text-secondary);
       display: flex;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
     ::-webkit-scrollbar {
@@ -64,6 +65,12 @@
 
     ::-webkit-scrollbar-thumb:hover {
       background: var(--accent-color);
+    }
+
+    .sidebar,
+    .main {
+      position: relative;
+      z-index: 2;
     }
 
     .sidebar {
@@ -290,9 +297,146 @@
       color: var(--muted);
     }
 
+    .right-ambient {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 24vw;
+      min-width: 220px;
+      height: 100vh;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+      opacity: 0.9;
+    }
+
+    .grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0, 120, 212, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 120, 212, 0.08) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: linear-gradient(to left, rgba(0,0,0,0.9), transparent 85%);
+      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.9), transparent 85%);
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(45px);
+      background: rgba(0, 120, 212, 0.24);
+      animation: floatOrb 10s ease-in-out infinite;
+    }
+
+    .orb-1 {
+      width: 180px;
+      height: 180px;
+      top: 10%;
+      right: 40px;
+      animation-delay: 0s;
+    }
+
+    .orb-2 {
+      width: 130px;
+      height: 130px;
+      top: 42%;
+      right: 90px;
+      animation-delay: 2s;
+    }
+
+    .orb-3 {
+      width: 220px;
+      height: 220px;
+      bottom: 8%;
+      right: -30px;
+      animation-delay: 4s;
+    }
+
+    .network {
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      border: 1px solid rgba(0, 120, 212, 0.18);
+      border-radius: 24px;
+      transform: rotate(45deg);
+      animation: pulseBox 6s ease-in-out infinite;
+    }
+
+    .network::before,
+    .network::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(0, 120, 212, 0.85);
+      box-shadow: 0 0 12px rgba(0, 120, 212, 0.7);
+    }
+
+    .network::before {
+      width: 8px;
+      height: 8px;
+      top: 12px;
+      left: 12px;
+    }
+
+    .network::after {
+      width: 8px;
+      height: 8px;
+      bottom: 12px;
+      right: 12px;
+    }
+
+    .network-1 {
+      top: 18%;
+      right: 60px;
+    }
+
+    .network-2 {
+      top: 50%;
+      right: 20px;
+      animation-delay: 1.5s;
+    }
+
+    .network-3 {
+      bottom: 10%;
+      right: 70px;
+      animation-delay: 3s;
+    }
+
+    @keyframes floatOrb {
+      0%, 100% {
+        transform: translateY(0px) translateX(0px) scale(1);
+      }
+      50% {
+        transform: translateY(-18px) translateX(-10px) scale(1.06);
+      }
+    }
+
+    @keyframes pulseBox {
+      0%, 100% {
+        opacity: 0.25;
+        transform: rotate(45deg) scale(1);
+      }
+      50% {
+        opacity: 0.55;
+        transform: rotate(45deg) scale(1.06);
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .right-ambient {
+        width: 18vw;
+        opacity: 0.5;
+      }
+    }
+
     @media (max-width: 900px) {
       .grid-two {
         grid-template-columns: 1fr;
+      }
+
+      .right-ambient {
+        display: none;
       }
     }
 
@@ -387,14 +531,28 @@
         border-color: #000000;
         color: #000000;
       }
+
+      .right-ambient {
+        display: none !important;
+      }
     }
   </style>
 </head>
 <body>
-  <aside class="sidebar">
-    <img src="profile.jpg" alt="Aleix Moya" class="profile-img">
+  <div class="right-ambient">
+    <div class="grid-overlay"></div>
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+    <div class="network network-1"></div>
+    <div class="network network-2"></div>
+    <div class="network network-3"></div>
+  </div>
 
-    <h1>Aleix Moya</h1>
+  <aside class="sidebar">
+    <img src="profile.jpg" alt="Aleix Moya Araujo" class="profile-img">
+
+    <h1>Aleix Moya Araujo</h1>
     <div class="typing-text">&gt; SysAdmin · Azure · Zero Trust_</div>
 
     <span class="contact-link"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Barcelona, Spain</span>
