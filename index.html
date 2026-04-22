@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aleix Moya Araujo - Resume</title>
+  <title>Aleix Moya - Resume</title>
+
   <meta name="description" content="System and Network Administrator focused on Azure, Zero Trust, infrastructure, networking, virtualization, automation, and hybrid cloud operations.">
+  <link rel="canonical" href="https://resume.aleix-moya.net/">
 
   <meta property="og:title" content="Aleix Moya Araujo - System & Network Administrator">
   <meta property="og:description" content="SysAdmin focused on Azure, Zero Trust, infrastructure engineering, networking, virtualization, and automation.">
-  <meta property="og:image" content="preview-image.jpg">
+  <meta property="og:image" content="https://resume.aleix-moya.net/preview-image.jpg">
+  <meta property="og:url" content="https://resume.aleix-moya.net/">
   <meta property="og:type" content="website">
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -24,14 +26,17 @@
       --text-primary: #ffffff;
       --text-secondary: #cccccc;
       --accent-color: #0078D4;
-      --accent-hover: #106EBE;
       --border-color: #3b3a39;
       --muted: #9f9f9f;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -43,14 +48,23 @@
       min-height: 100vh;
     }
 
-    ::-webkit-scrollbar { width: 10px; }
-    ::-webkit-scrollbar-track { background: var(--bg-main); }
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-main);
+    }
+
     ::-webkit-scrollbar-thumb {
       background: var(--bg-section);
       border-radius: 5px;
       border: 1px solid var(--border-color);
     }
-    ::-webkit-scrollbar-thumb:hover { background: var(--accent-color); }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-color);
+    }
 
     .sidebar {
       background: rgba(27, 26, 25, 0.9);
@@ -77,6 +91,7 @@
       object-fit: cover;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
       background: #1f1f1f;
+      display: block;
     }
 
     .sidebar h1 {
@@ -101,7 +116,10 @@
       text-align: center;
     }
 
-    @keyframes typing { from { width: 0; } }
+    @keyframes typing {
+      from { width: 0; }
+    }
+
     @keyframes blink-caret {
       from, to { border-color: transparent; }
       50% { border-color: var(--accent-color); }
@@ -122,21 +140,15 @@
       text-align: center;
     }
 
-    .sidebar a:hover { color: var(--accent-color); }
-    .sidebar i { font-size: 16px; width: 20px; text-align: center; }
-
-    .download-btn {
-      background: var(--accent-color);
-      color: var(--text-primary) !important;
-      padding: 12px 20px;
-      border-radius: 4px;
-      font-weight: 600;
-      margin-top: 14px;
-      transition: background 0.3s ease;
-      border: 1px solid transparent;
+    .sidebar a:hover {
+      color: var(--accent-color);
     }
 
-    .download-btn:hover { background: var(--accent-hover); }
+    .sidebar i {
+      font-size: 16px;
+      width: 20px;
+      text-align: center;
+    }
 
     .main {
       margin-left: 330px;
@@ -157,12 +169,26 @@
       letter-spacing: 0.2px;
     }
 
-    h2 i { color: var(--accent-color); }
+    h2 i {
+      color: var(--accent-color);
+    }
 
-    p, li { line-height: 1.65; }
-    ul { padding-left: 20px; }
-    li { margin-bottom: 10px; }
-    strong { color: var(--text-primary); }
+    p,
+    li {
+      line-height: 1.65;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    strong {
+      color: var(--text-primary);
+    }
 
     .section {
       margin-bottom: 28px;
@@ -225,8 +251,13 @@
       cursor: default;
     }
 
-    .job-entry { margin-bottom: 26px; }
-    .job-entry:last-child { margin-bottom: 0; }
+    .job-entry {
+      margin-bottom: 26px;
+    }
+
+    .job-entry:last-child {
+      margin-bottom: 0;
+    }
 
     .job-entry h3 {
       margin: 0 0 5px 0;
@@ -249,20 +280,26 @@
     }
 
     .mini-card {
-      background: rgba(0,0,0,0.18);
+      background: rgba(0, 0, 0, 0.18);
       border: 1px solid var(--border-color);
       border-radius: 8px;
       padding: 16px;
     }
 
-    .muted { color: var(--muted); }
+    .muted {
+      color: var(--muted);
+    }
 
     @media (max-width: 900px) {
-      .grid-two { grid-template-columns: 1fr; }
+      .grid-two {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 768px) {
-      body { flex-direction: column; }
+      body {
+        flex-direction: column;
+      }
 
       .sidebar {
         position: relative;
@@ -282,7 +319,9 @@
         box-sizing: border-box;
       }
 
-      .section { padding: 20px; }
+      .section {
+        padding: 20px;
+      }
     }
 
     @media print {
@@ -305,8 +344,16 @@
         color: #000000 !important;
       }
 
-      .sidebar h1, .sidebar .typing-text, .sidebar a, .sidebar .contact-link,
-      h2, h2 i, strong, .skill-tags li, .job-entry h3, .muted {
+      .sidebar h1,
+      .sidebar .typing-text,
+      .sidebar a,
+      .sidebar .contact-link,
+      h2,
+      h2 i,
+      strong,
+      .skill-tags li,
+      .job-entry h3,
+      .muted {
         color: #000000 !important;
       }
 
@@ -316,9 +363,10 @@
         margin-left: 5px;
       }
 
-      .download-btn { display: none !important; }
-
-      .main { margin-left: 0; padding: 0; }
+      .main {
+        margin-left: 0;
+        padding: 0;
+      }
 
       .section {
         background: none !important;
@@ -331,7 +379,10 @@
         opacity: 1 !important;
       }
 
-      .job-entry .job-date { color: #555555 !important; }
+      .job-entry .job-date {
+        color: #555555 !important;
+      }
+
       .skill-tags li {
         border-color: #000000;
         color: #000000;
@@ -347,11 +398,9 @@
     <div class="typing-text">&gt; SysAdmin · Azure · Zero Trust_</div>
 
     <span class="contact-link"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Barcelona, Spain</span>
-    <a href="mailto:prama99@proton.me"><i class="fas fa-envelope" aria-hidden="true"></i> prama99@proton.me</a>
-    <a href="tel:+34674047870"><i class="fas fa-phone" aria-hidden="true"></i> +34 674 04 78 70</a>
-    <a href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
-
-    <a href="Aleix_Moya_Resume.pdf" download class="download-btn"><i class="fas fa-file-pdf" aria-hidden="true"></i> Download PDF</a>
+    <a href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer">
+      <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+    </a>
   </aside>
 
   <main class="main">
