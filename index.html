@@ -301,132 +301,120 @@
       position: fixed;
       top: 0;
       right: 0;
-      width: 24vw;
-      min-width: 220px;
+      width: 38vw;
+      max-width: 640px;
+      min-width: 360px;
       height: 100vh;
       pointer-events: none;
       overflow: hidden;
       z-index: 0;
-      opacity: 0.9;
+      opacity: 0.95;
+      -webkit-mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.85) 18%, rgba(0,0,0,1) 100%);
+      mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.85) 18%, rgba(0,0,0,1) 100%);
     }
 
-    .grid-overlay {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(0, 120, 212, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 120, 212, 0.08) 1px, transparent 1px);
-      background-size: 32px 32px;
-      mask-image: linear-gradient(to left, rgba(0,0,0,0.9), transparent 85%);
-      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.9), transparent 85%);
+    .network-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      animation: ambientFloat 18s ease-in-out infinite;
     }
 
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(45px);
-      background: rgba(0, 120, 212, 0.24);
-      animation: floatOrb 10s ease-in-out infinite;
+    .net-line {
+      stroke: #1ea0ff;
+      stroke-width: 1.35;
+      stroke-opacity: 0.22;
+      animation: linePulse 5s ease-in-out infinite;
     }
 
-    .orb-1 {
-      width: 180px;
-      height: 180px;
-      top: 10%;
-      right: 40px;
-      animation-delay: 0s;
+    .net-line.thin {
+      stroke-width: 1;
+      stroke-opacity: 0.14;
     }
 
-    .orb-2 {
-      width: 130px;
-      height: 130px;
-      top: 42%;
-      right: 90px;
-      animation-delay: 2s;
+    .net-line.d1 { animation-delay: 0s; }
+    .net-line.d2 { animation-delay: 1s; }
+    .net-line.d3 { animation-delay: 2s; }
+    .net-line.d4 { animation-delay: 3s; }
+
+    .net-node {
+      fill: #38b6ff;
+      opacity: 0.72;
+      animation: nodePulse 4s ease-in-out infinite;
+      transform-origin: center;
+      transform-box: fill-box;
     }
 
-    .orb-3 {
-      width: 220px;
-      height: 220px;
-      bottom: 8%;
-      right: -30px;
-      animation-delay: 4s;
+    .net-node.big {
+      fill: #63c7ff;
+      opacity: 0.95;
     }
 
-    .network {
-      position: absolute;
-      width: 160px;
-      height: 160px;
-      border: 1px solid rgba(0, 120, 212, 0.18);
-      border-radius: 24px;
-      transform: rotate(45deg);
-      animation: pulseBox 6s ease-in-out infinite;
+    .n1  { animation-delay: 0s; }
+    .n2  { animation-delay: 0.2s; }
+    .n3  { animation-delay: 0.4s; }
+    .n4  { animation-delay: 0.6s; }
+    .n5  { animation-delay: 0.8s; }
+    .n6  { animation-delay: 1s; }
+    .n7  { animation-delay: 1.2s; }
+    .n8  { animation-delay: 1.4s; }
+    .n9  { animation-delay: 1.6s; }
+    .n10 { animation-delay: 1.8s; }
+    .n11 { animation-delay: 2s; }
+    .n12 { animation-delay: 2.2s; }
+    .n13 { animation-delay: 2.4s; }
+    .n14 { animation-delay: 2.6s; }
+    .n15 { animation-delay: 2.8s; }
+    .n16 { animation-delay: 3s; }
+    .n17 { animation-delay: 3.2s; }
+    .n18 { animation-delay: 3.4s; }
+    .n19 { animation-delay: 3.6s; }
+    .n20 { animation-delay: 3.8s; }
+    .n21 { animation-delay: 4s; }
+    .n22 { animation-delay: 4.2s; }
+    .n23 { animation-delay: 4.4s; }
+    .n24 { animation-delay: 4.6s; }
+    .n25 { animation-delay: 4.8s; }
+
+    .packet {
+      fill: #a7e2ff;
+      opacity: 0;
     }
 
-    .network::before,
-    .network::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(0, 120, 212, 0.85);
-      box-shadow: 0 0 12px rgba(0, 120, 212, 0.7);
-    }
-
-    .network::before {
-      width: 8px;
-      height: 8px;
-      top: 12px;
-      left: 12px;
-    }
-
-    .network::after {
-      width: 8px;
-      height: 8px;
-      bottom: 12px;
-      right: 12px;
-    }
-
-    .network-1 {
-      top: 18%;
-      right: 60px;
-    }
-
-    .network-2 {
-      top: 50%;
-      right: 20px;
-      animation-delay: 1.5s;
-    }
-
-    .network-3 {
-      bottom: 10%;
-      right: 70px;
-      animation-delay: 3s;
-    }
-
-    @keyframes floatOrb {
+    @keyframes ambientFloat {
       0%, 100% {
-        transform: translateY(0px) translateX(0px) scale(1);
+        transform: translateY(0px) translateX(0px);
       }
       50% {
-        transform: translateY(-18px) translateX(-10px) scale(1.06);
+        transform: translateY(-10px) translateX(-6px);
       }
     }
 
-    @keyframes pulseBox {
+    @keyframes linePulse {
       0%, 100% {
-        opacity: 0.25;
-        transform: rotate(45deg) scale(1);
+        stroke-opacity: 0.10;
       }
       50% {
-        opacity: 0.55;
-        transform: rotate(45deg) scale(1.06);
+        stroke-opacity: 0.32;
+      }
+    }
+
+    @keyframes nodePulse {
+      0%, 100% {
+        opacity: 0.45;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.15);
       }
     }
 
     @media (max-width: 1200px) {
       .right-ambient {
-        width: 18vw;
-        opacity: 0.5;
+        width: 30vw;
+        min-width: 280px;
+        opacity: 0.75;
       }
     }
 
@@ -539,14 +527,152 @@
   </style>
 </head>
 <body>
-  <div class="right-ambient">
-    <div class="grid-overlay"></div>
-    <span class="orb orb-1"></span>
-    <span class="orb orb-2"></span>
-    <span class="orb orb-3"></span>
-    <div class="network network-1"></div>
-    <div class="network network-2"></div>
-    <div class="network network-3"></div>
+  <div class="right-ambient" aria-hidden="true">
+    <svg class="network-svg" viewBox="0 0 520 1080" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3" result="blur"></feGaussianBlur>
+          <feMerge>
+            <feMergeNode in="blur"></feMergeNode>
+            <feMergeNode in="SourceGraphic"></feMergeNode>
+          </feMerge>
+        </filter>
+
+        <filter id="glowStrong" x="-80%" y="-80%" width="260%" height="260%">
+          <feGaussianBlur stdDeviation="6" result="blur"></feGaussianBlur>
+          <feMerge>
+            <feMergeNode in="blur"></feMergeNode>
+            <feMergeNode in="SourceGraphic"></feMergeNode>
+          </feMerge>
+        </filter>
+
+        <radialGradient id="bgGlow1" cx="75%" cy="18%" r="45%">
+          <stop offset="0%" stop-color="#0d8dff" stop-opacity="0.22"></stop>
+          <stop offset="100%" stop-color="#0d8dff" stop-opacity="0"></stop>
+        </radialGradient>
+
+        <radialGradient id="bgGlow2" cx="78%" cy="70%" r="42%">
+          <stop offset="0%" stop-color="#0d8dff" stop-opacity="0.18"></stop>
+          <stop offset="100%" stop-color="#0d8dff" stop-opacity="0"></stop>
+        </radialGradient>
+
+        <pattern id="gridPattern" width="28" height="28" patternUnits="userSpaceOnUse">
+          <path d="M 28 0 L 0 0 0 28" fill="none" stroke="rgba(0,120,212,0.09)" stroke-width="1"></path>
+        </pattern>
+      </defs>
+
+      <rect width="520" height="1080" fill="url(#gridPattern)" opacity="0.35"></rect>
+      <rect width="520" height="1080" fill="url(#bgGlow1)"></rect>
+      <rect width="520" height="1080" fill="url(#bgGlow2)"></rect>
+
+      <g class="network-lines">
+        <line class="net-line d1" x1="70" y1="180" x2="155" y2="135"></line>
+        <line class="net-line d2" x1="155" y1="135" x2="250" y2="185"></line>
+        <line class="net-line d3" x1="250" y1="185" x2="355" y2="130"></line>
+        <line class="net-line d4" x1="355" y1="130" x2="445" y2="220"></line>
+
+        <line class="net-line d2" x1="110" y1="310" x2="205" y2="250"></line>
+        <line class="net-line d3" x1="205" y1="250" x2="290" y2="315"></line>
+        <line class="net-line d4" x1="290" y1="315" x2="410" y2="260"></line>
+
+        <line class="net-line d1" x1="130" y1="450" x2="225" y2="390"></line>
+        <line class="net-line d2" x1="225" y1="390" x2="335" y2="455"></line>
+        <line class="net-line d3" x1="335" y1="455" x2="440" y2="390"></line>
+
+        <line class="net-line d4" x1="95" y1="610" x2="180" y2="560"></line>
+        <line class="net-line d1" x1="180" y1="560" x2="280" y2="620"></line>
+        <line class="net-line d2" x1="280" y1="620" x2="395" y2="560"></line>
+
+        <line class="net-line d3" x1="150" y1="790" x2="245" y2="735"></line>
+        <line class="net-line d4" x1="245" y1="735" x2="350" y2="800"></line>
+        <line class="net-line d1" x1="350" y1="800" x2="455" y2="715"></line>
+
+        <line class="net-line d2" x1="110" y1="930" x2="220" y2="880"></line>
+        <line class="net-line d3" x1="220" y1="880" x2="330" y2="945"></line>
+        <line class="net-line d4" x1="330" y1="945" x2="430" y2="875"></line>
+
+        <line class="net-line thin d1" x1="155" y1="135" x2="205" y2="250"></line>
+        <line class="net-line thin d2" x1="250" y1="185" x2="290" y2="315"></line>
+        <line class="net-line thin d3" x1="355" y1="130" x2="410" y2="260"></line>
+
+        <line class="net-line thin d4" x1="205" y1="250" x2="225" y2="390"></line>
+        <line class="net-line thin d1" x1="290" y1="315" x2="335" y2="455"></line>
+
+        <line class="net-line thin d2" x1="225" y1="390" x2="180" y2="560"></line>
+        <line class="net-line thin d3" x1="335" y1="455" x2="280" y2="620"></line>
+
+        <line class="net-line thin d4" x1="180" y1="560" x2="245" y2="735"></line>
+        <line class="net-line thin d1" x1="280" y1="620" x2="350" y2="800"></line>
+
+        <line class="net-line thin d2" x1="245" y1="735" x2="220" y2="880"></line>
+        <line class="net-line thin d3" x1="350" y1="800" x2="330" y2="945"></line>
+      </g>
+
+      <g class="network-nodes" filter="url(#glow)">
+        <circle class="net-node big n1" cx="70" cy="180" r="4.5"></circle>
+        <circle class="net-node n2" cx="155" cy="135" r="3.8"></circle>
+        <circle class="net-node n3" cx="250" cy="185" r="4"></circle>
+        <circle class="net-node n4" cx="355" cy="130" r="4.2"></circle>
+        <circle class="net-node big n5" cx="445" cy="220" r="5"></circle>
+
+        <circle class="net-node n6" cx="110" cy="310" r="3.7"></circle>
+        <circle class="net-node big n7" cx="205" cy="250" r="4.8"></circle>
+        <circle class="net-node n8" cx="290" cy="315" r="4"></circle>
+        <circle class="net-node n9" cx="410" cy="260" r="4.1"></circle>
+
+        <circle class="net-node n10" cx="130" cy="450" r="3.5"></circle>
+        <circle class="net-node big n11" cx="225" cy="390" r="5"></circle>
+        <circle class="net-node n12" cx="335" cy="455" r="4"></circle>
+        <circle class="net-node n13" cx="440" cy="390" r="4.4"></circle>
+
+        <circle class="net-node n14" cx="95" cy="610" r="3.7"></circle>
+        <circle class="net-node n15" cx="180" cy="560" r="4.2"></circle>
+        <circle class="net-node big n16" cx="280" cy="620" r="5"></circle>
+        <circle class="net-node n17" cx="395" cy="560" r="4.3"></circle>
+
+        <circle class="net-node n18" cx="150" cy="790" r="3.8"></circle>
+        <circle class="net-node big n19" cx="245" cy="735" r="4.8"></circle>
+        <circle class="net-node n20" cx="350" cy="800" r="4.2"></circle>
+        <circle class="net-node n21" cx="455" cy="715" r="4"></circle>
+
+        <circle class="net-node n22" cx="110" cy="930" r="3.8"></circle>
+        <circle class="net-node n23" cx="220" cy="880" r="4.3"></circle>
+        <circle class="net-node big n24" cx="330" cy="945" r="5"></circle>
+        <circle class="net-node n25" cx="430" cy="875" r="4.2"></circle>
+      </g>
+
+      <g class="packets" filter="url(#glowStrong)">
+        <circle class="packet" r="3.2">
+          <animateMotion dur="7s" repeatCount="indefinite" path="M70,180 L155,135 L250,185 L355,130 L445,220"></animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" dur="7s" repeatCount="indefinite"></animate>
+        </circle>
+
+        <circle class="packet" r="3">
+          <animateMotion dur="8.5s" begin="1s" repeatCount="indefinite" path="M110,310 L205,250 L290,315 L410,260"></animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" dur="8.5s" begin="1s" repeatCount="indefinite"></animate>
+        </circle>
+
+        <circle class="packet" r="3.5">
+          <animateMotion dur="9s" begin="2s" repeatCount="indefinite" path="M130,450 L225,390 L335,455 L440,390"></animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" dur="9s" begin="2s" repeatCount="indefinite"></animate>
+        </circle>
+
+        <circle class="packet" r="3.3">
+          <animateMotion dur="7.5s" begin="0.5s" repeatCount="indefinite" path="M95,610 L180,560 L280,620 L395,560"></animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" dur="7.5s" begin="0.5s" repeatCount="indefinite"></animate>
+        </circle>
+
+        <circle class="packet" r="3">
+          <animateMotion dur="8s" begin="1.8s" repeatCount="indefinite" path="M150,790 L245,735 L350,800 L455,715"></animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="1.8s" repeatCount="indefinite"></animate>
+        </circle>
+
+        <circle class="packet" r="3.2">
+          <animateMotion dur="8.8s" begin="2.6s" repeatCount="indefinite" path="M110,930 L220,880 L330,945 L430,875"></animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" dur="8.8s" begin="2.6s" repeatCount="indefinite"></animate>
+        </circle>
+      </g>
+    </svg>
   </div>
 
   <aside class="sidebar">
