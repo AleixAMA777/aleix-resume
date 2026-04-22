@@ -1,0 +1,455 @@
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Shield,
+  Server,
+  Network,
+  Cloud,
+  Terminal,
+  Activity,
+  GraduationCap,
+  Languages,
+  Briefcase,
+  CheckCircle2,
+} from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+
+const experiences = [
+  {
+    company: "Anticimex Group",
+    role: "System and Network Administrator",
+    period: "Jun 2025 – Present",
+    intro:
+      "Sole System & Network Administrator for Spain, owning end-to-end responsibility for infrastructure reliability, availability, security, and operational continuity across a distributed national environment.",
+    highlights: [
+      "Own Azure IaaS lifecycle management across virtual machines, networking, load balancing, and storage services.",
+      "Design and deploy Python-based Azure Function Apps to process and transform Smart IoT device data.",
+      "Led nationwide rollout of Zscaler Zero Trust architecture across Spain, including ZIA and ZPA policy design.",
+      "Manage VMware vSphere environments, monitoring stacks, Fortinet security controls, and incident response.",
+    ],
+  },
+  {
+    company: "Alinghi Red Bull Racing",
+    role: "IT Specialist",
+    period: "2023 – May 2025",
+    intro:
+      "Responsible for Windows and Linux server administration, infrastructure deployment, and operational support in a high-performance engineering environment.",
+    highlights: [
+      "Designed and deployed the Cisco network architecture for a newly built facility from scratch.",
+      "Implemented VLAN and subnetting strategy aligned with departmental and security requirements.",
+      "Administered VMware vSphere, Horizon, Intune, Exchange, SharePoint, Active Directory, and Entra ID.",
+      "Automated operational tasks with PowerShell and Bash while acting as the main technical contact for partners and providers.",
+    ],
+  },
+  {
+    company: "Seidor",
+    role: "Senior Systems Technician OnSite",
+    period: "2022 – 2023",
+    intro:
+      "Delivered Level 2 and Level 3 support at ESTEVE headquarters within a critical and regulated pharmaceutical environment.",
+    highlights: [
+      "Resolved high-impact hardware, software, and network incidents through structured troubleshooting and root cause analysis.",
+      "Maintained infrastructure stability, backup integrity, technical documentation, and operational continuity.",
+      "Supported servers, endpoints, network operations, enterprise applications, and SLA-oriented service delivery.",
+    ],
+  },
+  {
+    company: "MCR Solutions",
+    role: "Junior Technical Consultant",
+    period: "2020 – 2022",
+    intro:
+      "Worked in a hybrid BI and systems role focused on translating business requirements into data workflows and reporting solutions.",
+    highlights: [
+      "Conducted stakeholder requirement analysis sessions to define KPIs, data needs, and reporting structures.",
+      "Built ETL workflows and dashboarding solutions using Power BI, Jedox, and Google Data Studio.",
+      "Improved data consistency, processing quality, and reporting usability across client environments.",
+    ],
+  },
+];
+
+const projectCards = [
+  {
+    title: "Zero Trust Rollout Across Spain",
+    text:
+      "Led deployment of Zscaler ZIA and ZPA at national scale, enforcing identity-based access, segmentation, and secure remote connectivity.",
+    icon: Shield,
+  },
+  {
+    title: "Azure IoT Processing Pipeline",
+    text:
+      "Built and maintained Azure Function-based processing flows for Smart IoT telemetry, using Blob Storage and structured cloud data handling.",
+    icon: Cloud,
+  },
+  {
+    title: "Greenfield Cisco Network Deployment",
+    text:
+      "Designed VLANs, subnetting, and core network structure for a new building from zero, aligning performance and security requirements.",
+    icon: Network,
+  },
+  {
+    title: "Infrastructure Automation",
+    text:
+      "Automated operational tasks with PowerShell, Bash, and Python to reduce manual work, improve consistency, and speed up support operations.",
+    icon: Terminal,
+  },
+];
+
+const skillGroups = [
+  {
+    title: "Infrastructure & Systems",
+    icon: Server,
+    items: [
+      "Windows Server",
+      "Active Directory",
+      "DNS / DHCP / GPO",
+      "Linux (Ubuntu, CentOS, RHEL)",
+      "High Availability",
+      "Capacity Planning",
+    ],
+  },
+  {
+    title: "Cloud & Virtualization",
+    icon: Cloud,
+    items: [
+      "Microsoft Azure",
+      "Azure Virtual Machines",
+      "Azure Load Balancers",
+      "Storage Accounts / Blob Storage",
+      "Azure Function Apps",
+      "VMware vSphere",
+      "Hyper-V",
+      "Hybrid Cloud Integration",
+    ],
+  },
+  {
+    title: "Networking & Security",
+    icon: Network,
+    items: [
+      "TCP/IP",
+      "VLAN Design",
+      "Subnetting",
+      "Cisco Routing & Switching",
+      "Fortinet Firewalls",
+      "VPN & Remote Access",
+      "Zscaler ZIA / ZPA",
+      "Least Privilege Design",
+    ],
+  },
+  {
+    title: "Automation & Observability",
+    icon: Activity,
+    items: [
+      "PowerShell",
+      "Bash",
+      "Python",
+      "PRTG",
+      "Zabbix",
+      "Grafana",
+      "Prometheus",
+      "ELK Stack",
+    ],
+  },
+];
+
+const education = [
+  "Higher Level Computer Science | Systems and Network Administration + Cybersecurity (ASIX-CIBER) — Salesians Sarrià School CESF",
+  "Medium Level Computer Science | Administration of Microcomputers Systems and Networks — Salesians Sarrià School",
+  "Compulsory Secondary Education (ESO) — Santa Teresa Lisieux School",
+];
+
+const languages = [
+  "Spanish — Native",
+  "Catalan — Native",
+  "English — B2 First Certificate",
+];
+
+const sectionFade = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 },
+};
+
+export default function AleixMoyaResumeSite() {
+  return (
+    <div className="min-h-screen bg-zinc-950 text-zinc-100">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.12),transparent_28%),radial-gradient(circle_at_right,rgba(34,197,94,0.10),transparent_22%)] pointer-events-none" />
+
+      <main className="relative mx-auto max-w-7xl px-6 py-10 md:px-10 lg:px-12">
+        <motion.section
+          initial="hidden"
+          animate="visible"
+          variants={sectionFade}
+          transition={{ duration: 0.5 }}
+          className="grid gap-6 lg:grid-cols-[1.35fr_0.9fr]"
+        >
+          <Card className="border-zinc-800 bg-zinc-900/80 shadow-2xl backdrop-blur">
+            <CardContent className="p-8 md:p-10">
+              <div className="mb-6 flex flex-wrap items-center gap-3">
+                <Badge className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-emerald-300 hover:bg-emerald-500/10">
+                  SysAdmin · Cloud · Zero Trust · Azure
+                </Badge>
+                <Badge className="rounded-full border border-sky-500/30 bg-sky-500/10 px-3 py-1 text-sky-300 hover:bg-sky-500/10">
+                  Infrastructure Engineering
+                </Badge>
+              </div>
+
+              <div className="space-y-4">
+                <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
+                  Aleix Moya Araujo
+                </h1>
+                <p className="max-w-3xl text-lg leading-8 text-zinc-300 md:text-xl">
+                  Results-oriented System Administrator with 6 years of IT experience across
+                  infrastructure, networking, cloud operations, identity, automation, and
+                  Zero Trust architecture.
+                </p>
+                <p className="max-w-3xl text-base leading-7 text-zinc-400">
+                  I specialize in Windows and Linux systems, Azure workloads, Cisco and
+                  Ubiquiti networking, VMware environments, Fortinet security, and
+                  large-scale operational reliability. My profile combines hands-on
+                  execution with architectural thinking, from greenfield network builds to
+                  cloud-based IoT processing and enterprise access security.
+                </p>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Button asChild className="rounded-2xl bg-white text-zinc-950 hover:bg-zinc-200">
+                  <a href="mailto:prama99@proton.me">Contact me</a>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="rounded-2xl border-zinc-700 bg-transparent text-zinc-100 hover:bg-zinc-800"
+                >
+                  <a href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer">
+                    View LinkedIn
+                  </a>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-zinc-800 bg-zinc-900/70 shadow-xl backdrop-blur">
+            <CardContent className="flex h-full flex-col justify-between p-8">
+              <div>
+                <div className="mb-6 text-sm uppercase tracking-[0.22em] text-zinc-500">
+                  Contact
+                </div>
+                <div className="space-y-4 text-sm text-zinc-300">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="mt-0.5 h-4 w-4 text-zinc-500" />
+                    <span>Barcelona, Spain</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Phone className="mt-0.5 h-4 w-4 text-zinc-500" />
+                    <span>+34 674 04 78 70</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Mail className="mt-0.5 h-4 w-4 text-zinc-500" />
+                    <span>prama99@proton.me</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Linkedin className="mt-0.5 h-4 w-4 text-zinc-500" />
+                    <span>linkedin.com/in/aleix-m-aa7u7</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-10 rounded-3xl border border-zinc-800 bg-black/30 p-5">
+                <div className="mb-3 text-sm uppercase tracking-[0.22em] text-zinc-500">
+                  Focus areas
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "Azure",
+                    "Zero Trust",
+                    "VMware",
+                    "Cisco",
+                    "Fortinet",
+                    "Windows Server",
+                    "Linux",
+                    "Automation",
+                    "Monitoring",
+                    "IoT",
+                  ].map((item) => (
+                    <Badge
+                      key={item}
+                      variant="secondary"
+                      className="rounded-full bg-zinc-800 px-3 py-1 text-zinc-200"
+                    >
+                      {item}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.section>
+
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionFade}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mt-8 grid gap-6 lg:grid-cols-4"
+        >
+          {projectCards.map((project) => {
+            const Icon = project.icon;
+            return (
+              <Card key={project.title} className="border-zinc-800 bg-zinc-900/70 shadow-xl">
+                <CardContent className="p-6">
+                  <div className="mb-4 inline-flex rounded-2xl border border-zinc-800 bg-zinc-950 p-3">
+                    <Icon className="h-5 w-5 text-zinc-200" />
+                  </div>
+                  <h3 className="mb-2 text-lg font-medium text-white">{project.title}</h3>
+                  <p className="text-sm leading-6 text-zinc-400">{project.text}</p>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </motion.section>
+
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={sectionFade}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="mt-16"
+        >
+          <div className="mb-6 flex items-center gap-3">
+            <Briefcase className="h-5 w-5 text-zinc-400" />
+            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Experience</h2>
+          </div>
+
+          <div className="space-y-6">
+            {experiences.map((job) => (
+              <Card key={`${job.company}-${job.role}`} className="border-zinc-800 bg-zinc-900/70 shadow-xl">
+                <CardContent className="p-7 md:p-8">
+                  <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold text-white">{job.role}</h3>
+                      <p className="mt-1 text-base text-zinc-300">{job.company}</p>
+                    </div>
+                    <Badge className="w-fit rounded-full border border-zinc-700 bg-zinc-800 px-3 py-1 text-zinc-200 hover:bg-zinc-800">
+                      {job.period}
+                    </Badge>
+                  </div>
+
+                  <p className="mt-5 max-w-4xl text-sm leading-7 text-zinc-400">{job.intro}</p>
+
+                  <div className="mt-6 grid gap-3 md:grid-cols-2">
+                    {job.highlights.map((highlight) => (
+                      <div key={highlight} className="flex gap-3 rounded-2xl border border-zinc-800 bg-zinc-950/50 p-4">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
+                        <p className="text-sm leading-6 text-zinc-300">{highlight}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </motion.section>
+
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={sectionFade}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-16 grid gap-6 xl:grid-cols-[1.4fr_0.9fr]"
+        >
+          <div>
+            <div className="mb-6 flex items-center gap-3">
+              <Server className="h-5 w-5 text-zinc-400" />
+              <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Technical Skills</h2>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              {skillGroups.map((group) => {
+                const Icon = group.icon;
+                return (
+                  <Card key={group.title} className="border-zinc-800 bg-zinc-900/70 shadow-xl">
+                    <CardHeader className="pb-3">
+                      <CardTitle className="flex items-center gap-3 text-lg text-white">
+                        <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-2">
+                          <Icon className="h-4 w-4 text-zinc-300" />
+                        </div>
+                        {group.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex flex-wrap gap-2">
+                        {group.items.map((item) => (
+                          <Badge
+                            key={item}
+                            variant="secondary"
+                            className="rounded-full bg-zinc-800 px-3 py-1 text-zinc-200"
+                          >
+                            {item}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <Card className="border-zinc-800 bg-zinc-900/70 shadow-xl">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-white">
+                  <GraduationCap className="h-5 w-5 text-zinc-400" />
+                  Education
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {education.map((item) => (
+                  <div key={item} className="rounded-2xl border border-zinc-800 bg-zinc-950/50 p-4 text-sm leading-6 text-zinc-300">
+                    {item}
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+
+            <Card className="border-zinc-800 bg-zinc-900/70 shadow-xl">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-white">
+                  <Languages className="h-5 w-5 text-zinc-400" />
+                  Languages
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                {languages.map((item) => (
+                  <div key={item} className="rounded-2xl border border-zinc-800 bg-zinc-950/50 p-4 text-sm text-zinc-300">
+                    {item}
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+
+            <Card className="border-zinc-800 bg-zinc-900/70 shadow-xl">
+              <CardHeader>
+                <CardTitle className="text-white">References</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm leading-7 text-zinc-400">
+                  Letters of recommendation available from the CTO of ESTEVE and the HR
+                  Manager of Alinghi Red Bull Racing, supporting my commitment,
+                  performance, and professionalism as an IT engineer.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </motion.section>
+      </main>
+    </div>
+  );
+}
