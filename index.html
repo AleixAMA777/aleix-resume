@@ -3,18 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Aleix Moya | System & Network Administrator</title>
 
   <meta name="description" content="System and Network Administrator focused on Azure, Zero Trust, infrastructure, networking, virtualization, automation, and hybrid cloud operations.">
-  <link rel="canonical" href="https://resume.aleix-moya.net/">
+  <link rel="canonical" href="https://aleixresume.net/">
 
   <meta property="og:title" content="Aleix Moya - System & Network Administrator">
   <meta property="og:description" content="SysAdmin focused on Azure, Zero Trust, infrastructure engineering, networking, virtualization, and automation.">
-  <meta property="og:image" content="https://resume.aleix-moya.net/preview-image.jpg">
-  <meta property="og:url" content="https://resume.aleix-moya.net/">
+  <meta property="og:image" content="https://aleixresume.net/preview-image.jpg">
+  <meta property="og:url" content="https://aleixresume.net/">
   <meta property="og:type" content="website">
 
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -87,6 +91,7 @@
       height: 100vh;
       border-right: 1px solid var(--border-color);
       z-index: 10;
+      overflow: hidden;
     }
 
     .profile-img {
@@ -99,6 +104,8 @@
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
       background: #1f1f1f;
       display: block;
+      position: relative;
+      z-index: 3;
     }
 
     .sidebar h1 {
@@ -108,6 +115,8 @@
       color: var(--text-primary);
       text-align: center;
       font-weight: 700;
+      position: relative;
+      z-index: 3;
     }
 
     .typing-text {
@@ -121,6 +130,8 @@
       width: 33ch;
       animation: typing 2.6s steps(33, end), blink-caret .75s step-end infinite;
       text-align: center;
+      position: relative;
+      z-index: 3;
     }
 
     @keyframes typing {
@@ -145,6 +156,8 @@
       width: 100%;
       justify-content: center;
       text-align: center;
+      position: relative;
+      z-index: 3;
     }
 
     .sidebar a:hover {
@@ -155,6 +168,74 @@
       font-size: 16px;
       width: 20px;
       text-align: center;
+    }
+
+    .sidebar-binary {
+      position: relative;
+      width: 100%;
+      flex: 1;
+      margin-top: 18px;
+      overflow: hidden;
+      border-radius: 10px;
+      opacity: 0.9;
+      z-index: 1;
+      mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 12%, rgba(0,0,0,1) 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 12%, rgba(0,0,0,1) 100%);
+    }
+
+    .sidebar-binary::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(0, 120, 212, 0.16), transparent 45%),
+        linear-gradient(to bottom, rgba(0, 120, 212, 0.05), transparent 55%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .binary-column {
+      position: absolute;
+      top: -120%;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 13px;
+      line-height: 13px;
+      white-space: pre;
+      color: rgba(0, 120, 212, 0.62);
+      text-shadow: 0 0 8px rgba(0, 120, 212, 0.22);
+      user-select: none;
+      pointer-events: none;
+      animation-name: binaryFall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      z-index: 0;
+    }
+
+    .binary-column.dim {
+      color: rgba(255, 255, 255, 0.14);
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.08);
+    }
+
+    .binary-column.bright {
+      color: rgba(0, 170, 255, 0.92);
+      text-shadow: 0 0 12px rgba(0, 170, 255, 0.42);
+    }
+
+    @keyframes binaryFall {
+      0% {
+        transform: translateY(-120%);
+        opacity: 0;
+      }
+      8% {
+        opacity: 1;
+      }
+      85% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(220%);
+        opacity: 0;
+      }
     }
 
     .main {
@@ -437,11 +518,17 @@
         position: relative;
         width: 100%;
         height: auto;
+        min-height: 100vh;
         border-right: none;
         border-bottom: 1px solid var(--border-color);
         padding: 30px 20px;
         box-sizing: border-box;
         background: var(--bg-sidebar);
+      }
+
+      .sidebar-binary {
+        min-height: 260px;
+        margin-top: 14px;
       }
 
       .main {
@@ -520,12 +607,14 @@
         color: #000000;
       }
 
-      .right-ambient {
+      .right-ambient,
+      .sidebar-binary {
         display: none !important;
       }
     }
   </style>
 </head>
+
 <body>
   <div class="right-ambient" aria-hidden="true">
     <svg class="network-svg" viewBox="0 0 520 1080" preserveAspectRatio="xMidYMid slice">
@@ -685,6 +774,8 @@
     <a href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer">
       <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
     </a>
+
+    <div class="sidebar-binary" id="binaryRain" aria-hidden="true"></div>
   </aside>
 
   <main class="main">
@@ -837,5 +928,79 @@
       </ul>
     </section>
   </main>
+
+  <script>
+    (function () {
+      const container = document.getElementById('binaryRain');
+      if (!container) return;
+
+      function randomBinary(length) {
+        let out = '';
+
+        for (let i = 0; i < length; i++) {
+          out += Math.random() > 0.5 ? '1' : '0';
+
+          if (i < length - 1) {
+            out += '\n';
+          }
+        }
+
+        return out;
+      }
+
+      function buildBinaryRain() {
+        container.innerHTML = '';
+
+        const containerWidth = container.offsetWidth || 246;
+        const containerHeight = container.offsetHeight || 520;
+
+        const columnSpacing = 16;
+        const columnCount = Math.max(10, Math.floor(containerWidth / columnSpacing));
+
+        for (let i = 0; i < columnCount; i++) {
+          const col = document.createElement('span');
+          const charCount = Math.max(24, Math.floor(containerHeight / 13) + 14);
+
+          col.className = 'binary-column';
+
+          if (Math.random() > 0.74) {
+            col.classList.add('bright');
+          } else if (Math.random() > 0.48) {
+            col.classList.add('dim');
+          }
+
+          col.textContent = randomBinary(charCount);
+          col.style.left = `${i * columnSpacing + Math.random() * 7}px`;
+          col.style.animationDuration = `${7 + Math.random() * 8}s`;
+          col.style.animationDelay = `${Math.random() * 7}s`;
+          col.style.opacity = `${0.35 + Math.random() * 0.65}`;
+
+          container.appendChild(col);
+        }
+      }
+
+      buildBinaryRain();
+
+      let resizeTimer;
+
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(buildBinaryRain, 180);
+      });
+
+      setInterval(function () {
+        const columns = container.querySelectorAll('.binary-column');
+
+        columns.forEach(function (col) {
+          if (Math.random() > 0.55) {
+            const approxHeight = container.offsetHeight || 520;
+            const charCount = Math.max(24, Math.floor(approxHeight / 13) + 14);
+
+            col.textContent = randomBinary(charCount);
+          }
+        });
+      }, 1800);
+    })();
+  </script>
 </body>
 </html>
