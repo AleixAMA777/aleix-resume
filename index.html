@@ -228,11 +228,69 @@
       text-align: center;
     }
 
+    .language-switcher {
+      position: relative;
+      z-index: 4;
+      width: 100%;
+      margin: 8px 0 18px;
+      padding: 10px;
+      border-radius: 12px;
+      background: rgba(3, 10, 18, 0.46);
+      border: 1px solid rgba(0, 120, 212, 0.22);
+      box-shadow: 0 0 18px rgba(0, 120, 212, 0.08);
+    }
+
+    .language-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      font-size: 11px;
+      font-family: Consolas, "Courier New", monospace;
+      color: var(--muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .language-buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+
+    .language-button {
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-secondary);
+      border-radius: 8px;
+      padding: 7px 0;
+      font-size: 11px;
+      font-weight: 800;
+      font-family: Consolas, "Courier New", monospace;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .language-button:hover {
+      color: #ffffff;
+      border-color: rgba(0, 120, 212, 0.66);
+      background: rgba(0, 120, 212, 0.15);
+      transform: translateY(-1px);
+    }
+
+    .language-button.active {
+      color: #ffffff;
+      border-color: rgba(0, 170, 255, 0.88);
+      background: linear-gradient(135deg, rgba(0, 120, 212, 0.78), rgba(0, 84, 170, 0.70));
+      box-shadow: 0 0 16px rgba(0, 120, 212, 0.28);
+    }
+
     .sidebar-binary {
       position: relative;
       width: 100%;
       flex: 1;
-      margin-top: 18px;
+      margin-top: 0;
       overflow: hidden;
       border-radius: 10px;
       opacity: 0.94;
@@ -1074,7 +1132,8 @@
       body::before,
       .right-ambient,
       .sidebar-binary,
-      .hero-terminal {
+      .hero-terminal,
+      .language-switcher {
         display: none !important;
       }
 
@@ -1304,13 +1363,27 @@
 
     <span class="contact-link">
       <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-      Barcelona, Spain
+      <span data-i18n="sidebar.location">Barcelona, Spain</span>
     </span>
 
     <a href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer">
       <i class="fab fa-linkedin" aria-hidden="true"></i>
       LinkedIn
     </a>
+
+    <div class="language-switcher" aria-label="Language selector">
+      <div class="language-title">
+        <i class="fas fa-language" aria-hidden="true"></i>
+        <span data-i18n="language.title">Language</span>
+      </div>
+
+      <div class="language-buttons">
+        <button class="language-button active" type="button" data-lang="en">EN</button>
+        <button class="language-button" type="button" data-lang="es">ES</button>
+        <button class="language-button" type="button" data-lang="ca">CA</button>
+        <button class="language-button" type="button" data-lang="fr">FR</button>
+      </div>
+    </div>
 
     <div class="sidebar-binary" id="binaryRain" aria-hidden="true"></div>
   </aside>
@@ -1331,26 +1404,26 @@
               <span class="terminal-prompt">$</span>
               <span class="terminal-command"> whoami</span>
             </div>
-            <div class="terminal-output">Aleix Moya — System & Network Administrator</div>
+            <div class="terminal-output" data-i18n="terminal.whoami">Aleix Moya — System & Network Administrator</div>
 
             <div class="terminal-line">
               <span class="terminal-prompt">$</span>
               <span class="terminal-command"> focus --stack</span>
             </div>
-            <div class="terminal-output">Azure · Zero Trust · Networking · Automation · Hybrid Cloud</div>
+            <div class="terminal-output" data-i18n="terminal.stack">Azure · Zero Trust · Networking · Automation · Hybrid Cloud</div>
 
             <div class="terminal-line">
               <span class="terminal-prompt">$</span>
               <span class="terminal-command"> status</span>
             </div>
-            <div class="terminal-output">Building secure, reliable and automated infrastructure.</div>
+            <div class="terminal-output" data-i18n="terminal.status">Building secure, reliable and automated infrastructure.</div>
 
             <span class="terminal-cursor"></span>
           </div>
         </div>
 
-        <h2>Professional Summary</h2>
-        <p class="summary-text">
+        <h2 data-i18n="summary.title">Professional Summary</h2>
+        <p class="summary-text" data-i18n="summary.text">
           System and Network Administrator with 6+ years of experience designing, implementing and operating
           secure, scalable and automated infrastructure across on-premises and cloud environments.
           Specialized in Azure, Zero Trust architecture, identity security and network engineering.
@@ -1362,8 +1435,8 @@
               <span class="stat-icon"><i class="far fa-calendar-alt"></i></span>
               <div>
                 <span class="stat-number">6+</span>
-                <span class="stat-label">Years IT</span>
-                <span class="stat-sub">Since 2019</span>
+                <span class="stat-label" data-i18n="stats.yearsIt">Years IT</span>
+                <span class="stat-sub" data-i18n="stats.since2019">Since 2019</span>
               </div>
             </div>
           </div>
@@ -1373,8 +1446,8 @@
               <span class="stat-icon"><i class="fas fa-server"></i></span>
               <div>
                 <span class="stat-number">4+</span>
-                <span class="stat-label">Years Infrastructure & Networking</span>
-                <span class="stat-sub">Since 2021</span>
+                <span class="stat-label" data-i18n="stats.infraNetworking">Years Infrastructure & Networking</span>
+                <span class="stat-sub" data-i18n="stats.since2021">Since 2021</span>
               </div>
             </div>
           </div>
@@ -1384,8 +1457,8 @@
               <span class="stat-icon"><i class="fas fa-shield-alt"></i></span>
               <div>
                 <span class="stat-number">ZTNA</span>
-                <span class="stat-label">Rollout</span>
-                <span class="stat-sub">Zero Trust Network Access</span>
+                <span class="stat-label" data-i18n="stats.rollout">Rollout</span>
+                <span class="stat-sub" data-i18n="stats.zeroTrustNetwork">Zero Trust Network Access</span>
               </div>
             </div>
           </div>
@@ -1395,8 +1468,8 @@
               <span class="stat-icon"><i class="fas fa-cloud"></i></span>
               <div>
                 <span class="stat-number">Azure</span>
-                <span class="stat-label">Automation</span>
-                <span class="stat-sub">IaC · Pipelines · Monitoring</span>
+                <span class="stat-label" data-i18n="stats.automation">Automation</span>
+                <span class="stat-sub" data-i18n="stats.iacPipelines">IaC · Pipelines · Monitoring</span>
               </div>
             </div>
           </div>
@@ -1405,22 +1478,22 @@
         <div class="cta-row">
           <a class="cta-button" href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer">
             <i class="fab fa-linkedin-in"></i>
-            LinkedIn Profile
+            <span data-i18n="cta.linkedin">LinkedIn Profile</span>
           </a>
         </div>
       </section>
 
       <div class="layout-two">
         <section class="section">
-          <h2>Career Timeline</h2>
+          <h2 data-i18n="timeline.title">Career Timeline</h2>
 
           <div class="timeline">
             <div class="timeline-item">
               <div class="timeline-date">JUN 2025 — PRESENT</div>
               <div>
-                <div class="timeline-title">System and Network Administrator</div>
+                <div class="timeline-title" data-i18n="timeline.anticimex.role">System and Network Administrator</div>
                 <div class="timeline-company">Anticimex Group</div>
-                <div class="timeline-description">
+                <div class="timeline-description" data-i18n="timeline.anticimex.description">
                   Managing Azure infrastructure, networking, security and automation solutions across hybrid environments.
                 </div>
               </div>
@@ -1429,9 +1502,9 @@
             <div class="timeline-item">
               <div class="timeline-date">2023 — MAY 2025</div>
               <div>
-                <div class="timeline-title">IT Specialist</div>
+                <div class="timeline-title" data-i18n="timeline.alinghi.role">IT Specialist</div>
                 <div class="timeline-company">Alinghi Red Bull Racing</div>
-                <div class="timeline-description">
+                <div class="timeline-description" data-i18n="timeline.alinghi.description">
                   Supported global IT operations, cloud services and secure connectivity for high-performance environments.
                 </div>
               </div>
@@ -1440,9 +1513,9 @@
             <div class="timeline-item">
               <div class="timeline-date">2022 — 2023</div>
               <div>
-                <div class="timeline-title">Senior Systems Technician OnSite</div>
+                <div class="timeline-title" data-i18n="timeline.seidor.role">Senior Systems Technician OnSite</div>
                 <div class="timeline-company">Seidor</div>
-                <div class="timeline-description">
+                <div class="timeline-description" data-i18n="timeline.seidor.description">
                   On-site infrastructure support, system administration and endpoint management.
                 </div>
               </div>
@@ -1451,9 +1524,9 @@
             <div class="timeline-item">
               <div class="timeline-date">2020 — 2022</div>
               <div>
-                <div class="timeline-title">Junior Technical Consultant</div>
+                <div class="timeline-title" data-i18n="timeline.mcr.role">Junior Technical Consultant</div>
                 <div class="timeline-company">MCR Solutions</div>
-                <div class="timeline-description">
+                <div class="timeline-description" data-i18n="timeline.mcr.description">
                   Delivered IT support, system deployment and network solutions to enterprise clients.
                 </div>
               </div>
@@ -1462,14 +1535,14 @@
         </section>
 
         <section class="section">
-          <h2>Current Core Stack</h2>
+          <h2 data-i18n="stack.title">Current Core Stack</h2>
 
           <div class="core-stack-card">
             <div class="stack-item">
               <div class="stack-icon"><i class="fas fa-cloud"></i></div>
               <div>
-                <div class="stack-title">Cloud</div>
-                <div class="stack-description">
+                <div class="stack-title" data-i18n="stack.cloud.title">Cloud</div>
+                <div class="stack-description" data-i18n="stack.cloud.description">
                   Microsoft Azure · Virtual Networks · Load Balancers · Azure Functions · Storage · Compute
                 </div>
               </div>
@@ -1478,8 +1551,8 @@
             <div class="stack-item">
               <div class="stack-icon"><i class="fas fa-shield-alt"></i></div>
               <div>
-                <div class="stack-title">Identity & Security</div>
-                <div class="stack-description">
+                <div class="stack-title" data-i18n="stack.security.title">Identity & Security</div>
+                <div class="stack-description" data-i18n="stack.security.description">
                   Microsoft Entra ID · Zscaler ZIA/ZPA · Zero Trust · Fortinet · Conditional Access
                 </div>
               </div>
@@ -1488,8 +1561,8 @@
             <div class="stack-item">
               <div class="stack-icon"><i class="fas fa-network-wired"></i></div>
               <div>
-                <div class="stack-title">Infrastructure</div>
-                <div class="stack-description">
+                <div class="stack-title" data-i18n="stack.infrastructure.title">Infrastructure</div>
+                <div class="stack-description" data-i18n="stack.infrastructure.description">
                   Windows Server · Linux · VMware · Hyper-V · VPN · DNS · DHCP · Load Balancing
                 </div>
               </div>
@@ -1498,8 +1571,8 @@
             <div class="stack-item">
               <div class="stack-icon"><i class="fas fa-code"></i></div>
               <div>
-                <div class="stack-title">Automation & Observability</div>
-                <div class="stack-description">
+                <div class="stack-title" data-i18n="stack.automation.title">Automation & Observability</div>
+                <div class="stack-description" data-i18n="stack.automation.description">
                   PowerShell · Bash · Python · PRTG · Zabbix · Grafana · Prometheus · ELK
                 </div>
               </div>
@@ -1509,13 +1582,13 @@
       </div>
 
       <section class="section extra-sections">
-        <h2>Featured Projects</h2>
+        <h2 data-i18n="projects.title">Featured Projects</h2>
 
         <div class="project-grid">
           <div class="project-card">
             <i class="fas fa-user-shield"></i>
-            <h3>Zero Trust Rollout</h3>
-            <p>
+            <h3 data-i18n="projects.zeroTrust.title">Zero Trust Rollout</h3>
+            <p data-i18n="projects.zeroTrust.description">
               Nationwide deployment of Zscaler ZIA and ZPA across Spain, including policy design,
               segmentation and secure private application access.
             </p>
@@ -1523,8 +1596,8 @@
 
           <div class="project-card">
             <i class="fas fa-database"></i>
-            <h3>Azure IoT Data Platform</h3>
-            <p>
+            <h3 data-i18n="projects.iot.title">Azure IoT Data Platform</h3>
+            <p data-i18n="projects.iot.description">
               Serverless Python processing pipelines using Azure Functions, Blob Storage and structured
               Bronze/Silver/Gold data layers.
             </p>
@@ -1532,8 +1605,8 @@
 
           <div class="project-card">
             <i class="fas fa-diagram-project"></i>
-            <h3>Cisco Network Build</h3>
-            <p>
+            <h3 data-i18n="projects.cisco.title">Cisco Network Build</h3>
+            <p data-i18n="projects.cisco.description">
               Designed VLANs, subnetting, switching and segmentation for a greenfield building deployment
               from zero.
             </p>
@@ -1542,7 +1615,7 @@
       </section>
 
       <section class="section extra-sections">
-        <h2>Technical Skills</h2>
+        <h2 data-i18n="skills.title">Technical Skills</h2>
 
         <ul class="skill-tags">
           <li>Azure Virtual Machines</li>
@@ -1580,18 +1653,18 @@
 
       <div class="education-language-grid">
         <section class="section simple-card">
-          <h2>Education</h2>
+          <h2 data-i18n="education.title">Education</h2>
 
           <ul>
-            <li>
+            <li data-i18n="education.higher">
               <strong>Higher Level Computer Science:</strong>
               Systems and Network Administration + Cybersecurity (ASIX-CIBER) — Salesians Sarrià School CESF
             </li>
-            <li>
+            <li data-i18n="education.medium">
               <strong>Medium Level Computer Science:</strong>
               Administration of Microcomputers Systems and Networks — Salesians Sarrià School
             </li>
-            <li>
+            <li data-i18n="education.eso">
               <strong>Compulsory Secondary Education (ESO):</strong>
               Santa Teresa Lisieux School
             </li>
@@ -1599,12 +1672,12 @@
         </section>
 
         <section class="section simple-card">
-          <h2>Languages</h2>
+          <h2 data-i18n="languages.title">Languages</h2>
 
           <ul>
-            <li><strong>Spanish:</strong> Native</li>
-            <li><strong>Catalan:</strong> Native</li>
-            <li><strong>English:</strong> B2 First Certificate</li>
+            <li data-i18n="languages.spanish"><strong>Spanish:</strong> Native</li>
+            <li data-i18n="languages.catalan"><strong>Catalan:</strong> Native</li>
+            <li data-i18n="languages.english"><strong>English:</strong> B2 First Certificate</li>
           </ul>
         </section>
       </div>
@@ -1612,7 +1685,7 @@
       <footer class="site-footer">
         <div>
           <strong>Aleix Moya</strong>
-          <span> · Barcelona · Azure / Zero Trust / Infrastructure</span>
+          <span data-i18n="footer.tagline"> · Barcelona · Azure / Zero Trust / Infrastructure</span>
 
           <span class="footer-social">
             <a href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
@@ -1621,10 +1694,306 @@
           </span>
         </div>
 
-        <div>Last updated: April 2026</div>
+        <div data-i18n="footer.updated">Last updated: April 2026</div>
       </footer>
     </div>
   </main>
+
+  <script>
+    const translations = {
+      en: {
+        "language.title": "Language",
+        "sidebar.location": "Barcelona, Spain",
+
+        "terminal.whoami": "Aleix Moya — System & Network Administrator",
+        "terminal.stack": "Azure · Zero Trust · Networking · Automation · Hybrid Cloud",
+        "terminal.status": "Building secure, reliable and automated infrastructure.",
+
+        "summary.title": "Professional Summary",
+        "summary.text": "System and Network Administrator with 6+ years of experience designing, implementing and operating secure, scalable and automated infrastructure across on-premises and cloud environments. Specialized in Azure, Zero Trust architecture, identity security and network engineering.",
+
+        "stats.yearsIt": "Years IT",
+        "stats.since2019": "Since 2019",
+        "stats.infraNetworking": "Years Infrastructure & Networking",
+        "stats.since2021": "Since 2021",
+        "stats.rollout": "Rollout",
+        "stats.zeroTrustNetwork": "Zero Trust Network Access",
+        "stats.automation": "Automation",
+        "stats.iacPipelines": "IaC · Pipelines · Monitoring",
+
+        "cta.linkedin": "LinkedIn Profile",
+
+        "timeline.title": "Career Timeline",
+        "timeline.anticimex.role": "System and Network Administrator",
+        "timeline.anticimex.description": "Managing Azure infrastructure, networking, security and automation solutions across hybrid environments.",
+        "timeline.alinghi.role": "IT Specialist",
+        "timeline.alinghi.description": "Supported global IT operations, cloud services and secure connectivity for high-performance environments.",
+        "timeline.seidor.role": "Senior Systems Technician OnSite",
+        "timeline.seidor.description": "On-site infrastructure support, system administration and endpoint management.",
+        "timeline.mcr.role": "Junior Technical Consultant",
+        "timeline.mcr.description": "Delivered IT support, system deployment and network solutions to enterprise clients.",
+
+        "stack.title": "Current Core Stack",
+        "stack.cloud.title": "Cloud",
+        "stack.cloud.description": "Microsoft Azure · Virtual Networks · Load Balancers · Azure Functions · Storage · Compute",
+        "stack.security.title": "Identity & Security",
+        "stack.security.description": "Microsoft Entra ID · Zscaler ZIA/ZPA · Zero Trust · Fortinet · Conditional Access",
+        "stack.infrastructure.title": "Infrastructure",
+        "stack.infrastructure.description": "Windows Server · Linux · VMware · Hyper-V · VPN · DNS · DHCP · Load Balancing",
+        "stack.automation.title": "Automation & Observability",
+        "stack.automation.description": "PowerShell · Bash · Python · PRTG · Zabbix · Grafana · Prometheus · ELK",
+
+        "projects.title": "Featured Projects",
+        "projects.zeroTrust.title": "Zero Trust Rollout",
+        "projects.zeroTrust.description": "Nationwide deployment of Zscaler ZIA and ZPA across Spain, including policy design, segmentation and secure private application access.",
+        "projects.iot.title": "Azure IoT Data Platform",
+        "projects.iot.description": "Serverless Python processing pipelines using Azure Functions, Blob Storage and structured Bronze/Silver/Gold data layers.",
+        "projects.cisco.title": "Cisco Network Build",
+        "projects.cisco.description": "Designed VLANs, subnetting, switching and segmentation for a greenfield building deployment from zero.",
+
+        "skills.title": "Technical Skills",
+
+        "education.title": "Education",
+        "education.higher": "<strong>Higher Level Computer Science:</strong> Systems and Network Administration + Cybersecurity (ASIX-CIBER) — Salesians Sarrià School CESF",
+        "education.medium": "<strong>Medium Level Computer Science:</strong> Administration of Microcomputers Systems and Networks — Salesians Sarrià School",
+        "education.eso": "<strong>Compulsory Secondary Education (ESO):</strong> Santa Teresa Lisieux School",
+
+        "languages.title": "Languages",
+        "languages.spanish": "<strong>Spanish:</strong> Native",
+        "languages.catalan": "<strong>Catalan:</strong> Native",
+        "languages.english": "<strong>English:</strong> B2 First Certificate",
+
+        "footer.tagline": " · Barcelona · Azure / Zero Trust / Infrastructure",
+        "footer.updated": "Last updated: April 2026"
+      },
+
+      es: {
+        "language.title": "Idioma",
+        "sidebar.location": "Barcelona, España",
+
+        "terminal.whoami": "Aleix Moya — Administrador de Sistemas y Redes",
+        "terminal.stack": "Azure · Zero Trust · Redes · Automatización · Cloud Híbrido",
+        "terminal.status": "Construyendo infraestructura segura, fiable y automatizada.",
+
+        "summary.title": "Resumen Profesional",
+        "summary.text": "Administrador de Sistemas y Redes con más de 6 años de experiencia diseñando, implementando y operando infraestructura segura, escalable y automatizada en entornos on-premises y cloud. Especializado en Azure, arquitectura Zero Trust, seguridad de identidad e ingeniería de redes.",
+
+        "stats.yearsIt": "Años en IT",
+        "stats.since2019": "Desde 2019",
+        "stats.infraNetworking": "Años en Infraestructura y Redes",
+        "stats.since2021": "Desde 2021",
+        "stats.rollout": "Despliegue",
+        "stats.zeroTrustNetwork": "Acceso de Red Zero Trust",
+        "stats.automation": "Automatización",
+        "stats.iacPipelines": "IaC · Pipelines · Monitorización",
+
+        "cta.linkedin": "Perfil de LinkedIn",
+
+        "timeline.title": "Trayectoria Profesional",
+        "timeline.anticimex.role": "Administrador de Sistemas y Redes",
+        "timeline.anticimex.description": "Gestión de infraestructura Azure, redes, seguridad y soluciones de automatización en entornos híbridos.",
+        "timeline.alinghi.role": "Especialista IT",
+        "timeline.alinghi.description": "Soporte a operaciones IT globales, servicios cloud y conectividad segura para entornos de alto rendimiento.",
+        "timeline.seidor.role": "Técnico Senior de Sistemas OnSite",
+        "timeline.seidor.description": "Soporte de infraestructura onsite, administración de sistemas y gestión de endpoints.",
+        "timeline.mcr.role": "Consultor Técnico Junior",
+        "timeline.mcr.description": "Soporte IT, despliegue de sistemas y soluciones de red para clientes enterprise.",
+
+        "stack.title": "Stack Técnico Principal",
+        "stack.cloud.title": "Cloud",
+        "stack.cloud.description": "Microsoft Azure · Redes Virtuales · Load Balancers · Azure Functions · Storage · Compute",
+        "stack.security.title": "Identidad y Seguridad",
+        "stack.security.description": "Microsoft Entra ID · Zscaler ZIA/ZPA · Zero Trust · Fortinet · Conditional Access",
+        "stack.infrastructure.title": "Infraestructura",
+        "stack.infrastructure.description": "Windows Server · Linux · VMware · Hyper-V · VPN · DNS · DHCP · Load Balancing",
+        "stack.automation.title": "Automatización y Observabilidad",
+        "stack.automation.description": "PowerShell · Bash · Python · PRTG · Zabbix · Grafana · Prometheus · ELK",
+
+        "projects.title": "Proyectos Destacados",
+        "projects.zeroTrust.title": "Despliegue Zero Trust",
+        "projects.zeroTrust.description": "Despliegue nacional de Zscaler ZIA y ZPA en España, incluyendo diseño de políticas, segmentación y acceso privado seguro a aplicaciones.",
+        "projects.iot.title": "Plataforma Azure IoT Data",
+        "projects.iot.description": "Pipelines serverless en Python con Azure Functions, Blob Storage y capas de datos Bronze/Silver/Gold.",
+        "projects.cisco.title": "Diseño de Red Cisco",
+        "projects.cisco.description": "Diseño de VLANs, subnetting, switching y segmentación para el despliegue de red de un edificio desde cero.",
+
+        "skills.title": "Habilidades Técnicas",
+
+        "education.title": "Formación",
+        "education.higher": "<strong>Grado Superior de Informática:</strong> Administración de Sistemas Informáticos en Red + Ciberseguridad (ASIX-CIBER) — Salesians Sarrià School CESF",
+        "education.medium": "<strong>Grado Medio de Informática:</strong> Sistemas Microinformáticos y Redes — Salesians Sarrià School",
+        "education.eso": "<strong>Educación Secundaria Obligatoria (ESO):</strong> Santa Teresa Lisieux School",
+
+        "languages.title": "Idiomas",
+        "languages.spanish": "<strong>Español:</strong> Nativo",
+        "languages.catalan": "<strong>Catalán:</strong> Nativo",
+        "languages.english": "<strong>Inglés:</strong> B2 First Certificate",
+
+        "footer.tagline": " · Barcelona · Azure / Zero Trust / Infraestructura",
+        "footer.updated": "Última actualización: abril de 2026"
+      },
+
+      ca: {
+        "language.title": "Idioma",
+        "sidebar.location": "Barcelona, Espanya",
+
+        "terminal.whoami": "Aleix Moya — Administrador de Sistemes i Xarxes",
+        "terminal.stack": "Azure · Zero Trust · Xarxes · Automatització · Cloud Híbrid",
+        "terminal.status": "Construint infraestructura segura, fiable i automatitzada.",
+
+        "summary.title": "Resum Professional",
+        "summary.text": "Administrador de Sistemes i Xarxes amb més de 6 anys d’experiència dissenyant, implementant i operant infraestructura segura, escalable i automatitzada en entorns on-premises i cloud. Especialitzat en Azure, arquitectura Zero Trust, seguretat d’identitat i enginyeria de xarxes.",
+
+        "stats.yearsIt": "Anys en IT",
+        "stats.since2019": "Des de 2019",
+        "stats.infraNetworking": "Anys en Infraestructura i Xarxes",
+        "stats.since2021": "Des de 2021",
+        "stats.rollout": "Desplegament",
+        "stats.zeroTrustNetwork": "Accés de Xarxa Zero Trust",
+        "stats.automation": "Automatització",
+        "stats.iacPipelines": "IaC · Pipelines · Monitoratge",
+
+        "cta.linkedin": "Perfil de LinkedIn",
+
+        "timeline.title": "Trajectòria Professional",
+        "timeline.anticimex.role": "Administrador de Sistemes i Xarxes",
+        "timeline.anticimex.description": "Gestió d’infraestructura Azure, xarxes, seguretat i solucions d’automatització en entorns híbrids.",
+        "timeline.alinghi.role": "Especialista IT",
+        "timeline.alinghi.description": "Suport a operacions IT globals, serveis cloud i connectivitat segura per a entorns d’alt rendiment.",
+        "timeline.seidor.role": "Tècnic Sènior de Sistemes OnSite",
+        "timeline.seidor.description": "Suport d’infraestructura onsite, administració de sistemes i gestió d’endpoints.",
+        "timeline.mcr.role": "Consultor Tècnic Junior",
+        "timeline.mcr.description": "Suport IT, desplegament de sistemes i solucions de xarxa per a clients enterprise.",
+
+        "stack.title": "Stack Tècnic Principal",
+        "stack.cloud.title": "Cloud",
+        "stack.cloud.description": "Microsoft Azure · Xarxes Virtuals · Load Balancers · Azure Functions · Storage · Compute",
+        "stack.security.title": "Identitat i Seguretat",
+        "stack.security.description": "Microsoft Entra ID · Zscaler ZIA/ZPA · Zero Trust · Fortinet · Conditional Access",
+        "stack.infrastructure.title": "Infraestructura",
+        "stack.infrastructure.description": "Windows Server · Linux · VMware · Hyper-V · VPN · DNS · DHCP · Load Balancing",
+        "stack.automation.title": "Automatització i Observabilitat",
+        "stack.automation.description": "PowerShell · Bash · Python · PRTG · Zabbix · Grafana · Prometheus · ELK",
+
+        "projects.title": "Projectes Destacats",
+        "projects.zeroTrust.title": "Desplegament Zero Trust",
+        "projects.zeroTrust.description": "Desplegament nacional de Zscaler ZIA i ZPA a Espanya, incloent disseny de polítiques, segmentació i accés privat segur a aplicacions.",
+        "projects.iot.title": "Plataforma Azure IoT Data",
+        "projects.iot.description": "Pipelines serverless en Python amb Azure Functions, Blob Storage i capes de dades Bronze/Silver/Gold.",
+        "projects.cisco.title": "Disseny de Xarxa Cisco",
+        "projects.cisco.description": "Disseny de VLANs, subnetting, switching i segmentació per al desplegament de xarxa d’un edifici des de zero.",
+
+        "skills.title": "Habilitats Tècniques",
+
+        "education.title": "Formació",
+        "education.higher": "<strong>Grau Superior d’Informàtica:</strong> Administració de Sistemes Informàtics en Xarxa + Ciberseguretat (ASIX-CIBER) — Salesians Sarrià School CESF",
+        "education.medium": "<strong>Grau Mitjà d’Informàtica:</strong> Sistemes Microinformàtics i Xarxes — Salesians Sarrià School",
+        "education.eso": "<strong>Educació Secundària Obligatòria (ESO):</strong> Santa Teresa Lisieux School",
+
+        "languages.title": "Idiomes",
+        "languages.spanish": "<strong>Castellà:</strong> Nadiu",
+        "languages.catalan": "<strong>Català:</strong> Nadiu",
+        "languages.english": "<strong>Anglès:</strong> B2 First Certificate",
+
+        "footer.tagline": " · Barcelona · Azure / Zero Trust / Infraestructura",
+        "footer.updated": "Última actualització: abril de 2026"
+      },
+
+      fr: {
+        "language.title": "Langue",
+        "sidebar.location": "Barcelone, Espagne",
+
+        "terminal.whoami": "Aleix Moya — Administrateur Systèmes et Réseaux",
+        "terminal.stack": "Azure · Zero Trust · Réseaux · Automatisation · Cloud Hybride",
+        "terminal.status": "Construction d’infrastructures sécurisées, fiables et automatisées.",
+
+        "summary.title": "Résumé Professionnel",
+        "summary.text": "Administrateur Systèmes et Réseaux avec plus de 6 ans d’expérience dans la conception, l’implémentation et l’exploitation d’infrastructures sécurisées, évolutives et automatisées en environnements on-premises et cloud. Spécialisé en Azure, architecture Zero Trust, sécurité des identités et ingénierie réseau.",
+
+        "stats.yearsIt": "Années en IT",
+        "stats.since2019": "Depuis 2019",
+        "stats.infraNetworking": "Années Infrastructure & Réseaux",
+        "stats.since2021": "Depuis 2021",
+        "stats.rollout": "Déploiement",
+        "stats.zeroTrustNetwork": "Accès Réseau Zero Trust",
+        "stats.automation": "Automatisation",
+        "stats.iacPipelines": "IaC · Pipelines · Supervision",
+
+        "cta.linkedin": "Profil LinkedIn",
+
+        "timeline.title": "Parcours Professionnel",
+        "timeline.anticimex.role": "Administrateur Systèmes et Réseaux",
+        "timeline.anticimex.description": "Gestion de l’infrastructure Azure, des réseaux, de la sécurité et des solutions d’automatisation dans des environnements hybrides.",
+        "timeline.alinghi.role": "Spécialiste IT",
+        "timeline.alinghi.description": "Support des opérations IT globales, des services cloud et de la connectivité sécurisée pour des environnements à haute performance.",
+        "timeline.seidor.role": "Technicien Systèmes Senior OnSite",
+        "timeline.seidor.description": "Support d’infrastructure onsite, administration systèmes et gestion des endpoints.",
+        "timeline.mcr.role": "Consultant Technique Junior",
+        "timeline.mcr.description": "Support IT, déploiement de systèmes et solutions réseau pour des clients enterprise.",
+
+        "stack.title": "Stack Technique Principal",
+        "stack.cloud.title": "Cloud",
+        "stack.cloud.description": "Microsoft Azure · Réseaux Virtuels · Load Balancers · Azure Functions · Storage · Compute",
+        "stack.security.title": "Identité et Sécurité",
+        "stack.security.description": "Microsoft Entra ID · Zscaler ZIA/ZPA · Zero Trust · Fortinet · Conditional Access",
+        "stack.infrastructure.title": "Infrastructure",
+        "stack.infrastructure.description": "Windows Server · Linux · VMware · Hyper-V · VPN · DNS · DHCP · Load Balancing",
+        "stack.automation.title": "Automatisation et Observabilité",
+        "stack.automation.description": "PowerShell · Bash · Python · PRTG · Zabbix · Grafana · Prometheus · ELK",
+
+        "projects.title": "Projets Clés",
+        "projects.zeroTrust.title": "Déploiement Zero Trust",
+        "projects.zeroTrust.description": "Déploiement national de Zscaler ZIA et ZPA en Espagne, incluant la conception des politiques, la segmentation et l’accès privé sécurisé aux applications.",
+        "projects.iot.title": "Plateforme Azure IoT Data",
+        "projects.iot.description": "Pipelines serverless en Python avec Azure Functions, Blob Storage et couches de données Bronze/Silver/Gold.",
+        "projects.cisco.title": "Conception Réseau Cisco",
+        "projects.cisco.description": "Conception de VLANs, subnetting, switching et segmentation pour le déploiement réseau d’un bâtiment depuis zéro.",
+
+        "skills.title": "Compétences Techniques",
+
+        "education.title": "Formation",
+        "education.higher": "<strong>Formation Supérieure en Informatique :</strong> Administration des Systèmes et Réseaux + Cybersécurité (ASIX-CIBER) — Salesians Sarrià School CESF",
+        "education.medium": "<strong>Formation Intermédiaire en Informatique :</strong> Systèmes Micro-informatiques et Réseaux — Salesians Sarrià School",
+        "education.eso": "<strong>Enseignement Secondaire Obligatoire (ESO) :</strong> Santa Teresa Lisieux School",
+
+        "languages.title": "Langues",
+        "languages.spanish": "<strong>Espagnol :</strong> Natif",
+        "languages.catalan": "<strong>Catalan :</strong> Natif",
+        "languages.english": "<strong>Anglais :</strong> B2 First Certificate",
+
+        "footer.tagline": " · Barcelone · Azure / Zero Trust / Infrastructure",
+        "footer.updated": "Dernière mise à jour : avril 2026"
+      }
+    };
+
+    function setLanguage(lang) {
+      const dictionary = translations[lang] || translations.en;
+
+      document.documentElement.lang = lang;
+      localStorage.setItem("preferredLanguage", lang);
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+
+        if (dictionary[key]) {
+          element.innerHTML = dictionary[key];
+        }
+      });
+
+      document.querySelectorAll(".language-button").forEach((button) => {
+        button.classList.toggle("active", button.getAttribute("data-lang") === lang);
+      });
+    }
+
+    document.querySelectorAll(".language-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        setLanguage(button.getAttribute("data-lang"));
+      });
+    });
+
+    const savedLanguage = localStorage.getItem("preferredLanguage") || "en";
+    setLanguage(savedLanguage);
+  </script>
 
   <script>
     (function () {
