@@ -228,47 +228,11 @@
       text-align: center;
     }
 
-    .sidebar-actions {
-      width: 100%;
-      display: grid;
-      gap: 12px;
-      margin: 18px 0 8px;
-      position: relative;
-      z-index: 4;
-    }
-
-    .sidebar-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 100%;
-      min-height: 46px;
-      border: 1px solid rgba(0, 120, 212, 0.82);
-      background:
-        linear-gradient(135deg, rgba(0, 120, 212, 0.96), rgba(0, 94, 185, 0.92));
-      color: #ffffff !important;
-      padding: 11px 14px;
-      border-radius: 8px;
-      font-weight: 800;
-      letter-spacing: 0.2px;
-      box-shadow:
-        0 0 26px rgba(0, 120, 212, 0.35),
-        inset 0 1px 0 rgba(255, 255, 255, 0.20);
-      margin-bottom: 0 !important;
-    }
-
-    .sidebar-button .arrow {
-      margin-left: auto;
-      font-size: 18px;
-      opacity: 0.9;
-    }
-
     .sidebar-binary {
       position: relative;
       width: 100%;
       flex: 1;
-      margin-top: 8px;
+      margin-top: 18px;
       overflow: hidden;
       border-radius: 10px;
       opacity: 0.94;
@@ -447,11 +411,15 @@
     }
 
     .main {
-      margin-left: 330px;
-      padding: 40px 40px 0;
-      flex: 1;
-      max-width: 1050px;
+      margin-left: 290px;
+      width: calc(100% - 290px);
+      padding: 40px 28px 0;
       min-height: 100vh;
+    }
+
+    .main-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
     }
 
     .hero-terminal {
@@ -464,7 +432,7 @@
         0 0 28px rgba(0, 120, 212, 0.13),
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
       margin-bottom: 24px;
-      max-width: 750px;
+      max-width: 760px;
     }
 
     .terminal-topbar {
@@ -629,7 +597,7 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 15px;
       margin: 17px 0 17px;
-      max-width: 810px;
+      max-width: 820px;
     }
 
     .stat-card {
@@ -709,11 +677,10 @@
     }
 
     .cta-row {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 15px;
-      max-width: 405px;
+      display: flex;
+      justify-content: flex-start;
       margin-top: 15px;
+      max-width: 820px;
     }
 
     .cta-button {
@@ -724,27 +691,21 @@
       min-height: 38px;
       color: #ffffff;
       text-decoration: none;
-      padding: 10px 15px;
+      padding: 10px 18px;
       border-radius: 6px;
       border: 1px solid rgba(0, 120, 212, 0.75);
-      background: linear-gradient(135deg, rgba(0, 120, 212, 0.95), rgba(0, 91, 181, 0.84));
+      background: rgba(3, 10, 18, 0.64);
+      color: var(--accent-bright);
       font-weight: 800;
       font-size: 13px;
       transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-      box-shadow: 0 0 16px rgba(0, 120, 212, 0.17);
+      box-shadow: 0 0 16px rgba(0, 120, 212, 0.10);
     }
 
     .cta-button:hover {
       transform: translateY(-2px);
-      background: linear-gradient(135deg, rgba(0, 135, 235, 1), rgba(0, 98, 195, 0.96));
       border-color: rgba(0, 170, 255, 0.95);
-    }
-
-    .cta-button.secondary {
-      background: rgba(3, 10, 18, 0.64);
-      border-color: rgba(0, 120, 212, 0.66);
-      color: var(--accent-bright);
-      box-shadow: 0 0 16px rgba(0, 120, 212, 0.10);
+      background: rgba(0, 120, 212, 0.12);
     }
 
     .layout-two {
@@ -753,6 +714,7 @@
       gap: 38px;
       align-items: start;
       margin-top: 20px;
+      max-width: 980px;
     }
 
     .timeline {
@@ -876,7 +838,7 @@
 
     .extra-sections {
       margin-top: 28px;
-      max-width: 855px;
+      max-width: 980px;
     }
 
     .project-grid {
@@ -928,7 +890,7 @@
       padding-left: 0;
       list-style: none;
       margin-top: 15px;
-      max-width: 840px;
+      max-width: 980px;
     }
 
     .skill-tags li {
@@ -955,7 +917,7 @@
       grid-template-columns: 1.15fr 0.85fr;
       gap: 24px;
       margin-top: 28px;
-      max-width: 855px;
+      max-width: 980px;
     }
 
     .simple-card {
@@ -972,10 +934,9 @@
 
     .site-footer {
       min-height: 42px;
-      margin: 34px -40px 0 -40px;
-      padding: 12px 40px;
+      margin: 34px 0 0 0;
+      padding: 12px 0 20px;
       border-top: 1px solid rgba(255, 255, 255, 0.10);
-      background: rgba(7, 13, 20, 0.76);
       color: var(--muted);
       display: flex;
       flex-wrap: wrap;
@@ -983,8 +944,6 @@
       align-items: center;
       gap: 14px;
       font-size: 13px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
     }
 
     .site-footer strong {
@@ -1030,6 +989,14 @@
       .core-stack-card {
         max-width: 640px;
       }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .education-language-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 900px) {
@@ -1057,8 +1024,12 @@
 
       .main {
         margin-left: 0;
+        width: 100%;
         padding: 24px 20px 0;
-        max-width: none;
+      }
+
+      .main-inner {
+        width: 100%;
       }
 
       .hero-terminal {
@@ -1066,26 +1037,30 @@
       }
 
       .stats-grid,
-      .project-grid,
       .education-language-grid {
         grid-template-columns: 1fr;
         max-width: none;
       }
 
       .cta-row {
-        grid-template-columns: 1fr;
+        max-width: none;
+      }
+
+      .layout-two {
+        max-width: none;
+      }
+
+      .extra-sections {
+        max-width: none;
+      }
+
+      .skill-tags {
         max-width: none;
       }
 
       .timeline-item {
         grid-template-columns: 1fr;
         gap: 5px;
-      }
-
-      .site-footer {
-        margin-left: -20px;
-        margin-right: -20px;
-        padding: 14px 20px;
       }
     }
 
@@ -1099,8 +1074,7 @@
       body::before,
       .right-ambient,
       .sidebar-binary,
-      .hero-terminal,
-      .sidebar-actions {
+      .hero-terminal {
         display: none !important;
       }
 
@@ -1141,7 +1115,12 @@
 
       .main {
         margin-left: 0;
+        width: 100%;
         padding: 0;
+      }
+
+      .main-inner {
+        width: 100%;
       }
 
       .section,
@@ -1333,333 +1312,318 @@
       LinkedIn
     </a>
 
-    <div class="sidebar-actions">
-      <a class="sidebar-button" href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer">
-        <i class="far fa-envelope" aria-hidden="true"></i>
-        Contact Me
-        <span class="arrow">→</span>
-      </a>
-    </div>
-
     <div class="sidebar-binary" id="binaryRain" aria-hidden="true"></div>
   </aside>
 
   <main class="main">
-    <section class="section">
-      <div class="hero-terminal">
-        <div class="terminal-topbar">
-          <span class="terminal-dot red"></span>
-          <span class="terminal-dot yellow"></span>
-          <span class="terminal-dot green"></span>
-          <span class="terminal-title">~ aleix@resume.net</span>
-        </div>
-
-        <div class="terminal-body">
-          <div class="terminal-line">
-            <span class="terminal-prompt">$</span>
-            <span class="terminal-command"> whoami</span>
-          </div>
-          <div class="terminal-output">Aleix Moya — System & Network Administrator</div>
-
-          <div class="terminal-line">
-            <span class="terminal-prompt">$</span>
-            <span class="terminal-command"> focus --stack</span>
-          </div>
-          <div class="terminal-output">Azure · Zero Trust · Networking · Automation · Hybrid Cloud</div>
-
-          <div class="terminal-line">
-            <span class="terminal-prompt">$</span>
-            <span class="terminal-command"> status</span>
-          </div>
-          <div class="terminal-output">Building secure, reliable and automated infrastructure.</div>
-
-          <span class="terminal-cursor"></span>
-        </div>
-      </div>
-
-      <h2>Professional Summary</h2>
-      <p class="summary-text">
-        System and Network Administrator with 6+ years of experience designing, implementing and operating
-        secure, scalable and automated infrastructure across on-premises and cloud environments.
-        Specialized in Azure, Zero Trust architecture, identity security and network engineering.
-      </p>
-
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-content">
-            <span class="stat-icon"><i class="far fa-calendar-alt"></i></span>
-            <div>
-              <span class="stat-number">6+</span>
-              <span class="stat-label">Years IT</span>
-              <span class="stat-sub">Since 2019</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-content">
-            <span class="stat-icon"><i class="fas fa-server"></i></span>
-            <div>
-              <span class="stat-number">4+</span>
-              <span class="stat-label">Years Infrastructure & Networking</span>
-              <span class="stat-sub">Since 2021</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-content">
-            <span class="stat-icon"><i class="fas fa-shield-alt"></i></span>
-            <div>
-              <span class="stat-number">ZTNA</span>
-              <span class="stat-label">Rollout</span>
-              <span class="stat-sub">Zero Trust Network Access</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-content">
-            <span class="stat-icon"><i class="fas fa-cloud"></i></span>
-            <div>
-              <span class="stat-number">Azure</span>
-              <span class="stat-label">Automation</span>
-              <span class="stat-sub">IaC · Pipelines · Monitoring</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cta-row">
-        <a class="cta-button" href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer">
-          <i class="far fa-envelope"></i>
-          Contact Me
-          <span>→</span>
-        </a>
-
-        <a class="cta-button secondary" href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer">
-          <i class="fab fa-linkedin-in"></i>
-          LinkedIn Profile
-        </a>
-      </div>
-    </section>
-
-    <div class="layout-two">
+    <div class="main-inner">
       <section class="section">
-        <h2>Career Timeline</h2>
+        <div class="hero-terminal">
+          <div class="terminal-topbar">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">~ aleix@resume.net</span>
+          </div>
 
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-date">JUN 2025 — PRESENT</div>
-            <div>
-              <div class="timeline-title">System and Network Administrator</div>
-              <div class="timeline-company">Anticimex Group</div>
-              <div class="timeline-description">
-                Managing Azure infrastructure, networking, security and automation solutions across hybrid environments.
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span class="terminal-command"> whoami</span>
+            </div>
+            <div class="terminal-output">Aleix Moya — System & Network Administrator</div>
+
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span class="terminal-command"> focus --stack</span>
+            </div>
+            <div class="terminal-output">Azure · Zero Trust · Networking · Automation · Hybrid Cloud</div>
+
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span class="terminal-command"> status</span>
+            </div>
+            <div class="terminal-output">Building secure, reliable and automated infrastructure.</div>
+
+            <span class="terminal-cursor"></span>
+          </div>
+        </div>
+
+        <h2>Professional Summary</h2>
+        <p class="summary-text">
+          System and Network Administrator with 6+ years of experience designing, implementing and operating
+          secure, scalable and automated infrastructure across on-premises and cloud environments.
+          Specialized in Azure, Zero Trust architecture, identity security and network engineering.
+        </p>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-content">
+              <span class="stat-icon"><i class="far fa-calendar-alt"></i></span>
+              <div>
+                <span class="stat-number">6+</span>
+                <span class="stat-label">Years IT</span>
+                <span class="stat-sub">Since 2019</span>
               </div>
             </div>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-date">2023 — MAY 2025</div>
-            <div>
-              <div class="timeline-title">IT Specialist</div>
-              <div class="timeline-company">Alinghi Red Bull Racing</div>
-              <div class="timeline-description">
-                Supported global IT operations, cloud services and secure connectivity for high-performance environments.
+          <div class="stat-card">
+            <div class="stat-content">
+              <span class="stat-icon"><i class="fas fa-server"></i></span>
+              <div>
+                <span class="stat-number">4+</span>
+                <span class="stat-label">Years Infrastructure & Networking</span>
+                <span class="stat-sub">Since 2021</span>
               </div>
             </div>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-date">2022 — 2023</div>
-            <div>
-              <div class="timeline-title">Senior Systems Technician OnSite</div>
-              <div class="timeline-company">Seidor</div>
-              <div class="timeline-description">
-                On-site infrastructure support, system administration and endpoint management.
+          <div class="stat-card">
+            <div class="stat-content">
+              <span class="stat-icon"><i class="fas fa-shield-alt"></i></span>
+              <div>
+                <span class="stat-number">ZTNA</span>
+                <span class="stat-label">Rollout</span>
+                <span class="stat-sub">Zero Trust Network Access</span>
               </div>
             </div>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-date">2020 — 2022</div>
-            <div>
-              <div class="timeline-title">Junior Technical Consultant</div>
-              <div class="timeline-company">MCR Solutions</div>
-              <div class="timeline-description">
-                Delivered IT support, system deployment and network solutions to enterprise clients.
+          <div class="stat-card">
+            <div class="stat-content">
+              <span class="stat-icon"><i class="fas fa-cloud"></i></span>
+              <div>
+                <span class="stat-number">Azure</span>
+                <span class="stat-label">Automation</span>
+                <span class="stat-sub">IaC · Pipelines · Monitoring</span>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a class="cta-button" href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer">
+            <i class="fab fa-linkedin-in"></i>
+            LinkedIn Profile
+          </a>
+        </div>
+      </section>
+
+      <div class="layout-two">
+        <section class="section">
+          <h2>Career Timeline</h2>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">JUN 2025 — PRESENT</div>
+              <div>
+                <div class="timeline-title">System and Network Administrator</div>
+                <div class="timeline-company">Anticimex Group</div>
+                <div class="timeline-description">
+                  Managing Azure infrastructure, networking, security and automation solutions across hybrid environments.
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">2023 — MAY 2025</div>
+              <div>
+                <div class="timeline-title">IT Specialist</div>
+                <div class="timeline-company">Alinghi Red Bull Racing</div>
+                <div class="timeline-description">
+                  Supported global IT operations, cloud services and secure connectivity for high-performance environments.
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">2022 — 2023</div>
+              <div>
+                <div class="timeline-title">Senior Systems Technician OnSite</div>
+                <div class="timeline-company">Seidor</div>
+                <div class="timeline-description">
+                  On-site infrastructure support, system administration and endpoint management.
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">2020 — 2022</div>
+              <div>
+                <div class="timeline-title">Junior Technical Consultant</div>
+                <div class="timeline-company">MCR Solutions</div>
+                <div class="timeline-description">
+                  Delivered IT support, system deployment and network solutions to enterprise clients.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Current Core Stack</h2>
+
+          <div class="core-stack-card">
+            <div class="stack-item">
+              <div class="stack-icon"><i class="fas fa-cloud"></i></div>
+              <div>
+                <div class="stack-title">Cloud</div>
+                <div class="stack-description">
+                  Microsoft Azure · Virtual Networks · Load Balancers · Azure Functions · Storage · Compute
+                </div>
+              </div>
+            </div>
+
+            <div class="stack-item">
+              <div class="stack-icon"><i class="fas fa-shield-alt"></i></div>
+              <div>
+                <div class="stack-title">Identity & Security</div>
+                <div class="stack-description">
+                  Microsoft Entra ID · Zscaler ZIA/ZPA · Zero Trust · Fortinet · Conditional Access
+                </div>
+              </div>
+            </div>
+
+            <div class="stack-item">
+              <div class="stack-icon"><i class="fas fa-network-wired"></i></div>
+              <div>
+                <div class="stack-title">Infrastructure</div>
+                <div class="stack-description">
+                  Windows Server · Linux · VMware · Hyper-V · VPN · DNS · DHCP · Load Balancing
+                </div>
+              </div>
+            </div>
+
+            <div class="stack-item">
+              <div class="stack-icon"><i class="fas fa-code"></i></div>
+              <div>
+                <div class="stack-title">Automation & Observability</div>
+                <div class="stack-description">
+                  PowerShell · Bash · Python · PRTG · Zabbix · Grafana · Prometheus · ELK
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="section extra-sections">
+        <h2>Featured Projects</h2>
+
+        <div class="project-grid">
+          <div class="project-card">
+            <i class="fas fa-user-shield"></i>
+            <h3>Zero Trust Rollout</h3>
+            <p>
+              Nationwide deployment of Zscaler ZIA and ZPA across Spain, including policy design,
+              segmentation and secure private application access.
+            </p>
+          </div>
+
+          <div class="project-card">
+            <i class="fas fa-database"></i>
+            <h3>Azure IoT Data Platform</h3>
+            <p>
+              Serverless Python processing pipelines using Azure Functions, Blob Storage and structured
+              Bronze/Silver/Gold data layers.
+            </p>
+          </div>
+
+          <div class="project-card">
+            <i class="fas fa-diagram-project"></i>
+            <h3>Cisco Network Build</h3>
+            <p>
+              Designed VLANs, subnetting, switching and segmentation for a greenfield building deployment
+              from zero.
+            </p>
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <h2>Current Core Stack</h2>
+      <section class="section extra-sections">
+        <h2>Technical Skills</h2>
 
-        <div class="core-stack-card">
-          <div class="stack-item">
-            <div class="stack-icon"><i class="fas fa-cloud"></i></div>
-            <div>
-              <div class="stack-title">Cloud</div>
-              <div class="stack-description">
-                Microsoft Azure · Virtual Networks · Load Balancers · Azure Functions · Storage · Compute
-              </div>
-            </div>
-          </div>
-
-          <div class="stack-item">
-            <div class="stack-icon"><i class="fas fa-shield-alt"></i></div>
-            <div>
-              <div class="stack-title">Identity & Security</div>
-              <div class="stack-description">
-                Microsoft Entra ID · Zscaler ZIA/ZPA · Zero Trust · Fortinet · Conditional Access
-              </div>
-            </div>
-          </div>
-
-          <div class="stack-item">
-            <div class="stack-icon"><i class="fas fa-network-wired"></i></div>
-            <div>
-              <div class="stack-title">Infrastructure</div>
-              <div class="stack-description">
-                Windows Server · Linux · VMware · Hyper-V · VPN · DNS · DHCP · Load Balancing
-              </div>
-            </div>
-          </div>
-
-          <div class="stack-item">
-            <div class="stack-icon"><i class="fas fa-code"></i></div>
-            <div>
-              <div class="stack-title">Automation & Observability</div>
-              <div class="stack-description">
-                PowerShell · Bash · Python · PRTG · Zabbix · Grafana · Prometheus · ELK
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <section class="section extra-sections">
-      <h2>Featured Projects</h2>
-
-      <div class="project-grid">
-        <div class="project-card">
-          <i class="fas fa-user-shield"></i>
-          <h3>Zero Trust Rollout</h3>
-          <p>
-            Nationwide deployment of Zscaler ZIA and ZPA across Spain, including policy design,
-            segmentation and secure private application access.
-          </p>
-        </div>
-
-        <div class="project-card">
-          <i class="fas fa-database"></i>
-          <h3>Azure IoT Data Platform</h3>
-          <p>
-            Serverless Python processing pipelines using Azure Functions, Blob Storage and structured
-            Bronze/Silver/Gold data layers.
-          </p>
-        </div>
-
-        <div class="project-card">
-          <i class="fas fa-diagram-project"></i>
-          <h3>Cisco Network Build</h3>
-          <p>
-            Designed VLANs, subnetting, switching and segmentation for a greenfield building deployment
-            from zero.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section extra-sections">
-      <h2>Technical Skills</h2>
-
-      <ul class="skill-tags">
-        <li>Azure Virtual Machines</li>
-        <li>Azure Load Balancers</li>
-        <li>Azure Storage / Blob Storage</li>
-        <li>Azure Function Apps</li>
-        <li>Hybrid Cloud Integration</li>
-        <li>Windows Server</li>
-        <li>Active Directory</li>
-        <li>DNS / DHCP / GPO</li>
-        <li>Linux Ubuntu / CentOS / RHEL</li>
-        <li>VMware vSphere</li>
-        <li>VMware Horizon</li>
-        <li>Hyper-V</li>
-        <li>Cisco Routing & Switching</li>
-        <li>VLAN Design</li>
-        <li>Subnetting</li>
-        <li>Fortinet Firewalls</li>
-        <li>VPN & Secure Remote Access</li>
-        <li>Zscaler ZIA / ZPA</li>
-        <li>Zero Trust Architecture</li>
-        <li>PowerShell</li>
-        <li>Bash</li>
-        <li>Python</li>
-        <li>PRTG</li>
-        <li>Zabbix</li>
-        <li>Grafana</li>
-        <li>Prometheus</li>
-        <li>ELK Stack</li>
-        <li>MySQL</li>
-        <li>PostgreSQL</li>
-        <li>MongoDB</li>
-      </ul>
-    </section>
-
-    <div class="education-language-grid">
-      <section class="section simple-card">
-        <h2>Education</h2>
-
-        <ul>
-          <li>
-            <strong>Higher Level Computer Science:</strong>
-            Systems and Network Administration + Cybersecurity (ASIX-CIBER) — Salesians Sarrià School CESF
-          </li>
-          <li>
-            <strong>Medium Level Computer Science:</strong>
-            Administration of Microcomputers Systems and Networks — Salesians Sarrià School
-          </li>
-          <li>
-            <strong>Compulsory Secondary Education (ESO):</strong>
-            Santa Teresa Lisieux School
-          </li>
+        <ul class="skill-tags">
+          <li>Azure Virtual Machines</li>
+          <li>Azure Load Balancers</li>
+          <li>Azure Storage / Blob Storage</li>
+          <li>Azure Function Apps</li>
+          <li>Hybrid Cloud Integration</li>
+          <li>Windows Server</li>
+          <li>Active Directory</li>
+          <li>DNS / DHCP / GPO</li>
+          <li>Linux Ubuntu / CentOS / RHEL</li>
+          <li>VMware vSphere</li>
+          <li>VMware Horizon</li>
+          <li>Hyper-V</li>
+          <li>Cisco Routing & Switching</li>
+          <li>VLAN Design</li>
+          <li>Subnetting</li>
+          <li>Fortinet Firewalls</li>
+          <li>VPN & Secure Remote Access</li>
+          <li>Zscaler ZIA / ZPA</li>
+          <li>Zero Trust Architecture</li>
+          <li>PowerShell</li>
+          <li>Bash</li>
+          <li>Python</li>
+          <li>PRTG</li>
+          <li>Zabbix</li>
+          <li>Grafana</li>
+          <li>Prometheus</li>
+          <li>ELK Stack</li>
+          <li>MySQL</li>
+          <li>PostgreSQL</li>
+          <li>MongoDB</li>
         </ul>
       </section>
 
-      <section class="section simple-card">
-        <h2>Languages</h2>
+      <div class="education-language-grid">
+        <section class="section simple-card">
+          <h2>Education</h2>
 
-        <ul>
-          <li><strong>Spanish:</strong> Native</li>
-          <li><strong>Catalan:</strong> Native</li>
-          <li><strong>English:</strong> B2 First Certificate</li>
-        </ul>
-      </section>
-    </div>
+          <ul>
+            <li>
+              <strong>Higher Level Computer Science:</strong>
+              Systems and Network Administration + Cybersecurity (ASIX-CIBER) — Salesians Sarrià School CESF
+            </li>
+            <li>
+              <strong>Medium Level Computer Science:</strong>
+              Administration of Microcomputers Systems and Networks — Salesians Sarrià School
+            </li>
+            <li>
+              <strong>Compulsory Secondary Education (ESO):</strong>
+              Santa Teresa Lisieux School
+            </li>
+          </ul>
+        </section>
 
-    <footer class="site-footer">
-      <div>
-        <strong>Aleix Moya</strong>
-        <span> · Barcelona · Azure / Zero Trust / Infrastructure</span>
+        <section class="section simple-card">
+          <h2>Languages</h2>
 
-        <span class="footer-social">
-          <a href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer" aria-label="Contact">
-            <i class="far fa-envelope"></i>
-          </a>
-        </span>
+          <ul>
+            <li><strong>Spanish:</strong> Native</li>
+            <li><strong>Catalan:</strong> Native</li>
+            <li><strong>English:</strong> B2 First Certificate</li>
+          </ul>
+        </section>
       </div>
 
-      <div>Last updated: April 2026</div>
-    </footer>
+      <footer class="site-footer">
+        <div>
+          <strong>Aleix Moya</strong>
+          <span> · Barcelona · Azure / Zero Trust / Infrastructure</span>
+
+          <span class="footer-social">
+            <a href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </span>
+        </div>
+
+        <div>Last updated: April 2026</div>
+      </footer>
+    </div>
   </main>
 
   <script>
