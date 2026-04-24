@@ -7,6 +7,9 @@
   <title>Aleix Moya | System & Network Administrator</title>
 
   <meta name="description" content="System and Network Administrator focused on Azure, Zero Trust, infrastructure, networking, virtualization, automation, and hybrid cloud operations.">
+  <meta name="author" content="Aleix Moya">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0078D4">
   <link rel="canonical" href="https://aleixresume.net/">
 
   <meta property="og:title" content="Aleix Moya - System & Network Administrator">
@@ -14,6 +17,11 @@
   <meta property="og:image" content="https://aleixresume.net/preview-image.jpg">
   <meta property="og:url" content="https://aleixresume.net/">
   <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aleix Moya - System & Network Administrator">
+  <meta name="twitter:description" content="SysAdmin focused on Azure, Zero Trust, infrastructure engineering, networking, virtualization, and automation.">
+  <meta name="twitter:image" content="https://aleixresume.net/preview-image.jpg">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg">
@@ -24,14 +32,21 @@
 
   <style>
     :root {
-      --bg-main: #111111;
-      --bg-sidebar: #1b1a19;
-      --bg-section: #252423;
+      --bg-main: #050b12;
+      --bg-main-soft: #07111c;
+      --bg-sidebar: #111111;
+      --bg-section: rgba(10, 18, 27, 0.82);
+      --bg-card: rgba(12, 21, 31, 0.82);
       --text-primary: #ffffff;
-      --text-secondary: #cccccc;
+      --text-secondary: #c8d0da;
       --accent-color: #0078D4;
-      --border-color: #3b3a39;
-      --muted: #9f9f9f;
+      --accent-bright: #2aa8ff;
+      --border-color: rgba(255, 255, 255, 0.13);
+      --blue-border: rgba(0, 120, 212, 0.48);
+      --muted: #8d9bab;
+      --terminal-green: #35d16f;
+      --terminal-yellow: #f4c542;
+      --terminal-red: #ff5f56;
     }
 
     * {
@@ -43,14 +58,32 @@
     }
 
     body {
-      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
       padding: 0;
-      background: var(--bg-main);
+      background:
+        radial-gradient(circle at 83% 11%, rgba(0, 120, 212, 0.13), transparent 28%),
+        radial-gradient(circle at 78% 75%, rgba(0, 120, 212, 0.10), transparent 34%),
+        linear-gradient(135deg, #050b12 0%, #07111c 48%, #03070d 100%);
       color: var(--text-secondary);
       display: flex;
       min-height: 100vh;
       overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.014) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 35%, rgba(0,0,0,0.70) 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 35%, rgba(0,0,0,0.70) 100%);
+      opacity: 0.22;
+      z-index: 0;
     }
 
     ::-webkit-scrollbar {
@@ -58,13 +91,13 @@
     }
 
     ::-webkit-scrollbar-track {
-      background: var(--bg-main);
+      background: #050b12;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: var(--bg-section);
-      border-radius: 5px;
-      border: 1px solid var(--border-color);
+      background: #172536;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     ::-webkit-scrollbar-thumb:hover {
@@ -78,20 +111,33 @@
     }
 
     .sidebar {
-      background: rgba(27, 26, 25, 0.9);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background:
+        linear-gradient(180deg, rgba(17, 17, 17, 0.98) 0%, rgba(8, 14, 22, 0.96) 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       color: var(--text-primary);
       width: 290px;
-      padding: 40px 22px;
+      padding: 36px 22px 28px;
       display: flex;
       flex-direction: column;
       align-items: center;
       position: fixed;
       height: 100vh;
-      border-right: 1px solid var(--border-color);
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
       z-index: 10;
       overflow: hidden;
+      box-shadow: 12px 0 36px rgba(0, 0, 0, 0.28);
+    }
+
+    .sidebar::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 8%, rgba(0, 120, 212, 0.16), transparent 30%),
+        radial-gradient(circle at 50% 78%, rgba(0, 120, 212, 0.12), transparent 34%);
+      pointer-events: none;
+      z-index: 0;
     }
 
     .profile-img {
@@ -101,7 +147,10 @@
       border: 3px solid var(--accent-color);
       margin-bottom: 16px;
       object-fit: cover;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+      box-shadow:
+        0 0 0 4px rgba(0, 120, 212, 0.13),
+        0 0 28px rgba(0, 120, 212, 0.38),
+        0 8px 18px rgba(0, 0, 0, 0.42);
       background: #1f1f1f;
       display: block;
       position: relative;
@@ -109,38 +158,46 @@
     }
 
     .sidebar h1 {
-      font-size: 29px;
-      line-height: 1.15;
-      margin: 0 0 6px 0;
+      font-size: 30px;
+      line-height: 1.12;
+      margin: 0 0 8px 0;
       color: var(--text-primary);
       text-align: center;
-      font-weight: 700;
+      font-weight: 800;
+      letter-spacing: -0.6px;
       position: relative;
       z-index: 3;
     }
 
     .typing-text {
       font-family: Consolas, "Courier New", Courier, monospace;
-      color: var(--accent-color);
+      color: var(--accent-bright);
       font-size: 12px;
       margin-bottom: 28px;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 2px solid var(--accent-color);
+      border-right: 2px solid var(--accent-bright);
       width: 33ch;
       animation: typing 2.6s steps(33, end), blink-caret .75s step-end infinite;
       text-align: center;
+      text-shadow: 0 0 12px rgba(0, 120, 212, 0.38);
       position: relative;
       z-index: 3;
     }
 
     @keyframes typing {
-      from { width: 0; }
+      from {
+        width: 0;
+      }
     }
 
     @keyframes blink-caret {
-      from, to { border-color: transparent; }
-      50% { border-color: var(--accent-color); }
+      from, to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: var(--accent-bright);
+      }
     }
 
     .sidebar a,
@@ -149,7 +206,7 @@
       text-decoration: none;
       font-size: 14px;
       margin-bottom: 14px;
-      transition: color 0.2s ease;
+      transition: color 0.2s ease, transform 0.2s ease;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -161,7 +218,8 @@
     }
 
     .sidebar a:hover {
-      color: var(--accent-color);
+      color: var(--accent-bright);
+      transform: translateY(-1px);
     }
 
     .sidebar i {
@@ -170,17 +228,54 @@
       text-align: center;
     }
 
+    .sidebar-actions {
+      width: 100%;
+      display: grid;
+      gap: 12px;
+      margin: 18px 0 8px;
+      position: relative;
+      z-index: 4;
+    }
+
+    .sidebar-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid rgba(0, 120, 212, 0.82);
+      background:
+        linear-gradient(135deg, rgba(0, 120, 212, 0.96), rgba(0, 94, 185, 0.92));
+      color: #ffffff !important;
+      padding: 11px 14px;
+      border-radius: 8px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      box-shadow:
+        0 0 26px rgba(0, 120, 212, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.20);
+      margin-bottom: 0 !important;
+    }
+
+    .sidebar-button .arrow {
+      margin-left: auto;
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
     .sidebar-binary {
       position: relative;
       width: 100%;
       flex: 1;
-      margin-top: 18px;
+      margin-top: 8px;
       overflow: hidden;
       border-radius: 10px;
-      opacity: 0.9;
+      opacity: 0.94;
       z-index: 1;
-      mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 12%, rgba(0,0,0,1) 100%);
-      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 12%, rgba(0,0,0,1) 100%);
+      border: 1px solid rgba(0, 120, 212, 0.08);
+      mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.82) 11%, rgba(0,0,0,1) 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.82) 11%, rgba(0,0,0,1) 100%);
     }
 
     .sidebar-binary::before {
@@ -188,8 +283,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 50% 0%, rgba(0, 120, 212, 0.16), transparent 45%),
-        linear-gradient(to bottom, rgba(0, 120, 212, 0.05), transparent 55%);
+        radial-gradient(circle at 50% 0%, rgba(0, 120, 212, 0.20), transparent 48%),
+        linear-gradient(to bottom, rgba(0, 120, 212, 0.07), transparent 58%);
       pointer-events: none;
       z-index: 1;
     }
@@ -201,8 +296,8 @@
       font-size: 13px;
       line-height: 13px;
       white-space: pre;
-      color: rgba(0, 120, 212, 0.62);
-      text-shadow: 0 0 8px rgba(0, 120, 212, 0.22);
+      color: rgba(0, 120, 212, 0.54);
+      text-shadow: 0 0 8px rgba(0, 120, 212, 0.24);
       user-select: none;
       pointer-events: none;
       animation-name: binaryFall;
@@ -212,13 +307,13 @@
     }
 
     .binary-column.dim {
-      color: rgba(255, 255, 255, 0.14);
+      color: rgba(255, 255, 255, 0.13);
       text-shadow: 0 0 6px rgba(255, 255, 255, 0.08);
     }
 
     .binary-column.bright {
       color: rgba(0, 170, 255, 0.92);
-      text-shadow: 0 0 12px rgba(0, 170, 255, 0.42);
+      text-shadow: 0 0 12px rgba(0, 170, 255, 0.48);
     }
 
     @keyframes binaryFall {
@@ -238,160 +333,20 @@
       }
     }
 
-    .main {
-      margin-left: 330px;
-      padding: 40px;
-      flex: 1;
-      max-width: 1050px;
-    }
-
-    h2 {
-      color: var(--text-primary);
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 10px;
-      margin-top: 10px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      letter-spacing: 0.2px;
-    }
-
-    h2 i {
-      color: var(--accent-color);
-    }
-
-    p,
-    li {
-      line-height: 1.65;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-
-    strong {
-      color: var(--text-primary);
-    }
-
-    .section {
-      margin-bottom: 28px;
-      padding: 25px;
-      background: var(--bg-section);
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.22);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-left 0.3s ease;
-      border-left: 4px solid transparent;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: slideUpFade 0.55s ease-out forwards;
-    }
-
-    .section:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.42);
-      border-left: 4px solid var(--accent-color);
-    }
-
-    .section:nth-child(1) { animation-delay: 0.1s; }
-    .section:nth-child(2) { animation-delay: 0.18s; }
-    .section:nth-child(3) { animation-delay: 0.26s; }
-    .section:nth-child(4) { animation-delay: 0.34s; }
-    .section:nth-child(5) { animation-delay: 0.42s; }
-    .section:nth-child(6) { animation-delay: 0.50s; }
-    .section:nth-child(7) { animation-delay: 0.58s; }
-
-    @keyframes slideUpFade {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding-left: 0;
-      list-style: none;
-      margin-top: 15px;
-    }
-
-    .skill-tags li {
-      background: var(--bg-main);
-      color: var(--text-primary);
-      padding: 6px 14px;
-      border-radius: 4px;
-      font-size: 13px;
-      font-weight: 600;
-      border: 1px solid var(--border-color);
-      transition: all 0.2s ease;
-      margin-bottom: 0;
-    }
-
-    .skill-tags li:hover {
-      background: var(--accent-color);
-      border-color: var(--accent-color);
-      cursor: default;
-    }
-
-    .job-entry {
-      margin-bottom: 26px;
-    }
-
-    .job-entry:last-child {
-      margin-bottom: 0;
-    }
-
-    .job-entry h3 {
-      margin: 0 0 5px 0;
-      color: var(--text-primary);
-      font-size: 1.12em;
-    }
-
-    .job-entry .job-date {
-      margin: 0 0 10px 0;
-      font-size: 0.9em;
-      color: var(--accent-color);
-      font-weight: 600;
-      font-family: Consolas, monospace;
-    }
-
-    .grid-two {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .mini-card {
-      background: rgba(0, 0, 0, 0.18);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 16px;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
     .right-ambient {
       position: fixed;
       top: 0;
       right: 0;
-      width: 38vw;
-      max-width: 640px;
+      width: 40vw;
+      max-width: 650px;
       min-width: 360px;
       height: 100vh;
       pointer-events: none;
       overflow: hidden;
       z-index: 0;
-      opacity: 0.95;
-      -webkit-mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.85) 18%, rgba(0,0,0,1) 100%);
-      mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.85) 18%, rgba(0,0,0,1) 100%);
+      opacity: 0.98;
+      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.92) 60%, transparent 100%);
+      mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.92) 60%, transparent 100%);
     }
 
     .network-svg {
@@ -403,14 +358,14 @@
 
     .net-line {
       stroke: #1ea0ff;
-      stroke-width: 1.35;
-      stroke-opacity: 0.22;
+      stroke-width: 1.25;
+      stroke-opacity: 0.24;
       animation: linePulse 5s ease-in-out infinite;
     }
 
     .net-line.thin {
       stroke-width: 1;
-      stroke-opacity: 0.14;
+      stroke-opacity: 0.12;
     }
 
     .net-line.d1 { animation-delay: 0s; }
@@ -428,7 +383,7 @@
 
     .net-node.big {
       fill: #63c7ff;
-      opacity: 0.95;
+      opacity: 0.96;
     }
 
     .n1  { animation-delay: 0s; }
@@ -476,7 +431,7 @@
         stroke-opacity: 0.10;
       }
       50% {
-        stroke-opacity: 0.32;
+        stroke-opacity: 0.34;
       }
     }
 
@@ -491,25 +446,597 @@
       }
     }
 
+    .main {
+      margin-left: 330px;
+      padding: 40px 40px 0;
+      flex: 1;
+      max-width: 1050px;
+      min-height: 100vh;
+    }
+
+    .hero-terminal {
+      border: 1px solid rgba(0, 120, 212, 0.58);
+      border-radius: 10px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(2, 7, 13, 0.96), rgba(3, 9, 17, 0.92));
+      box-shadow:
+        0 0 28px rgba(0, 120, 212, 0.13),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      margin-bottom: 24px;
+      max-width: 750px;
+    }
+
+    .terminal-topbar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 14px;
+      background: rgba(255, 255, 255, 0.035);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      position: relative;
+    }
+
+    .terminal-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .terminal-dot.red {
+      background: var(--terminal-red);
+    }
+
+    .terminal-dot.yellow {
+      background: var(--terminal-yellow);
+    }
+
+    .terminal-dot.green {
+      background: var(--terminal-green);
+    }
+
+    .terminal-title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .terminal-body {
+      padding: 17px 21px;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .terminal-line {
+      margin-bottom: 5px;
+    }
+
+    .terminal-prompt,
+    .terminal-command {
+      color: var(--accent-bright);
+      font-weight: 700;
+      text-shadow: 0 0 8px rgba(0, 120, 212, 0.35);
+    }
+
+    .terminal-output {
+      color: #f2f7ff;
+      margin-bottom: 11px;
+    }
+
+    .terminal-cursor {
+      display: inline-block;
+      width: 8px;
+      height: 16px;
+      background: rgba(255, 255, 255, 0.78);
+      animation: cursorBlink 1s steps(2, start) infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes cursorBlink {
+      0%, 45% {
+        opacity: 1;
+      }
+      46%, 100% {
+        opacity: 0;
+      }
+    }
+
+    .section {
+      margin-bottom: 26px;
+      padding: 0;
+      background: transparent;
+      border-radius: 12px;
+      position: relative;
+      z-index: 2;
+      animation: slideUpFade 0.55s ease-out forwards;
+    }
+
+    @keyframes slideUpFade {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      color: var(--text-primary);
+      padding-bottom: 8px;
+      margin: 0 0 9px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      font-size: 22px;
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 28px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--accent-bright);
+      box-shadow: 0 0 12px rgba(0, 120, 212, 0.7);
+    }
+
+    h2 i {
+      color: var(--accent-bright);
+    }
+
+    p,
+    li {
+      line-height: 1.62;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    strong {
+      color: var(--text-primary);
+    }
+
+    .summary-text {
+      max-width: 790px;
+      color: #c5ced9;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 15px;
+      margin: 17px 0 17px;
+      max-width: 810px;
+    }
+
+    .stat-card {
+      background:
+        linear-gradient(180deg, rgba(14, 24, 35, 0.82), rgba(9, 17, 26, 0.82));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 7px;
+      padding: 18px 17px;
+      min-height: 118px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0, 120, 212, 0.72);
+      box-shadow: 0 0 26px rgba(0, 120, 212, 0.14);
+    }
+
+    .stat-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(0, 120, 212, 0.21), transparent 42%);
+      pointer-events: none;
+    }
+
+    .stat-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 13px;
+      align-items: center;
+    }
+
+    .stat-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0078D4, #064ea9);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      box-shadow: 0 0 18px rgba(0, 120, 212, 0.33);
+      font-size: 18px;
+    }
+
+    .stat-number {
+      display: block;
+      color: var(--text-primary);
+      font-size: 25px;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: -0.6px;
+    }
+
+    .stat-label {
+      display: block;
+      color: #eef5ff;
+      font-size: 15px;
+      margin-top: 3px;
+      line-height: 1.17;
+      font-weight: 650;
+    }
+
+    .stat-sub {
+      display: block;
+      margin-top: 8px;
+      color: var(--accent-bright);
+      font-size: 11px;
+      line-height: 1.35;
+      font-family: Consolas, "Courier New", monospace;
+    }
+
+    .cta-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+      max-width: 405px;
+      margin-top: 15px;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 38px;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      border: 1px solid rgba(0, 120, 212, 0.75);
+      background: linear-gradient(135deg, rgba(0, 120, 212, 0.95), rgba(0, 91, 181, 0.84));
+      font-weight: 800;
+      font-size: 13px;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      box-shadow: 0 0 16px rgba(0, 120, 212, 0.17);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, rgba(0, 135, 235, 1), rgba(0, 98, 195, 0.96));
+      border-color: rgba(0, 170, 255, 0.95);
+    }
+
+    .cta-button.secondary {
+      background: rgba(3, 10, 18, 0.64);
+      border-color: rgba(0, 120, 212, 0.66);
+      color: var(--accent-bright);
+      box-shadow: 0 0 16px rgba(0, 120, 212, 0.10);
+    }
+
+    .layout-two {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 38px;
+      align-items: start;
+      margin-top: 20px;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 24px;
+      margin-top: 15px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 4px;
+      bottom: 7px;
+      width: 3px;
+      border-radius: 999px;
+      background: linear-gradient(to bottom, rgba(56, 182, 255, 0.95), rgba(0, 120, 212, 0.18));
+      box-shadow: 0 0 18px rgba(0, 120, 212, 0.60);
+    }
+
+    .timeline-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 14px;
+      padding: 0 0 24px 0;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -22px;
+      top: 2px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #d8f0ff;
+      border: 2px solid #5fc2ff;
+      box-shadow:
+        0 0 0 4px rgba(0, 120, 212, 0.22),
+        0 0 18px rgba(0, 170, 255, 0.86);
+    }
+
+    .timeline-date {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 11px;
+      color: var(--accent-bright);
+      font-weight: 850;
+      padding-top: 1px;
+      line-height: 1.35;
+    }
+
+    .timeline-title {
+      color: #ffffff;
+      font-weight: 850;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .timeline-company {
+      color: var(--accent-bright);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .timeline-description {
+      color: #aeb8c5;
+      font-size: 12px;
+      line-height: 1.52;
+      max-width: 360px;
+    }
+
+    .core-stack-card {
+      background:
+        linear-gradient(180deg, rgba(14, 24, 35, 0.86), rgba(9, 17, 26, 0.84));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 7px;
+      padding: 12px 16px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.20);
+      margin-top: 5px;
+    }
+
+    .stack-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .stack-item:last-child {
+      border-bottom: none;
+    }
+
+    .stack-icon {
+      color: var(--accent-bright);
+      font-size: 29px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-shadow: 0 0 16px rgba(0, 120, 212, 0.48);
+    }
+
+    .stack-title {
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 850;
+      margin-bottom: 3px;
+    }
+
+    .stack-description {
+      color: #aeb8c5;
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+    .extra-sections {
+      margin-top: 28px;
+      max-width: 855px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .project-card {
+      background:
+        linear-gradient(180deg, rgba(14, 24, 35, 0.84), rgba(9, 17, 26, 0.82));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      padding: 17px;
+      min-height: 160px;
+      transition: transform 0.22s ease, border-color 0.22s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0, 120, 212, 0.72);
+    }
+
+    .project-card i {
+      color: var(--accent-bright);
+      font-size: 24px;
+      margin-bottom: 14px;
+      text-shadow: 0 0 12px rgba(0, 120, 212, 0.36);
+    }
+
+    .project-card h3 {
+      color: #ffffff;
+      font-size: 15px;
+      margin: 0 0 8px;
+    }
+
+    .project-card p {
+      color: #aeb8c5;
+      font-size: 12px;
+      line-height: 1.52;
+      margin: 0;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      padding-left: 0;
+      list-style: none;
+      margin-top: 15px;
+      max-width: 840px;
+    }
+
+    .skill-tags li {
+      background: rgba(8, 15, 24, 0.72);
+      color: #e6eef7;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: all 0.2s ease;
+      margin-bottom: 0;
+    }
+
+    .skill-tags li:hover {
+      background: rgba(0, 120, 212, 0.22);
+      border-color: rgba(0, 120, 212, 0.74);
+      color: #ffffff;
+      cursor: default;
+    }
+
+    .education-language-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      margin-top: 28px;
+      max-width: 855px;
+    }
+
+    .simple-card {
+      background:
+        linear-gradient(180deg, rgba(14, 24, 35, 0.84), rgba(9, 17, 26, 0.82));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .simple-card ul {
+      margin-bottom: 0;
+    }
+
+    .site-footer {
+      min-height: 42px;
+      margin: 34px -40px 0 -40px;
+      padding: 12px 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
+      background: rgba(7, 13, 20, 0.76);
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      font-size: 13px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .site-footer strong {
+      color: #ffffff;
+    }
+
+    .footer-social {
+      display: inline-flex;
+      gap: 16px;
+      align-items: center;
+      margin-left: 18px;
+      padding-left: 18px;
+      border-left: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-social a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-social a:hover {
+      color: var(--accent-bright);
+    }
+
     @media (max-width: 1200px) {
       .right-ambient {
-        width: 30vw;
-        min-width: 280px;
-        opacity: 0.75;
+        width: 34vw;
+        min-width: 300px;
+        opacity: 0.72;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 620px;
+      }
+
+      .layout-two {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .core-stack-card {
+        max-width: 640px;
       }
     }
 
     @media (max-width: 900px) {
-      .grid-two {
-        grid-template-columns: 1fr;
-      }
-
       .right-ambient {
         display: none;
       }
-    }
 
-    @media (max-width: 768px) {
       body {
         flex-direction: column;
       }
@@ -521,25 +1048,44 @@
         min-height: 100vh;
         border-right: none;
         border-bottom: 1px solid var(--border-color);
-        padding: 30px 20px;
-        box-sizing: border-box;
-        background: var(--bg-sidebar);
+        padding: 32px 20px;
       }
 
       .sidebar-binary {
         min-height: 260px;
-        margin-top: 14px;
       }
 
       .main {
         margin-left: 0;
-        padding: 20px;
-        width: 100%;
-        box-sizing: border-box;
+        padding: 24px 20px 0;
+        max-width: none;
       }
 
-      .section {
-        padding: 20px;
+      .hero-terminal {
+        max-width: none;
+      }
+
+      .stats-grid,
+      .project-grid,
+      .education-language-grid {
+        grid-template-columns: 1fr;
+        max-width: none;
+      }
+
+      .cta-row {
+        grid-template-columns: 1fr;
+        max-width: none;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      .site-footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding: 14px 20px;
       }
     }
 
@@ -550,10 +1096,19 @@
         display: block;
       }
 
+      body::before,
+      .right-ambient,
+      .sidebar-binary,
+      .hero-terminal,
+      .sidebar-actions {
+        display: none !important;
+      }
+
       .sidebar {
         position: relative;
         width: 100%;
         height: auto;
+        min-height: 0;
         background: none !important;
         backdrop-filter: none !important;
         border: none;
@@ -561,6 +1116,7 @@
         border-bottom: 2px solid #000000;
         margin-bottom: 20px;
         color: #000000 !important;
+        box-shadow: none !important;
       }
 
       .sidebar h1,
@@ -571,8 +1127,9 @@
       h2 i,
       strong,
       .skill-tags li,
-      .job-entry h3,
-      .muted {
+      .timeline-title,
+      .stack-title,
+      .project-card h3 {
         color: #000000 !important;
       }
 
@@ -587,29 +1144,25 @@
         padding: 0;
       }
 
-      .section {
+      .section,
+      .stat-card,
+      .project-card,
+      .simple-card,
+      .core-stack-card {
         background: none !important;
         box-shadow: none !important;
-        border-left: none !important;
-        padding: 10px 0;
+        border-color: #cccccc !important;
         page-break-inside: avoid;
         transform: none !important;
         animation: none !important;
         opacity: 1 !important;
       }
 
-      .job-entry .job-date {
-        color: #555555 !important;
-      }
-
-      .skill-tags li {
-        border-color: #000000;
-        color: #000000;
-      }
-
-      .right-ambient,
-      .sidebar-binary {
-        display: none !important;
+      .site-footer {
+        background: none !important;
+        color: #000000 !important;
+        margin: 20px 0 0;
+        padding: 10px 0;
       }
     }
   </style>
@@ -650,7 +1203,7 @@
         </pattern>
       </defs>
 
-      <rect width="520" height="1080" fill="url(#gridPattern)" opacity="0.35"></rect>
+      <rect width="520" height="1080" fill="url(#gridPattern)" opacity="0.30"></rect>
       <rect width="520" height="1080" fill="url(#bgGlow1)"></rect>
       <rect width="520" height="1080" fill="url(#bgGlow2)"></rect>
 
@@ -765,60 +1318,266 @@
   </div>
 
   <aside class="sidebar">
-    <img src="profile.jpg" alt="Aleix Moya Araujo" class="profile-img">
+    <img src="profile.jpg" alt="Aleix Moya" class="profile-img">
 
     <h1>Aleix Moya</h1>
     <div class="typing-text">&gt; SysAdmin · Azure · Zero Trust_</div>
 
-    <span class="contact-link"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Barcelona, Spain</span>
+    <span class="contact-link">
+      <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+      Barcelona, Spain
+    </span>
+
     <a href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer">
-      <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+      <i class="fab fa-linkedin" aria-hidden="true"></i>
+      LinkedIn
     </a>
+
+    <div class="sidebar-actions">
+      <a class="sidebar-button" href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer">
+        <i class="far fa-envelope" aria-hidden="true"></i>
+        Contact Me
+        <span class="arrow">→</span>
+      </a>
+    </div>
 
     <div class="sidebar-binary" id="binaryRain" aria-hidden="true"></div>
   </aside>
 
   <main class="main">
     <section class="section">
-      <h2><i class="fas fa-user-gear" aria-hidden="true"></i> Professional Summary</h2>
-      <p>
-        Results-oriented <strong>System and Network Administrator</strong> with 6 years of experience in IT, including
-        4 years fully dedicated to systems, infrastructure, and networking, plus 2 early-career years in a hybrid
-        Business Intelligence and Systems role. Specialized in <strong>Windows and Linux administration</strong>,
-        <strong>Azure workloads</strong>, <strong>network architecture</strong>, <strong>virtualization</strong>, and
-        <strong>Zero Trust security</strong>.
+      <div class="hero-terminal">
+        <div class="terminal-topbar">
+          <span class="terminal-dot red"></span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
+          <span class="terminal-title">~ aleix@resume.net</span>
+        </div>
+
+        <div class="terminal-body">
+          <div class="terminal-line">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-command"> whoami</span>
+          </div>
+          <div class="terminal-output">Aleix Moya — System & Network Administrator</div>
+
+          <div class="terminal-line">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-command"> focus --stack</span>
+          </div>
+          <div class="terminal-output">Azure · Zero Trust · Networking · Automation · Hybrid Cloud</div>
+
+          <div class="terminal-line">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-command"> status</span>
+          </div>
+          <div class="terminal-output">Building secure, reliable and automated infrastructure.</div>
+
+          <span class="terminal-cursor"></span>
+        </div>
+      </div>
+
+      <h2>Professional Summary</h2>
+      <p class="summary-text">
+        System and Network Administrator with 6+ years of experience designing, implementing and operating
+        secure, scalable and automated infrastructure across on-premises and cloud environments.
+        Specialized in Azure, Zero Trust architecture, identity security and network engineering.
       </p>
-      <p>
-        My profile combines hands-on operational execution with architectural thinking: from building Cisco network
-        environments from scratch, to managing hybrid cloud workloads, automating infrastructure tasks, deploying
-        monitoring stacks, and leading nationwide Zscaler rollouts.
-      </p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-content">
+            <span class="stat-icon"><i class="far fa-calendar-alt"></i></span>
+            <div>
+              <span class="stat-number">6+</span>
+              <span class="stat-label">Years IT</span>
+              <span class="stat-sub">Since 2019</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-content">
+            <span class="stat-icon"><i class="fas fa-server"></i></span>
+            <div>
+              <span class="stat-number">4+</span>
+              <span class="stat-label">Years Infrastructure & Networking</span>
+              <span class="stat-sub">Since 2021</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-content">
+            <span class="stat-icon"><i class="fas fa-shield-alt"></i></span>
+            <div>
+              <span class="stat-number">ZTNA</span>
+              <span class="stat-label">Rollout</span>
+              <span class="stat-sub">Zero Trust Network Access</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-content">
+            <span class="stat-icon"><i class="fas fa-cloud"></i></span>
+            <div>
+              <span class="stat-number">Azure</span>
+              <span class="stat-label">Automation</span>
+              <span class="stat-sub">IaC · Pipelines · Monitoring</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a class="cta-button" href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer">
+          <i class="far fa-envelope"></i>
+          Contact Me
+          <span>→</span>
+        </a>
+
+        <a class="cta-button secondary" href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer">
+          <i class="fab fa-linkedin-in"></i>
+          LinkedIn Profile
+        </a>
+      </div>
     </section>
 
-    <section class="section">
-      <h2><i class="fas fa-bolt" aria-hidden="true"></i> Key Highlights</h2>
-      <div class="grid-two">
-        <div class="mini-card">
-          <strong>Zero Trust Rollout</strong>
-          <p class="muted">Led nationwide deployment of Zscaler ZIA and ZPA across Spain, including policy design, segmentation, and secure private access.</p>
+    <div class="layout-two">
+      <section class="section">
+        <h2>Career Timeline</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">JUN 2025 — PRESENT</div>
+            <div>
+              <div class="timeline-title">System and Network Administrator</div>
+              <div class="timeline-company">Anticimex Group</div>
+              <div class="timeline-description">
+                Managing Azure infrastructure, networking, security and automation solutions across hybrid environments.
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2023 — MAY 2025</div>
+            <div>
+              <div class="timeline-title">IT Specialist</div>
+              <div class="timeline-company">Alinghi Red Bull Racing</div>
+              <div class="timeline-description">
+                Supported global IT operations, cloud services and secure connectivity for high-performance environments.
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2022 — 2023</div>
+            <div>
+              <div class="timeline-title">Senior Systems Technician OnSite</div>
+              <div class="timeline-company">Seidor</div>
+              <div class="timeline-description">
+                On-site infrastructure support, system administration and endpoint management.
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2020 — 2022</div>
+            <div>
+              <div class="timeline-title">Junior Technical Consultant</div>
+              <div class="timeline-company">MCR Solutions</div>
+              <div class="timeline-description">
+                Delivered IT support, system deployment and network solutions to enterprise clients.
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="mini-card">
-          <strong>Azure IoT Processing</strong>
-          <p class="muted">Designed and deployed Python-based Azure Function Apps to process and transform Smart IoT data using Storage Accounts and Blob Storage.</p>
+      </section>
+
+      <section class="section">
+        <h2>Current Core Stack</h2>
+
+        <div class="core-stack-card">
+          <div class="stack-item">
+            <div class="stack-icon"><i class="fas fa-cloud"></i></div>
+            <div>
+              <div class="stack-title">Cloud</div>
+              <div class="stack-description">
+                Microsoft Azure · Virtual Networks · Load Balancers · Azure Functions · Storage · Compute
+              </div>
+            </div>
+          </div>
+
+          <div class="stack-item">
+            <div class="stack-icon"><i class="fas fa-shield-alt"></i></div>
+            <div>
+              <div class="stack-title">Identity & Security</div>
+              <div class="stack-description">
+                Microsoft Entra ID · Zscaler ZIA/ZPA · Zero Trust · Fortinet · Conditional Access
+              </div>
+            </div>
+          </div>
+
+          <div class="stack-item">
+            <div class="stack-icon"><i class="fas fa-network-wired"></i></div>
+            <div>
+              <div class="stack-title">Infrastructure</div>
+              <div class="stack-description">
+                Windows Server · Linux · VMware · Hyper-V · VPN · DNS · DHCP · Load Balancing
+              </div>
+            </div>
+          </div>
+
+          <div class="stack-item">
+            <div class="stack-icon"><i class="fas fa-code"></i></div>
+            <div>
+              <div class="stack-title">Automation & Observability</div>
+              <div class="stack-description">
+                PowerShell · Bash · Python · PRTG · Zabbix · Grafana · Prometheus · ELK
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="mini-card">
-          <strong>Greenfield Network Build</strong>
-          <p class="muted">Designed and implemented Cisco VLAN and subnetting architecture for a new building from zero.</p>
+      </section>
+    </div>
+
+    <section class="section extra-sections">
+      <h2>Featured Projects</h2>
+
+      <div class="project-grid">
+        <div class="project-card">
+          <i class="fas fa-user-shield"></i>
+          <h3>Zero Trust Rollout</h3>
+          <p>
+            Nationwide deployment of Zscaler ZIA and ZPA across Spain, including policy design,
+            segmentation and secure private application access.
+          </p>
         </div>
-        <div class="mini-card">
-          <strong>Automation & Reliability</strong>
-          <p class="muted">Automated operations with PowerShell, Bash, and Python to improve consistency, efficiency, and support speed.</p>
+
+        <div class="project-card">
+          <i class="fas fa-database"></i>
+          <h3>Azure IoT Data Platform</h3>
+          <p>
+            Serverless Python processing pipelines using Azure Functions, Blob Storage and structured
+            Bronze/Silver/Gold data layers.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <i class="fas fa-diagram-project"></i>
+          <h3>Cisco Network Build</h3>
+          <p>
+            Designed VLANs, subnetting, switching and segmentation for a greenfield building deployment
+            from zero.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <h2><i class="fas fa-cloud" aria-hidden="true"></i> Technical Skills</h2>
+    <section class="section extra-sections">
+      <h2>Technical Skills</h2>
+
       <ul class="skill-tags">
         <li>Azure Virtual Machines</li>
         <li>Azure Load Balancers</li>
@@ -828,8 +1587,9 @@
         <li>Windows Server</li>
         <li>Active Directory</li>
         <li>DNS / DHCP / GPO</li>
-        <li>Linux (Ubuntu, CentOS, RHEL)</li>
+        <li>Linux Ubuntu / CentOS / RHEL</li>
         <li>VMware vSphere</li>
+        <li>VMware Horizon</li>
         <li>Hyper-V</li>
         <li>Cisco Routing & Switching</li>
         <li>VLAN Design</li>
@@ -852,81 +1612,54 @@
       </ul>
     </section>
 
-    <section class="section">
-      <h2><i class="fas fa-briefcase" aria-hidden="true"></i> Work Experience</h2>
+    <div class="education-language-grid">
+      <section class="section simple-card">
+        <h2>Education</h2>
 
-      <div class="job-entry">
-        <h3>System and Network Administrator – Anticimex Group</h3>
-        <p class="job-date">JUN 2025 – PRESENT</p>
         <ul>
-          <li>Sole System & Network Administrator for Spain, owning end-to-end responsibility for infrastructure reliability, availability, security, and operational continuity.</li>
-          <li>Manage Azure IaaS environments including Virtual Machines, networking components, Load Balancers, and Storage Accounts.</li>
-          <li>Design and deploy Python-based Azure Function Apps to process data from Smart IoT devices.</li>
-          <li>Led nationwide deployment of <strong>Zscaler Zero Trust architecture</strong>, including ZIA, ZPA, and identity-based access controls.</li>
-          <li>Manage VMware environments, monitoring platforms, Fortinet policies, and root-cause analysis for high-impact incidents.</li>
+          <li>
+            <strong>Higher Level Computer Science:</strong>
+            Systems and Network Administration + Cybersecurity (ASIX-CIBER) — Salesians Sarrià School CESF
+          </li>
+          <li>
+            <strong>Medium Level Computer Science:</strong>
+            Administration of Microcomputers Systems and Networks — Salesians Sarrià School
+          </li>
+          <li>
+            <strong>Compulsory Secondary Education (ESO):</strong>
+            Santa Teresa Lisieux School
+          </li>
         </ul>
+      </section>
+
+      <section class="section simple-card">
+        <h2>Languages</h2>
+
+        <ul>
+          <li><strong>Spanish:</strong> Native</li>
+          <li><strong>Catalan:</strong> Native</li>
+          <li><strong>English:</strong> B2 First Certificate</li>
+        </ul>
+      </section>
+    </div>
+
+    <footer class="site-footer">
+      <div>
+        <strong>Aleix Moya</strong>
+        <span> · Barcelona · Azure / Zero Trust / Infrastructure</span>
+
+        <span class="footer-social">
+          <a href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer" aria-label="Contact">
+            <i class="far fa-envelope"></i>
+          </a>
+        </span>
       </div>
 
-      <div class="job-entry">
-        <h3>IT Specialist – Alinghi Red Bull Racing</h3>
-        <p class="job-date">2023 – MAY 2025</p>
-        <ul>
-          <li>Administered Windows and Linux servers, ensuring stability, performance, and proactive monitoring.</li>
-          <li>Led the end-to-end design and deployment of a <strong>Cisco network architecture</strong> in a newly constructed building.</li>
-          <li>Designed VLAN architecture and subnetting schemes aligned with departmental and security requirements.</li>
-          <li>Managed VMware vSphere, VMware Horizon, Intune, Exchange, SharePoint, Active Directory, and Entra ID.</li>
-          <li>Automated operational tasks with PowerShell and Bash and acted as the main technical contact for partners and providers.</li>
-        </ul>
-      </div>
-
-      <div class="job-entry">
-        <h3>Senior Systems Technician OnSite – Seidor</h3>
-        <p class="job-date">2022 – 2023</p>
-        <ul>
-          <li>Delivered Level 2 and Level 3 support at ESTEVE headquarters in a regulated pharmaceutical environment.</li>
-          <li>Resolved complex hardware, software, and network incidents through structured troubleshooting and root-cause analysis.</li>
-          <li>Maintained infrastructure stability, backup integrity, documentation, and service continuity.</li>
-        </ul>
-      </div>
-
-      <div class="job-entry">
-        <h3>Junior Technical Consultant – MCR Solutions</h3>
-        <p class="job-date">2020 – 2022</p>
-        <ul>
-          <li>Worked in a hybrid BI and systems role, translating business requirements into ETL processes and reporting solutions.</li>
-          <li>Built data workflows and dashboards using <strong>Power BI</strong>, <strong>Jedox</strong>, and <strong>Google Data Studio</strong>.</li>
-          <li>Improved data quality, reporting usability, and integration performance across client environments.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2><i class="fas fa-award" aria-hidden="true"></i> Architecture & Operations Focus</h2>
-      <ul>
-        <li><strong>Infrastructure Engineering:</strong> Windows Server, Linux administration, capacity planning, service continuity, and reliability operations.</li>
-        <li><strong>Hybrid Cloud:</strong> Azure IaaS lifecycle management, storage, networking, serverless processing, and on-prem ↔ Azure integration.</li>
-        <li><strong>Networking & Security:</strong> TCP/IP, VLANs, switching, routing, firewall policy design, segmentation, and least-privilege access.</li>
-        <li><strong>Automation & Observability:</strong> PowerShell, Bash, Python, PRTG, Zabbix, Grafana, Prometheus, ELK, and proactive monitoring.</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2><i class="fas fa-graduation-cap" aria-hidden="true"></i> Education</h2>
-      <ul>
-        <li><strong>Higher Level Computer Science:</strong> Systems and Network Administration + Cybersecurity (ASIX-CIBER) — Salesians Sarrià School CESF</li>
-        <li><strong>Medium Level Computer Science:</strong> Administration of Microcomputers Systems and Networks — Salesians Sarrià School</li>
-        <li><strong>Compulsory Secondary Education (ESO):</strong> Santa Teresa Lisieux School</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2><i class="fas fa-language" aria-hidden="true"></i> Languages</h2>
-      <ul>
-        <li><strong>Spanish:</strong> Native</li>
-        <li><strong>Catalan:</strong> Native</li>
-        <li><strong>English:</strong> B2 First Certificate</li>
-      </ul>
-    </section>
+      <div>Last updated: April 2026</div>
+    </footer>
   </main>
 
   <script>
@@ -953,7 +1686,6 @@
 
         const containerWidth = container.offsetWidth || 246;
         const containerHeight = container.offsetHeight || 520;
-
         const columnSpacing = 16;
         const columnCount = Math.max(10, Math.floor(containerWidth / columnSpacing));
 
