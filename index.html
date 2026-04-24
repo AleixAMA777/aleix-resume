@@ -1,52 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aleix Moya - Resume</title>
+  <meta
+    name="description"
+    content="System and Network Administrator focused on Azure, Zero Trust, infrastructure, networking, virtualization, automation, and hybrid cloud operations."
+  />
 
-  <title>Aleix Moya | System & Network Administrator</title>
+  <meta property="og:title" content="Aleix Moya Araujo - System & Network Administrator" />
+  <meta
+    property="og:description"
+    content="SysAdmin focused on Azure, Zero Trust, infrastructure engineering, networking, virtualization, and automation."
+  />
+  <meta property="og:image" content="preview-image.jpg" />
+  <meta property="og:type" content="website" />
 
-  <meta name="description" content="System and Network Administrator focused on Azure, Zero Trust, infrastructure, networking, virtualization, automation, and hybrid cloud operations.">
-  <meta name="author" content="Aleix Moya">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#0078D4">
-  <link rel="canonical" href="https://aleixresume.net/">
-
-  <meta property="og:title" content="Aleix Moya - System & Network Administrator">
-  <meta property="og:description" content="SysAdmin focused on Azure, Zero Trust, infrastructure engineering, networking, virtualization, and automation.">
-  <meta property="og:image" content="https://aleixresume.net/preview-image.jpg">
-  <meta property="og:url" content="https://aleixresume.net/">
-  <meta property="og:type" content="website">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Aleix Moya - System & Network Administrator">
-  <meta name="twitter:description" content="SysAdmin focused on Azure, Zero Trust, infrastructure engineering, networking, virtualization, and automation.">
-  <meta name="twitter:image" content="https://aleixresume.net/preview-image.jpg">
-
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="apple-touch-icon" href="/favicon.svg">
-
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
 
   <style>
     :root {
-      --bg-main: #050b12;
-      --bg-main-soft: #07111c;
-      --bg-sidebar: #111111;
-      --bg-section: rgba(10, 18, 27, 0.82);
-      --bg-card: rgba(12, 21, 31, 0.82);
+      --bg-main: #06090f;
+      --bg-sidebar: rgba(18, 18, 20, 0.92);
+      --bg-section: rgba(33, 33, 37, 0.92);
       --text-primary: #ffffff;
-      --text-secondary: #c8d0da;
-      --accent-color: #0078D4;
-      --accent-bright: #2aa8ff;
-      --border-color: rgba(255, 255, 255, 0.13);
-      --blue-border: rgba(0, 120, 212, 0.48);
-      --muted: #8d9bab;
-      --terminal-green: #35d16f;
-      --terminal-yellow: #f4c542;
-      --terminal-red: #ff5f56;
+      --text-secondary: #cccccc;
+      --accent-color: #0b8cff;
+      --accent-hover: #4aa8ff;
+      --border-color: rgba(89, 89, 96, 0.45);
+      --muted: #9f9f9f;
+      --glow-soft: rgba(11, 140, 255, 0.24);
+      --glow-strong: rgba(11, 140, 255, 0.8);
     }
 
     * {
@@ -58,32 +49,17 @@
     }
 
     body {
-      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
       margin: 0;
       padding: 0;
       background:
-        radial-gradient(circle at 83% 11%, rgba(0, 120, 212, 0.13), transparent 28%),
-        radial-gradient(circle at 78% 75%, rgba(0, 120, 212, 0.10), transparent 34%),
-        linear-gradient(135deg, #050b12 0%, #07111c 48%, #03070d 100%);
+        radial-gradient(circle at 80% 20%, rgba(11, 140, 255, 0.08), transparent 25%),
+        radial-gradient(circle at 85% 70%, rgba(11, 140, 255, 0.06), transparent 25%),
+        var(--bg-main);
       color: var(--text-secondary);
       display: flex;
       min-height: 100vh;
       overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.014) 1px, transparent 1px);
-      background-size: 40px 40px;
-      mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 35%, rgba(0,0,0,0.70) 100%);
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 35%, rgba(0,0,0,0.70) 100%);
-      opacity: 0.22;
-      z-index: 0;
     }
 
     ::-webkit-scrollbar {
@@ -91,53 +67,36 @@
     }
 
     ::-webkit-scrollbar-track {
-      background: #050b12;
+      background: var(--bg-main);
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #172536;
-      border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #1d2430;
+      border-radius: 5px;
+      border: 1px solid var(--border-color);
     }
 
     ::-webkit-scrollbar-thumb:hover {
       background: var(--accent-color);
     }
 
-    .sidebar,
-    .main {
-      position: relative;
-      z-index: 2;
-    }
-
+    /* SIDEBAR */
     .sidebar {
-      background:
-        linear-gradient(180deg, rgba(17, 17, 17, 0.98) 0%, rgba(8, 14, 22, 0.96) 100%);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      background: var(--bg-sidebar);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       color: var(--text-primary);
       width: 290px;
-      padding: 36px 22px 28px;
+      padding: 40px 22px;
       display: flex;
       flex-direction: column;
       align-items: center;
       position: fixed;
+      left: 0;
+      top: 0;
       height: 100vh;
-      border-right: 1px solid rgba(255, 255, 255, 0.12);
-      z-index: 10;
-      overflow: hidden;
-      box-shadow: 12px 0 36px rgba(0, 0, 0, 0.28);
-    }
-
-    .sidebar::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 50% 8%, rgba(0, 120, 212, 0.16), transparent 30%),
-        radial-gradient(circle at 50% 78%, rgba(0, 120, 212, 0.12), transparent 34%);
-      pointer-events: none;
-      z-index: 0;
+      border-right: 1px solid var(--border-color);
+      z-index: 30;
     }
 
     .profile-img {
@@ -148,41 +107,32 @@
       margin-bottom: 16px;
       object-fit: cover;
       box-shadow:
-        0 0 0 4px rgba(0, 120, 212, 0.13),
-        0 0 28px rgba(0, 120, 212, 0.38),
-        0 8px 18px rgba(0, 0, 0, 0.42);
+        0 0 0 1px rgba(255, 255, 255, 0.05),
+        0 0 20px rgba(11, 140, 255, 0.15),
+        0 6px 16px rgba(0, 0, 0, 0.35);
       background: #1f1f1f;
-      display: block;
-      position: relative;
-      z-index: 3;
     }
 
     .sidebar h1 {
-      font-size: 30px;
-      line-height: 1.12;
+      font-size: 29px;
+      line-height: 1.1;
       margin: 0 0 8px 0;
       color: var(--text-primary);
       text-align: center;
-      font-weight: 800;
-      letter-spacing: -0.6px;
-      position: relative;
-      z-index: 3;
+      font-weight: 700;
     }
 
     .typing-text {
       font-family: Consolas, "Courier New", Courier, monospace;
-      color: var(--accent-bright);
+      color: var(--accent-color);
       font-size: 12px;
       margin-bottom: 28px;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 2px solid var(--accent-bright);
+      border-right: 2px solid var(--accent-color);
       width: 33ch;
-      animation: typing 2.6s steps(33, end), blink-caret .75s step-end infinite;
+      animation: typing 2.6s steps(33, end), blink-caret 0.75s step-end infinite;
       text-align: center;
-      text-shadow: 0 0 12px rgba(0, 120, 212, 0.38);
-      position: relative;
-      z-index: 3;
     }
 
     @keyframes typing {
@@ -196,7 +146,7 @@
         border-color: transparent;
       }
       50% {
-        border-color: var(--accent-bright);
+        border-color: var(--accent-color);
       }
     }
 
@@ -206,20 +156,17 @@
       text-decoration: none;
       font-size: 14px;
       margin-bottom: 14px;
-      transition: color 0.2s ease, transform 0.2s ease;
+      transition: color 0.2s ease;
       display: flex;
       align-items: center;
       gap: 10px;
       width: 100%;
       justify-content: center;
       text-align: center;
-      position: relative;
-      z-index: 3;
     }
 
     .sidebar a:hover {
-      color: var(--accent-bright);
-      transform: translateY(-1px);
+      color: var(--accent-color);
     }
 
     .sidebar i {
@@ -228,407 +175,37 @@
       text-align: center;
     }
 
-    .language-switcher {
-      position: relative;
-      z-index: 4;
-      width: 100%;
-      margin: 8px 0 18px;
-      padding: 10px;
-      border-radius: 12px;
-      background: rgba(3, 10, 18, 0.46);
-      border: 1px solid rgba(0, 120, 212, 0.22);
-      box-shadow: 0 0 18px rgba(0, 120, 212, 0.08);
-    }
-
-    .language-title {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 7px;
-      font-size: 11px;
-      font-family: Consolas, "Courier New", monospace;
-      color: var(--muted);
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-    }
-
-    .language-buttons {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 6px;
-    }
-
-    .language-button {
-      border: 1px solid rgba(255, 255, 255, 0.10);
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--text-secondary);
-      border-radius: 8px;
-      padding: 7px 0;
-      font-size: 11px;
-      font-weight: 800;
-      font-family: Consolas, "Courier New", monospace;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .language-button:hover {
-      color: #ffffff;
-      border-color: rgba(0, 120, 212, 0.66);
-      background: rgba(0, 120, 212, 0.15);
-      transform: translateY(-1px);
-    }
-
-    .language-button.active {
-      color: #ffffff;
-      border-color: rgba(0, 170, 255, 0.88);
-      background: linear-gradient(135deg, rgba(0, 120, 212, 0.78), rgba(0, 84, 170, 0.70));
-      box-shadow: 0 0 16px rgba(0, 120, 212, 0.28);
-    }
-
-    .sidebar-binary {
-      position: relative;
-      width: 100%;
-      flex: 1;
-      margin-top: 0;
-      overflow: hidden;
-      border-radius: 10px;
-      opacity: 0.94;
-      z-index: 1;
-      border: 1px solid rgba(0, 120, 212, 0.08);
-      mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.82) 11%, rgba(0,0,0,1) 100%);
-      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.82) 11%, rgba(0,0,0,1) 100%);
-    }
-
-    .sidebar-binary::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 50% 0%, rgba(0, 120, 212, 0.20), transparent 48%),
-        linear-gradient(to bottom, rgba(0, 120, 212, 0.07), transparent 58%);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .binary-column {
-      position: absolute;
-      top: -120%;
-      font-family: Consolas, "Courier New", monospace;
-      font-size: 13px;
-      line-height: 13px;
-      white-space: pre;
-      color: rgba(0, 120, 212, 0.54);
-      text-shadow: 0 0 8px rgba(0, 120, 212, 0.24);
-      user-select: none;
-      pointer-events: none;
-      animation-name: binaryFall;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      z-index: 0;
-    }
-
-    .binary-column.dim {
-      color: rgba(255, 255, 255, 0.13);
-      text-shadow: 0 0 6px rgba(255, 255, 255, 0.08);
-    }
-
-    .binary-column.bright {
-      color: rgba(0, 170, 255, 0.92);
-      text-shadow: 0 0 12px rgba(0, 170, 255, 0.48);
-    }
-
-    @keyframes binaryFall {
-      0% {
-        transform: translateY(-120%);
-        opacity: 0;
-      }
-      8% {
-        opacity: 1;
-      }
-      85% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(220%);
-        opacity: 0;
-      }
-    }
-
-    .right-ambient {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 40vw;
-      max-width: 650px;
-      min-width: 360px;
-      height: 100vh;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 0;
-      opacity: 0.98;
-      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.92) 60%, transparent 100%);
-      mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.92) 60%, transparent 100%);
-    }
-
-    .network-svg {
-      width: 100%;
-      height: 100%;
-      display: block;
-      animation: ambientFloat 18s ease-in-out infinite;
-    }
-
-    .net-line {
-      stroke: #1ea0ff;
-      stroke-width: 1.25;
-      stroke-opacity: 0.24;
-      animation: linePulse 5s ease-in-out infinite;
-    }
-
-    .net-line.thin {
-      stroke-width: 1;
-      stroke-opacity: 0.12;
-    }
-
-    .net-line.d1 { animation-delay: 0s; }
-    .net-line.d2 { animation-delay: 1s; }
-    .net-line.d3 { animation-delay: 2s; }
-    .net-line.d4 { animation-delay: 3s; }
-
-    .net-node {
-      fill: #38b6ff;
-      opacity: 0.72;
-      animation: nodePulse 4s ease-in-out infinite;
-      transform-origin: center;
-      transform-box: fill-box;
-    }
-
-    .net-node.big {
-      fill: #63c7ff;
-      opacity: 0.96;
-    }
-
-    .n1  { animation-delay: 0s; }
-    .n2  { animation-delay: 0.2s; }
-    .n3  { animation-delay: 0.4s; }
-    .n4  { animation-delay: 0.6s; }
-    .n5  { animation-delay: 0.8s; }
-    .n6  { animation-delay: 1s; }
-    .n7  { animation-delay: 1.2s; }
-    .n8  { animation-delay: 1.4s; }
-    .n9  { animation-delay: 1.6s; }
-    .n10 { animation-delay: 1.8s; }
-    .n11 { animation-delay: 2s; }
-    .n12 { animation-delay: 2.2s; }
-    .n13 { animation-delay: 2.4s; }
-    .n14 { animation-delay: 2.6s; }
-    .n15 { animation-delay: 2.8s; }
-    .n16 { animation-delay: 3s; }
-    .n17 { animation-delay: 3.2s; }
-    .n18 { animation-delay: 3.4s; }
-    .n19 { animation-delay: 3.6s; }
-    .n20 { animation-delay: 3.8s; }
-    .n21 { animation-delay: 4s; }
-    .n22 { animation-delay: 4.2s; }
-    .n23 { animation-delay: 4.4s; }
-    .n24 { animation-delay: 4.6s; }
-    .n25 { animation-delay: 4.8s; }
-
-    .packet {
-      fill: #a7e2ff;
-      opacity: 0;
-    }
-
-    @keyframes ambientFloat {
-      0%, 100% {
-        transform: translateY(0px) translateX(0px);
-      }
-      50% {
-        transform: translateY(-10px) translateX(-6px);
-      }
-    }
-
-    @keyframes linePulse {
-      0%, 100% {
-        stroke-opacity: 0.10;
-      }
-      50% {
-        stroke-opacity: 0.34;
-      }
-    }
-
-    @keyframes nodePulse {
-      0%, 100% {
-        opacity: 0.45;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1.15);
-      }
-    }
-
+    /* MAIN */
     .main {
-      margin-left: 290px;
-      width: calc(100% - 290px);
-      padding: 40px 28px 0;
-      min-height: 100vh;
-    }
-
-    .main-inner {
-      width: min(1180px, 100%);
-      margin: 0 auto;
-    }
-
-    .hero-terminal {
-      border: 1px solid rgba(0, 120, 212, 0.58);
-      border-radius: 10px;
-      overflow: hidden;
-      background:
-        linear-gradient(180deg, rgba(2, 7, 13, 0.96), rgba(3, 9, 17, 0.92));
-      box-shadow:
-        0 0 28px rgba(0, 120, 212, 0.13),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-      margin-bottom: 24px;
-      max-width: 760px;
-    }
-
-    .terminal-topbar {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 11px 14px;
-      background: rgba(255, 255, 255, 0.035);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-      position: relative;
-    }
-
-    .terminal-dot {
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      display: inline-block;
-    }
-
-    .terminal-dot.red {
-      background: var(--terminal-red);
-    }
-
-    .terminal-dot.yellow {
-      background: var(--terminal-yellow);
-    }
-
-    .terminal-dot.green {
-      background: var(--terminal-green);
-    }
-
-    .terminal-title {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: Consolas, "Courier New", monospace;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .terminal-body {
-      padding: 17px 21px;
-      font-family: Consolas, "Courier New", monospace;
-      font-size: 15px;
-      line-height: 1.45;
-    }
-
-    .terminal-line {
-      margin-bottom: 5px;
-    }
-
-    .terminal-prompt,
-    .terminal-command {
-      color: var(--accent-bright);
-      font-weight: 700;
-      text-shadow: 0 0 8px rgba(0, 120, 212, 0.35);
-    }
-
-    .terminal-output {
-      color: #f2f7ff;
-      margin-bottom: 11px;
-    }
-
-    .terminal-cursor {
-      display: inline-block;
-      width: 8px;
-      height: 16px;
-      background: rgba(255, 255, 255, 0.78);
-      animation: cursorBlink 1s steps(2, start) infinite;
-      vertical-align: middle;
-    }
-
-    @keyframes cursorBlink {
-      0%, 45% {
-        opacity: 1;
-      }
-      46%, 100% {
-        opacity: 0;
-      }
-    }
-
-    .section {
-      margin-bottom: 26px;
-      padding: 0;
-      background: transparent;
-      border-radius: 12px;
+      margin-left: 330px;
+      margin-right: 280px;
+      padding: 40px;
+      flex: 1;
+      max-width: 1050px;
       position: relative;
       z-index: 2;
-      animation: slideUpFade 0.55s ease-out forwards;
-    }
-
-    @keyframes slideUpFade {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
 
     h2 {
       color: var(--text-primary);
-      padding-bottom: 8px;
-      margin: 0 0 9px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 10px;
+      margin-top: 10px;
       display: flex;
       align-items: center;
       gap: 10px;
-      font-weight: 800;
-      letter-spacing: -0.4px;
-      font-size: 22px;
-      position: relative;
-    }
-
-    h2::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 28px;
-      height: 2px;
-      border-radius: 999px;
-      background: var(--accent-bright);
-      box-shadow: 0 0 12px rgba(0, 120, 212, 0.7);
+      font-weight: 700;
+      letter-spacing: 0.2px;
     }
 
     h2 i {
-      color: var(--accent-bright);
+      color: var(--accent-color);
+      text-shadow: 0 0 12px rgba(11, 140, 255, 0.35);
     }
 
     p,
     li {
-      line-height: 1.62;
-    }
-
-    p {
-      margin: 0 0 12px;
+      line-height: 1.65;
     }
 
     ul {
@@ -643,425 +220,449 @@
       color: var(--text-primary);
     }
 
-    .summary-text {
-      max-width: 790px;
-      color: #c5ced9;
-      font-size: 15px;
-      line-height: 1.55;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 15px;
-      margin: 17px 0 17px;
-      max-width: 820px;
-    }
-
-    .stat-card {
-      background:
-        linear-gradient(180deg, rgba(14, 24, 35, 0.82), rgba(9, 17, 26, 0.82));
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 7px;
-      padding: 18px 17px;
-      min-height: 118px;
+    .section {
+      margin-bottom: 28px;
+      padding: 25px;
+      background: var(--bg-section);
+      border-radius: 10px;
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.03),
+        0 10px 24px rgba(0, 0, 0, 0.28);
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-left 0.3s ease;
+      border-left: 4px solid transparent;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: slideUpFade 0.55s ease-out forwards;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
-      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
     }
 
-    .stat-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(0, 120, 212, 0.72);
-      box-shadow: 0 0 26px rgba(0, 120, 212, 0.14);
-    }
-
-    .stat-card::before {
+    .section::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at top right, rgba(0, 120, 212, 0.21), transparent 42%);
+      background: linear-gradient(
+        90deg,
+        rgba(11, 140, 255, 0.05),
+        transparent 20%,
+        transparent 80%,
+        rgba(11, 140, 255, 0.03)
+      );
       pointer-events: none;
     }
 
-    .stat-content {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 13px;
-      align-items: center;
-    }
-
-    .stat-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #0078D4, #064ea9);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-      box-shadow: 0 0 18px rgba(0, 120, 212, 0.33);
-      font-size: 18px;
-    }
-
-    .stat-number {
-      display: block;
-      color: var(--text-primary);
-      font-size: 25px;
-      line-height: 1;
-      font-weight: 850;
-      letter-spacing: -0.6px;
-    }
-
-    .stat-label {
-      display: block;
-      color: #eef5ff;
-      font-size: 15px;
-      margin-top: 3px;
-      line-height: 1.17;
-      font-weight: 650;
-    }
-
-    .stat-sub {
-      display: block;
-      margin-top: 8px;
-      color: var(--accent-bright);
-      font-size: 11px;
-      line-height: 1.35;
-      font-family: Consolas, "Courier New", monospace;
-    }
-
-    .cta-row {
-      display: flex;
-      justify-content: flex-start;
-      margin-top: 15px;
-      max-width: 820px;
-    }
-
-    .cta-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 38px;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 6px;
-      border: 1px solid rgba(0, 120, 212, 0.75);
-      background: rgba(3, 10, 18, 0.64);
-      color: var(--accent-bright);
-      font-weight: 800;
-      font-size: 13px;
-      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-      box-shadow: 0 0 16px rgba(0, 120, 212, 0.10);
-    }
-
-    .cta-button:hover {
-      transform: translateY(-2px);
-      border-color: rgba(0, 170, 255, 0.95);
-      background: rgba(0, 120, 212, 0.12);
-    }
-
-    .layout-two {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 38px;
-      align-items: start;
-      margin-top: 20px;
-      max-width: 980px;
-    }
-
-    .timeline {
-      position: relative;
-      padding-left: 24px;
-      margin-top: 15px;
-    }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 7px;
-      top: 4px;
-      bottom: 7px;
-      width: 3px;
-      border-radius: 999px;
-      background: linear-gradient(to bottom, rgba(56, 182, 255, 0.95), rgba(0, 120, 212, 0.18));
-      box-shadow: 0 0 18px rgba(0, 120, 212, 0.60);
-    }
-
-    .timeline-item {
-      position: relative;
-      display: grid;
-      grid-template-columns: 112px 1fr;
-      gap: 14px;
-      padding: 0 0 24px 0;
-    }
-
-    .timeline-item:last-child {
-      padding-bottom: 0;
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -22px;
-      top: 2px;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #d8f0ff;
-      border: 2px solid #5fc2ff;
+    .section:hover {
+      transform: translateY(-4px);
       box-shadow:
-        0 0 0 4px rgba(0, 120, 212, 0.22),
-        0 0 18px rgba(0, 170, 255, 0.86);
+        0 0 0 1px rgba(11, 140, 255, 0.14),
+        0 14px 28px rgba(0, 0, 0, 0.42),
+        0 0 20px rgba(11, 140, 255, 0.08);
+      border-left: 4px solid var(--accent-color);
     }
 
-    .timeline-date {
-      font-family: Consolas, "Courier New", monospace;
-      font-size: 11px;
-      color: var(--accent-bright);
-      font-weight: 850;
-      padding-top: 1px;
-      line-height: 1.35;
-    }
+    .section:nth-child(1) { animation-delay: 0.10s; }
+    .section:nth-child(2) { animation-delay: 0.18s; }
+    .section:nth-child(3) { animation-delay: 0.26s; }
+    .section:nth-child(4) { animation-delay: 0.34s; }
+    .section:nth-child(5) { animation-delay: 0.42s; }
+    .section:nth-child(6) { animation-delay: 0.50s; }
+    .section:nth-child(7) { animation-delay: 0.58s; }
 
-    .timeline-title {
-      color: #ffffff;
-      font-weight: 850;
-      font-size: 13px;
-      margin-bottom: 4px;
-    }
-
-    .timeline-company {
-      color: var(--accent-bright);
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .timeline-description {
-      color: #aeb8c5;
-      font-size: 12px;
-      line-height: 1.52;
-      max-width: 360px;
-    }
-
-    .core-stack-card {
-      background:
-        linear-gradient(180deg, rgba(14, 24, 35, 0.86), rgba(9, 17, 26, 0.84));
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 7px;
-      padding: 12px 16px;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.20);
-      margin-top: 5px;
-    }
-
-    .stack-item {
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 12px;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .stack-item:last-child {
-      border-bottom: none;
-    }
-
-    .stack-icon {
-      color: var(--accent-bright);
-      font-size: 29px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-shadow: 0 0 16px rgba(0, 120, 212, 0.48);
-    }
-
-    .stack-title {
-      color: #ffffff;
-      font-size: 15px;
-      font-weight: 850;
-      margin-bottom: 3px;
-    }
-
-    .stack-description {
-      color: #aeb8c5;
-      font-size: 11px;
-      line-height: 1.45;
-    }
-
-    .extra-sections {
-      margin-top: 28px;
-      max-width: 980px;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 15px;
-      margin-top: 15px;
-    }
-
-    .project-card {
-      background:
-        linear-gradient(180deg, rgba(14, 24, 35, 0.84), rgba(9, 17, 26, 0.82));
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 8px;
-      padding: 17px;
-      min-height: 160px;
-      transition: transform 0.22s ease, border-color 0.22s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(0, 120, 212, 0.72);
-    }
-
-    .project-card i {
-      color: var(--accent-bright);
-      font-size: 24px;
-      margin-bottom: 14px;
-      text-shadow: 0 0 12px rgba(0, 120, 212, 0.36);
-    }
-
-    .project-card h3 {
-      color: #ffffff;
-      font-size: 15px;
-      margin: 0 0 8px;
-    }
-
-    .project-card p {
-      color: #aeb8c5;
-      font-size: 12px;
-      line-height: 1.52;
-      margin: 0;
+    @keyframes slideUpFade {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .skill-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 9px;
+      gap: 10px;
       padding-left: 0;
       list-style: none;
       margin-top: 15px;
-      max-width: 980px;
     }
 
     .skill-tags li {
-      background: rgba(8, 15, 24, 0.72);
-      color: #e6eef7;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(9, 14, 22, 0.95);
+      color: var(--text-primary);
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid var(--border-color);
       transition: all 0.2s ease;
       margin-bottom: 0;
     }
 
     .skill-tags li:hover {
-      background: rgba(0, 120, 212, 0.22);
-      border-color: rgba(0, 120, 212, 0.74);
-      color: #ffffff;
+      background: rgba(11, 140, 255, 0.14);
+      border-color: rgba(11, 140, 255, 0.5);
+      box-shadow: 0 0 12px rgba(11, 140, 255, 0.18);
       cursor: default;
     }
 
-    .education-language-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 24px;
-      margin-top: 28px;
-      max-width: 980px;
+    .job-entry {
+      margin-bottom: 26px;
     }
 
-    .simple-card {
-      background:
-        linear-gradient(180deg, rgba(14, 24, 35, 0.84), rgba(9, 17, 26, 0.82));
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 8px;
-      padding: 20px;
-    }
-
-    .simple-card ul {
+    .job-entry:last-child {
       margin-bottom: 0;
     }
 
-    .site-footer {
-      min-height: 42px;
-      margin: 34px 0 0 0;
-      padding: 12px 0 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.10);
+    .job-entry h3 {
+      margin: 0 0 5px 0;
+      color: var(--text-primary);
+      font-size: 1.12em;
+    }
+
+    .job-entry .job-date {
+      margin: 0 0 10px 0;
+      font-size: 0.9em;
+      color: var(--accent-color);
+      font-weight: 600;
+      font-family: Consolas, monospace;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .mini-card {
+      background: rgba(0, 0, 0, 0.18);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 16px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .mini-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(11, 140, 255, 0.35);
+      box-shadow: 0 0 18px rgba(11, 140, 255, 0.08);
+    }
+
+    .muted {
       color: var(--muted);
+    }
+
+    /* RIGHT EXPERIENCE RAIL */
+    .experience-rail {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 250px;
+      height: 100vh;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(2, 8, 18, 0.15), rgba(2, 8, 18, 0.5)),
+        radial-gradient(circle at 78% 18%, rgba(11, 140, 255, 0.18), transparent 30%),
+        radial-gradient(circle at 74% 65%, rgba(11, 140, 255, 0.12), transparent 30%);
+      border-left: 1px solid rgba(11, 140, 255, 0.06);
+    }
+
+    .experience-rail::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(11, 140, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(11, 140, 255, 0.04) 1px, transparent 1px);
+      background-size: 42px 42px;
+      opacity: 0.35;
+    }
+
+    .experience-rail::after {
+      content: "";
+      position: absolute;
+      top: -15%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 220px;
+      height: 130%;
+      background: radial-gradient(circle, rgba(11, 140, 255, 0.12), transparent 60%);
+      filter: blur(26px);
+      opacity: 0.6;
+      animation: backgroundBreath 8s ease-in-out infinite;
+    }
+
+    @keyframes backgroundBreath {
+      0%, 100% {
+        opacity: 0.35;
+        transform: translateX(-50%) scale(0.95);
+      }
+      50% {
+        opacity: 0.7;
+        transform: translateX(-50%) scale(1.05);
+      }
+    }
+
+    .timeline-visual {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-38%, -50%);
+      width: 180px;
+      height: 82vh;
+    }
+
+    .timeline-track {
+      position: absolute;
+      top: 0;
+      left: 28px;
+      width: 8px;
+      height: 100%;
+      border-radius: 999px;
+    }
+
+    .timeline-track::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 999px;
+      background: linear-gradient(
+        180deg,
+        rgba(11, 140, 255, 0.25),
+        rgba(70, 180, 255, 0.9) 20%,
+        rgba(70, 180, 255, 0.75) 50%,
+        rgba(11, 140, 255, 0.3)
+      );
+      box-shadow:
+        0 0 10px rgba(11, 140, 255, 0.30),
+        0 0 22px rgba(11, 140, 255, 0.20),
+        0 0 40px rgba(11, 140, 255, 0.12);
+      opacity: 0.92;
+      animation: railPulse 5s ease-in-out infinite;
+    }
+
+    .timeline-track::after {
+      content: "";
+      position: absolute;
+      left: -6px;
+      width: 20px;
+      height: 120px;
+      border-radius: 999px;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.95),
+        rgba(90, 210, 255, 0.65),
+        rgba(255, 255, 255, 0)
+      );
+      filter: blur(3px);
+      opacity: 0;
+      animation: railShine 6.5s ease-in-out infinite;
+      box-shadow:
+        0 0 18px rgba(135, 220, 255, 0.75),
+        0 0 28px rgba(11, 140, 255, 0.55);
+    }
+
+    @keyframes railPulse {
+      0%, 100% {
+        box-shadow:
+          0 0 10px rgba(11, 140, 255, 0.22),
+          0 0 22px rgba(11, 140, 255, 0.12),
+          0 0 40px rgba(11, 140, 255, 0.08);
+      }
+      50% {
+        box-shadow:
+          0 0 12px rgba(11, 140, 255, 0.35),
+          0 0 28px rgba(11, 140, 255, 0.22),
+          0 0 48px rgba(11, 140, 255, 0.14);
+      }
+    }
+
+    @keyframes railShine {
+      0% {
+        top: -16%;
+        opacity: 0;
+      }
+      8% {
+        opacity: 1;
+      }
+      45% {
+        opacity: 0.95;
+      }
+      52% {
+        opacity: 0;
+      }
+      100% {
+        top: 105%;
+        opacity: 0;
+      }
+    }
+
+    .timeline-point {
+      position: absolute;
+      left: 0;
+      top: var(--y);
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
       align-items: center;
-      gap: 14px;
-      font-size: 13px;
+      transform: translateY(-50%);
     }
 
-    .site-footer strong {
-      color: #ffffff;
+    .timeline-dot {
+      position: relative;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 50% 50%, #dff6ff 0 32%, #6fd3ff 33% 58%, #168fff 59% 100%);
+      border: 3px solid rgba(150, 225, 255, 0.85);
+      box-shadow:
+        0 0 0 4px rgba(11, 140, 255, 0.20),
+        0 0 12px rgba(11, 140, 255, 0.75),
+        0 0 26px rgba(11, 140, 255, 0.55);
+      z-index: 2;
+      animation: nodeGlow 4.2s ease-in-out infinite;
+      animation-delay: var(--delay);
     }
 
-    .footer-social {
-      display: inline-flex;
-      gap: 16px;
-      align-items: center;
+    .timeline-dot::before {
+      content: "";
+      position: absolute;
+      inset: -10px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(11, 140, 255, 0.45), transparent 70%);
+      animation: nodeRing 4.2s ease-in-out infinite;
+      animation-delay: var(--delay);
+    }
+
+    .timeline-dot::after {
+      content: "";
+      position: absolute;
+      inset: -18px;
+      border-radius: 50%;
+      border: 1px solid rgba(110, 210, 255, 0.18);
+      opacity: 0.5;
+      animation: nodeOuterRing 4.2s ease-in-out infinite;
+      animation-delay: var(--delay);
+    }
+
+    @keyframes nodeGlow {
+      0%, 100% {
+        box-shadow:
+          0 0 0 4px rgba(11, 140, 255, 0.16),
+          0 0 10px rgba(11, 140, 255, 0.45),
+          0 0 20px rgba(11, 140, 255, 0.28);
+        transform: scale(1);
+      }
+      18% {
+        box-shadow:
+          0 0 0 6px rgba(11, 140, 255, 0.28),
+          0 0 16px rgba(100, 215, 255, 0.85),
+          0 0 32px rgba(11, 140, 255, 0.65);
+        transform: scale(1.08);
+      }
+      28% {
+        box-shadow:
+          0 0 0 4px rgba(11, 140, 255, 0.18),
+          0 0 12px rgba(11, 140, 255, 0.65),
+          0 0 24px rgba(11, 140, 255, 0.42);
+        transform: scale(1.02);
+      }
+    }
+
+    @keyframes nodeRing {
+      0%, 100% {
+        opacity: 0.15;
+        transform: scale(0.9);
+      }
+      18% {
+        opacity: 0.5;
+        transform: scale(1.25);
+      }
+      28% {
+        opacity: 0.2;
+        transform: scale(1.02);
+      }
+    }
+
+    @keyframes nodeOuterRing {
+      0%, 100% {
+        opacity: 0.14;
+        transform: scale(0.95);
+      }
+      18% {
+        opacity: 0.35;
+        transform: scale(1.18);
+      }
+      28% {
+        opacity: 0.16;
+        transform: scale(1.02);
+      }
+    }
+
+    .timeline-label {
       margin-left: 18px;
-      padding-left: 18px;
-      border-left: 1px solid rgba(255, 255, 255, 0.12);
+      color: #67c4ff;
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-shadow:
+        0 0 6px rgba(11, 140, 255, 0.22),
+        0 0 14px rgba(11, 140, 255, 0.14);
+      opacity: 0.92;
+      animation: labelFlicker 6s ease-in-out infinite;
+      animation-delay: calc(var(--delay) + 0.2s);
+      white-space: nowrap;
     }
 
-    .footer-social a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: color 0.2s ease;
+    @keyframes labelFlicker {
+      0%, 100% {
+        opacity: 0.88;
+        text-shadow:
+          0 0 6px rgba(11, 140, 255, 0.20),
+          0 0 14px rgba(11, 140, 255, 0.10);
+      }
+      18% {
+        opacity: 1;
+        text-shadow:
+          0 0 10px rgba(140, 225, 255, 0.55),
+          0 0 22px rgba(11, 140, 255, 0.30);
+      }
+      28% {
+        opacity: 0.9;
+      }
     }
 
-    .footer-social a:hover {
-      color: var(--accent-bright);
-    }
-
+    /* MOBILE */
     @media (max-width: 1200px) {
-      .right-ambient {
-        width: 34vw;
-        min-width: 300px;
-        opacity: 0.72;
+      .main {
+        margin-right: 40px;
       }
 
-      .stats-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        max-width: 620px;
+      .experience-rail {
+        width: 170px;
+      }
+    }
+
+    @media (max-width: 960px) {
+      .experience-rail {
+        display: none;
       }
 
-      .layout-two {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-
-      .core-stack-card {
-        max-width: 640px;
-      }
-
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .education-language-grid {
-        grid-template-columns: 1fr;
+      .main {
+        margin-right: 0;
       }
     }
 
     @media (max-width: 900px) {
-      .right-ambient {
-        display: none;
+      .grid-two {
+        grid-template-columns: 1fr;
       }
+    }
 
+    @media (max-width: 768px) {
       body {
         flex-direction: column;
       }
@@ -1070,58 +671,27 @@
         position: relative;
         width: 100%;
         height: auto;
-        min-height: 100vh;
         border-right: none;
         border-bottom: 1px solid var(--border-color);
-        padding: 32px 20px;
-      }
-
-      .sidebar-binary {
-        min-height: 260px;
+        padding: 30px 20px;
+        box-sizing: border-box;
+        background: rgba(18, 18, 20, 0.96);
       }
 
       .main {
         margin-left: 0;
+        padding: 20px;
         width: 100%;
-        padding: 24px 20px 0;
+        box-sizing: border-box;
+        max-width: 100%;
       }
 
-      .main-inner {
-        width: 100%;
-      }
-
-      .hero-terminal {
-        max-width: none;
-      }
-
-      .stats-grid,
-      .education-language-grid {
-        grid-template-columns: 1fr;
-        max-width: none;
-      }
-
-      .cta-row {
-        max-width: none;
-      }
-
-      .layout-two {
-        max-width: none;
-      }
-
-      .extra-sections {
-        max-width: none;
-      }
-
-      .skill-tags {
-        max-width: none;
-      }
-
-      .timeline-item {
-        grid-template-columns: 1fr;
-        gap: 5px;
+      .section {
+        padding: 20px;
       }
     }
 
+    /* PRINT */
     @media print {
       body {
         background: #ffffff !important;
@@ -1129,19 +699,10 @@
         display: block;
       }
 
-      body::before,
-      .right-ambient,
-      .sidebar-binary,
-      .hero-terminal,
-      .language-switcher {
-        display: none !important;
-      }
-
       .sidebar {
         position: relative;
         width: 100%;
         height: auto;
-        min-height: 0;
         background: none !important;
         backdrop-filter: none !important;
         border: none;
@@ -1149,7 +710,10 @@
         border-bottom: 2px solid #000000;
         margin-bottom: 20px;
         color: #000000 !important;
-        box-shadow: none !important;
+      }
+
+      .experience-rail {
+        display: none !important;
       }
 
       .sidebar h1,
@@ -1160,10 +724,10 @@
       h2 i,
       strong,
       .skill-tags li,
-      .timeline-title,
-      .stack-title,
-      .project-card h3 {
+      .job-entry h3,
+      .muted {
         color: #000000 !important;
+        text-shadow: none !important;
       }
 
       .sidebar a::after {
@@ -1174,898 +738,305 @@
 
       .main {
         margin-left: 0;
-        width: 100%;
+        margin-right: 0;
         padding: 0;
       }
 
-      .main-inner {
-        width: 100%;
-      }
-
-      .section,
-      .stat-card,
-      .project-card,
-      .simple-card,
-      .core-stack-card {
+      .section {
         background: none !important;
         box-shadow: none !important;
-        border-color: #cccccc !important;
+        border-left: none !important;
+        padding: 10px 0;
         page-break-inside: avoid;
         transform: none !important;
         animation: none !important;
         opacity: 1 !important;
       }
 
-      .site-footer {
-        background: none !important;
-        color: #000000 !important;
-        margin: 20px 0 0;
-        padding: 10px 0;
+      .job-entry .job-date {
+        color: #555555 !important;
+      }
+
+      .skill-tags li {
+        border-color: #000000;
+        color: #000000;
       }
     }
   </style>
 </head>
-
 <body>
-  <div class="right-ambient" aria-hidden="true">
-    <svg class="network-svg" viewBox="0 0 520 1080" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="3" result="blur"></feGaussianBlur>
-          <feMerge>
-            <feMergeNode in="blur"></feMergeNode>
-            <feMergeNode in="SourceGraphic"></feMergeNode>
-          </feMerge>
-        </filter>
-
-        <filter id="glowStrong" x="-80%" y="-80%" width="260%" height="260%">
-          <feGaussianBlur stdDeviation="6" result="blur"></feGaussianBlur>
-          <feMerge>
-            <feMergeNode in="blur"></feMergeNode>
-            <feMergeNode in="SourceGraphic"></feMergeNode>
-          </feMerge>
-        </filter>
-
-        <radialGradient id="bgGlow1" cx="75%" cy="18%" r="45%">
-          <stop offset="0%" stop-color="#0d8dff" stop-opacity="0.22"></stop>
-          <stop offset="100%" stop-color="#0d8dff" stop-opacity="0"></stop>
-        </radialGradient>
-
-        <radialGradient id="bgGlow2" cx="78%" cy="70%" r="42%">
-          <stop offset="0%" stop-color="#0d8dff" stop-opacity="0.18"></stop>
-          <stop offset="100%" stop-color="#0d8dff" stop-opacity="0"></stop>
-        </radialGradient>
-
-        <pattern id="gridPattern" width="28" height="28" patternUnits="userSpaceOnUse">
-          <path d="M 28 0 L 0 0 0 28" fill="none" stroke="rgba(0,120,212,0.09)" stroke-width="1"></path>
-        </pattern>
-      </defs>
-
-      <rect width="520" height="1080" fill="url(#gridPattern)" opacity="0.30"></rect>
-      <rect width="520" height="1080" fill="url(#bgGlow1)"></rect>
-      <rect width="520" height="1080" fill="url(#bgGlow2)"></rect>
-
-      <g class="network-lines">
-        <line class="net-line d1" x1="70" y1="180" x2="155" y2="135"></line>
-        <line class="net-line d2" x1="155" y1="135" x2="250" y2="185"></line>
-        <line class="net-line d3" x1="250" y1="185" x2="355" y2="130"></line>
-        <line class="net-line d4" x1="355" y1="130" x2="445" y2="220"></line>
-
-        <line class="net-line d2" x1="110" y1="310" x2="205" y2="250"></line>
-        <line class="net-line d3" x1="205" y1="250" x2="290" y2="315"></line>
-        <line class="net-line d4" x1="290" y1="315" x2="410" y2="260"></line>
-
-        <line class="net-line d1" x1="130" y1="450" x2="225" y2="390"></line>
-        <line class="net-line d2" x1="225" y1="390" x2="335" y2="455"></line>
-        <line class="net-line d3" x1="335" y1="455" x2="440" y2="390"></line>
-
-        <line class="net-line d4" x1="95" y1="610" x2="180" y2="560"></line>
-        <line class="net-line d1" x1="180" y1="560" x2="280" y2="620"></line>
-        <line class="net-line d2" x1="280" y1="620" x2="395" y2="560"></line>
-
-        <line class="net-line d3" x1="150" y1="790" x2="245" y2="735"></line>
-        <line class="net-line d4" x1="245" y1="735" x2="350" y2="800"></line>
-        <line class="net-line d1" x1="350" y1="800" x2="455" y2="715"></line>
-
-        <line class="net-line d2" x1="110" y1="930" x2="220" y2="880"></line>
-        <line class="net-line d3" x1="220" y1="880" x2="330" y2="945"></line>
-        <line class="net-line d4" x1="330" y1="945" x2="430" y2="875"></line>
-
-        <line class="net-line thin d1" x1="155" y1="135" x2="205" y2="250"></line>
-        <line class="net-line thin d2" x1="250" y1="185" x2="290" y2="315"></line>
-        <line class="net-line thin d3" x1="355" y1="130" x2="410" y2="260"></line>
-
-        <line class="net-line thin d4" x1="205" y1="250" x2="225" y2="390"></line>
-        <line class="net-line thin d1" x1="290" y1="315" x2="335" y2="455"></line>
-
-        <line class="net-line thin d2" x1="225" y1="390" x2="180" y2="560"></line>
-        <line class="net-line thin d3" x1="335" y1="455" x2="280" y2="620"></line>
-
-        <line class="net-line thin d4" x1="180" y1="560" x2="245" y2="735"></line>
-        <line class="net-line thin d1" x1="280" y1="620" x2="350" y2="800"></line>
-
-        <line class="net-line thin d2" x1="245" y1="735" x2="220" y2="880"></line>
-        <line class="net-line thin d3" x1="350" y1="800" x2="330" y2="945"></line>
-      </g>
-
-      <g class="network-nodes" filter="url(#glow)">
-        <circle class="net-node big n1" cx="70" cy="180" r="4.5"></circle>
-        <circle class="net-node n2" cx="155" cy="135" r="3.8"></circle>
-        <circle class="net-node n3" cx="250" cy="185" r="4"></circle>
-        <circle class="net-node n4" cx="355" cy="130" r="4.2"></circle>
-        <circle class="net-node big n5" cx="445" cy="220" r="5"></circle>
-
-        <circle class="net-node n6" cx="110" cy="310" r="3.7"></circle>
-        <circle class="net-node big n7" cx="205" cy="250" r="4.8"></circle>
-        <circle class="net-node n8" cx="290" cy="315" r="4"></circle>
-        <circle class="net-node n9" cx="410" cy="260" r="4.1"></circle>
-
-        <circle class="net-node n10" cx="130" cy="450" r="3.5"></circle>
-        <circle class="net-node big n11" cx="225" cy="390" r="5"></circle>
-        <circle class="net-node n12" cx="335" cy="455" r="4"></circle>
-        <circle class="net-node n13" cx="440" cy="390" r="4.4"></circle>
-
-        <circle class="net-node n14" cx="95" cy="610" r="3.7"></circle>
-        <circle class="net-node n15" cx="180" cy="560" r="4.2"></circle>
-        <circle class="net-node big n16" cx="280" cy="620" r="5"></circle>
-        <circle class="net-node n17" cx="395" cy="560" r="4.3"></circle>
-
-        <circle class="net-node n18" cx="150" cy="790" r="3.8"></circle>
-        <circle class="net-node big n19" cx="245" cy="735" r="4.8"></circle>
-        <circle class="net-node n20" cx="350" cy="800" r="4.2"></circle>
-        <circle class="net-node n21" cx="455" cy="715" r="4"></circle>
-
-        <circle class="net-node n22" cx="110" cy="930" r="3.8"></circle>
-        <circle class="net-node n23" cx="220" cy="880" r="4.3"></circle>
-        <circle class="net-node big n24" cx="330" cy="945" r="5"></circle>
-        <circle class="net-node n25" cx="430" cy="875" r="4.2"></circle>
-      </g>
-
-      <g class="packets" filter="url(#glowStrong)">
-        <circle class="packet" r="3.2">
-          <animateMotion dur="7s" repeatCount="indefinite" path="M70,180 L155,135 L250,185 L355,130 L445,220"></animateMotion>
-          <animate attributeName="opacity" values="0;1;1;0" dur="7s" repeatCount="indefinite"></animate>
-        </circle>
-
-        <circle class="packet" r="3">
-          <animateMotion dur="8.5s" begin="1s" repeatCount="indefinite" path="M110,310 L205,250 L290,315 L410,260"></animateMotion>
-          <animate attributeName="opacity" values="0;1;1;0" dur="8.5s" begin="1s" repeatCount="indefinite"></animate>
-        </circle>
-
-        <circle class="packet" r="3.5">
-          <animateMotion dur="9s" begin="2s" repeatCount="indefinite" path="M130,450 L225,390 L335,455 L440,390"></animateMotion>
-          <animate attributeName="opacity" values="0;1;1;0" dur="9s" begin="2s" repeatCount="indefinite"></animate>
-        </circle>
-
-        <circle class="packet" r="3.3">
-          <animateMotion dur="7.5s" begin="0.5s" repeatCount="indefinite" path="M95,610 L180,560 L280,620 L395,560"></animateMotion>
-          <animate attributeName="opacity" values="0;1;1;0" dur="7.5s" begin="0.5s" repeatCount="indefinite"></animate>
-        </circle>
-
-        <circle class="packet" r="3">
-          <animateMotion dur="8s" begin="1.8s" repeatCount="indefinite" path="M150,790 L245,735 L350,800 L455,715"></animateMotion>
-          <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="1.8s" repeatCount="indefinite"></animate>
-        </circle>
-
-        <circle class="packet" r="3.2">
-          <animateMotion dur="8.8s" begin="2.6s" repeatCount="indefinite" path="M110,930 L220,880 L330,945 L430,875"></animateMotion>
-          <animate attributeName="opacity" values="0;1;1;0" dur="8.8s" begin="2.6s" repeatCount="indefinite"></animate>
-        </circle>
-      </g>
-    </svg>
-  </div>
-
   <aside class="sidebar">
-    <img src="profile.jpg" alt="Aleix Moya" class="profile-img">
+    <img src="profile.jpg" alt="Aleix Moya Araujo" class="profile-img" />
 
-    <h1>Aleix Moya</h1>
+    <h1>Aleix Moya<br />Araujo</h1>
     <div class="typing-text">&gt; SysAdmin · Azure · Zero Trust_</div>
 
     <span class="contact-link">
       <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-      <span data-i18n="sidebar.location">Barcelona, Spain</span>
+      Barcelona, Spain
     </span>
 
     <a href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer">
       <i class="fab fa-linkedin" aria-hidden="true"></i>
       LinkedIn
     </a>
+  </aside>
 
-    <div class="language-switcher" aria-label="Language selector">
-      <div class="language-title">
-        <i class="fas fa-language" aria-hidden="true"></i>
-        <span data-i18n="language.title">Language</span>
+  <aside class="experience-rail" aria-hidden="true">
+    <div class="timeline-visual">
+      <div class="timeline-track"></div>
+
+      <div class="timeline-point" style="--y: 8%; --delay: 0s;">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">Present</div>
       </div>
 
-      <div class="language-buttons">
-        <button class="language-button active" type="button" data-lang="en">EN</button>
-        <button class="language-button" type="button" data-lang="es">ES</button>
-        <button class="language-button" type="button" data-lang="ca">CA</button>
-        <button class="language-button" type="button" data-lang="fr">FR</button>
+      <div class="timeline-point" style="--y: 32%; --delay: 1.2s;">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">2025</div>
+      </div>
+
+      <div class="timeline-point" style="--y: 56%; --delay: 2.4s;">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">2023</div>
+      </div>
+
+      <div class="timeline-point" style="--y: 78%; --delay: 3.6s;">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">2022</div>
+      </div>
+
+      <div class="timeline-point" style="--y: 96%; --delay: 4.8s;">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">2020</div>
       </div>
     </div>
-
-    <div class="sidebar-binary" id="binaryRain" aria-hidden="true"></div>
   </aside>
 
   <main class="main">
-    <div class="main-inner">
-      <section class="section">
-        <div class="hero-terminal">
-          <div class="terminal-topbar">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">~ aleix@resume.net</span>
-          </div>
+    <section class="section">
+      <h2><i class="fas fa-user-gear" aria-hidden="true"></i> Professional Summary</h2>
+      <p>
+        Results-oriented <strong>System and Network Administrator</strong> with 6 years of experience in IT, including
+        4 years fully dedicated to systems, infrastructure, and networking, plus 2 early-career years in a hybrid
+        Business Intelligence and Systems role. Specialized in <strong>Windows and Linux administration</strong>,
+        <strong>Azure workloads</strong>, <strong>network architecture</strong>, <strong>virtualization</strong>, and
+        <strong>Zero Trust security</strong>.
+      </p>
+      <p>
+        My profile combines hands-on operational execution with architectural thinking: from building Cisco network
+        environments from scratch, to managing hybrid cloud workloads, automating infrastructure tasks, deploying
+        monitoring stacks, and leading nationwide Zscaler rollouts.
+      </p>
+    </section>
 
-          <div class="terminal-body">
-            <div class="terminal-line">
-              <span class="terminal-prompt">$</span>
-              <span class="terminal-command"> whoami</span>
-            </div>
-            <div class="terminal-output" data-i18n="terminal.whoami">Aleix Moya — System & Network Administrator</div>
-
-            <div class="terminal-line">
-              <span class="terminal-prompt">$</span>
-              <span class="terminal-command"> focus --stack</span>
-            </div>
-            <div class="terminal-output" data-i18n="terminal.stack">Azure · Zero Trust · Networking · Automation · Hybrid Cloud</div>
-
-            <div class="terminal-line">
-              <span class="terminal-prompt">$</span>
-              <span class="terminal-command"> status</span>
-            </div>
-            <div class="terminal-output" data-i18n="terminal.status">Building secure, reliable and automated infrastructure.</div>
-
-            <span class="terminal-cursor"></span>
-          </div>
+    <section class="section">
+      <h2><i class="fas fa-bolt" aria-hidden="true"></i> Key Highlights</h2>
+      <div class="grid-two">
+        <div class="mini-card">
+          <strong>Zero Trust Rollout</strong>
+          <p class="muted">
+            Led nationwide deployment of Zscaler ZIA and ZPA across Spain, including policy design,
+            segmentation, and secure private access.
+          </p>
         </div>
 
-        <h2 data-i18n="summary.title">Professional Summary</h2>
-        <p class="summary-text" data-i18n="summary.text">
-          System and Network Administrator with 6+ years of experience designing, implementing and operating
-          secure, scalable and automated infrastructure across on-premises and cloud environments.
-          Specialized in Azure, Zero Trust architecture, identity security and network engineering.
-        </p>
-
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-content">
-              <span class="stat-icon"><i class="far fa-calendar-alt"></i></span>
-              <div>
-                <span class="stat-number">6+</span>
-                <span class="stat-label" data-i18n="stats.yearsIt">Years IT</span>
-                <span class="stat-sub" data-i18n="stats.since2019">Since 2019</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-content">
-              <span class="stat-icon"><i class="fas fa-server"></i></span>
-              <div>
-                <span class="stat-number">4+</span>
-                <span class="stat-label" data-i18n="stats.infraNetworking">Years Infrastructure & Networking</span>
-                <span class="stat-sub" data-i18n="stats.since2021">Since 2021</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-content">
-              <span class="stat-icon"><i class="fas fa-shield-alt"></i></span>
-              <div>
-                <span class="stat-number">ZTNA</span>
-                <span class="stat-label" data-i18n="stats.rollout">Rollout</span>
-                <span class="stat-sub" data-i18n="stats.zeroTrustNetwork">Zero Trust Network Access</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-content">
-              <span class="stat-icon"><i class="fas fa-cloud"></i></span>
-              <div>
-                <span class="stat-number">Azure</span>
-                <span class="stat-label" data-i18n="stats.automation">Automation</span>
-                <span class="stat-sub" data-i18n="stats.iacPipelines">IaC · Pipelines · Monitoring</span>
-              </div>
-            </div>
-          </div>
+        <div class="mini-card">
+          <strong>Azure IoT Processing</strong>
+          <p class="muted">
+            Designed and deployed Python-based Azure Function Apps to process and transform Smart IoT
+            data using Storage Accounts and Blob Storage.
+          </p>
         </div>
 
-        <div class="cta-row">
-          <a class="cta-button" href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer">
-            <i class="fab fa-linkedin-in"></i>
-            <span data-i18n="cta.linkedin">LinkedIn Profile</span>
-          </a>
+        <div class="mini-card">
+          <strong>Greenfield Network Build</strong>
+          <p class="muted">
+            Designed and implemented Cisco VLAN and subnetting architecture for a new building from zero.
+          </p>
         </div>
-      </section>
 
-      <div class="layout-two">
-        <section class="section">
-          <h2 data-i18n="timeline.title">Career Timeline</h2>
-
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-date">JUN 2025 — PRESENT</div>
-              <div>
-                <div class="timeline-title" data-i18n="timeline.anticimex.role">System and Network Administrator</div>
-                <div class="timeline-company">Anticimex Group</div>
-                <div class="timeline-description" data-i18n="timeline.anticimex.description">
-                  Managing Azure infrastructure, networking, security and automation solutions across hybrid environments.
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-date">2023 — MAY 2025</div>
-              <div>
-                <div class="timeline-title" data-i18n="timeline.alinghi.role">IT Specialist</div>
-                <div class="timeline-company">Alinghi Red Bull Racing</div>
-                <div class="timeline-description" data-i18n="timeline.alinghi.description">
-                  Supported global IT operations, cloud services and secure connectivity for high-performance environments.
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-date">2022 — 2023</div>
-              <div>
-                <div class="timeline-title" data-i18n="timeline.seidor.role">Senior Systems Technician OnSite</div>
-                <div class="timeline-company">Seidor</div>
-                <div class="timeline-description" data-i18n="timeline.seidor.description">
-                  On-site infrastructure support, system administration and endpoint management.
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-date">2020 — 2022</div>
-              <div>
-                <div class="timeline-title" data-i18n="timeline.mcr.role">Junior Technical Consultant</div>
-                <div class="timeline-company">MCR Solutions</div>
-                <div class="timeline-description" data-i18n="timeline.mcr.description">
-                  Delivered IT support, system deployment and network solutions to enterprise clients.
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="section">
-          <h2 data-i18n="stack.title">Current Core Stack</h2>
-
-          <div class="core-stack-card">
-            <div class="stack-item">
-              <div class="stack-icon"><i class="fas fa-cloud"></i></div>
-              <div>
-                <div class="stack-title" data-i18n="stack.cloud.title">Cloud</div>
-                <div class="stack-description" data-i18n="stack.cloud.description">
-                  Microsoft Azure · Virtual Networks · Load Balancers · Azure Functions · Storage · Compute
-                </div>
-              </div>
-            </div>
-
-            <div class="stack-item">
-              <div class="stack-icon"><i class="fas fa-shield-alt"></i></div>
-              <div>
-                <div class="stack-title" data-i18n="stack.security.title">Identity & Security</div>
-                <div class="stack-description" data-i18n="stack.security.description">
-                  Microsoft Entra ID · Zscaler ZIA/ZPA · Zero Trust · Fortinet · Conditional Access
-                </div>
-              </div>
-            </div>
-
-            <div class="stack-item">
-              <div class="stack-icon"><i class="fas fa-network-wired"></i></div>
-              <div>
-                <div class="stack-title" data-i18n="stack.infrastructure.title">Infrastructure</div>
-                <div class="stack-description" data-i18n="stack.infrastructure.description">
-                  Windows Server · Linux · VMware · Hyper-V · VPN · DNS · DHCP · Load Balancing
-                </div>
-              </div>
-            </div>
-
-            <div class="stack-item">
-              <div class="stack-icon"><i class="fas fa-code"></i></div>
-              <div>
-                <div class="stack-title" data-i18n="stack.automation.title">Automation & Observability</div>
-                <div class="stack-description" data-i18n="stack.automation.description">
-                  PowerShell · Bash · Python · PRTG · Zabbix · Grafana · Prometheus · ELK
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <div class="mini-card">
+          <strong>Automation & Reliability</strong>
+          <p class="muted">
+            Automated operations with PowerShell, Bash, and Python to improve consistency, efficiency,
+            and support speed.
+          </p>
+        </div>
       </div>
+    </section>
 
-      <section class="section extra-sections">
-        <h2 data-i18n="projects.title">Featured Projects</h2>
+    <section class="section">
+      <h2><i class="fas fa-cloud" aria-hidden="true"></i> Technical Skills</h2>
+      <ul class="skill-tags">
+        <li>Azure Virtual Machines</li>
+        <li>Azure Load Balancers</li>
+        <li>Azure Storage / Blob Storage</li>
+        <li>Azure Function Apps</li>
+        <li>Hybrid Cloud Integration</li>
+        <li>Windows Server</li>
+        <li>Active Directory</li>
+        <li>DNS / DHCP / GPO</li>
+        <li>Linux (Ubuntu, CentOS, RHEL)</li>
+        <li>VMware vSphere</li>
+        <li>Hyper-V</li>
+        <li>Cisco Routing & Switching</li>
+        <li>VLAN Design</li>
+        <li>Subnetting</li>
+        <li>Fortinet Firewalls</li>
+        <li>VPN & Secure Remote Access</li>
+        <li>Zscaler ZIA / ZPA</li>
+        <li>Zero Trust Architecture</li>
+        <li>PowerShell</li>
+        <li>Bash</li>
+        <li>Python</li>
+        <li>PRTG</li>
+        <li>Zabbix</li>
+        <li>Grafana</li>
+        <li>Prometheus</li>
+        <li>ELK Stack</li>
+        <li>MySQL</li>
+        <li>PostgreSQL</li>
+        <li>MongoDB</li>
+      </ul>
+    </section>
 
-        <div class="project-grid">
-          <div class="project-card">
-            <i class="fas fa-user-shield"></i>
-            <h3 data-i18n="projects.zeroTrust.title">Zero Trust Rollout</h3>
-            <p data-i18n="projects.zeroTrust.description">
-              Nationwide deployment of Zscaler ZIA and ZPA across Spain, including policy design,
-              segmentation and secure private application access.
-            </p>
-          </div>
+    <section class="section">
+      <h2><i class="fas fa-briefcase" aria-hidden="true"></i> Work Experience</h2>
 
-          <div class="project-card">
-            <i class="fas fa-database"></i>
-            <h3 data-i18n="projects.iot.title">Azure IoT Data Platform</h3>
-            <p data-i18n="projects.iot.description">
-              Serverless Python processing pipelines using Azure Functions, Blob Storage and structured
-              Bronze/Silver/Gold data layers.
-            </p>
-          </div>
-
-          <div class="project-card">
-            <i class="fas fa-diagram-project"></i>
-            <h3 data-i18n="projects.cisco.title">Cisco Network Build</h3>
-            <p data-i18n="projects.cisco.description">
-              Designed VLANs, subnetting, switching and segmentation for a greenfield building deployment
-              from zero.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section extra-sections">
-        <h2 data-i18n="skills.title">Technical Skills</h2>
-
-        <ul class="skill-tags">
-          <li>Azure Virtual Machines</li>
-          <li>Azure Load Balancers</li>
-          <li>Azure Storage / Blob Storage</li>
-          <li>Azure Function Apps</li>
-          <li>Hybrid Cloud Integration</li>
-          <li>Windows Server</li>
-          <li>Active Directory</li>
-          <li>DNS / DHCP / GPO</li>
-          <li>Linux Ubuntu / CentOS / RHEL</li>
-          <li>VMware vSphere</li>
-          <li>VMware Horizon</li>
-          <li>Hyper-V</li>
-          <li>Cisco Routing & Switching</li>
-          <li>VLAN Design</li>
-          <li>Subnetting</li>
-          <li>Fortinet Firewalls</li>
-          <li>VPN & Secure Remote Access</li>
-          <li>Zscaler ZIA / ZPA</li>
-          <li>Zero Trust Architecture</li>
-          <li>PowerShell</li>
-          <li>Bash</li>
-          <li>Python</li>
-          <li>PRTG</li>
-          <li>Zabbix</li>
-          <li>Grafana</li>
-          <li>Prometheus</li>
-          <li>ELK Stack</li>
-          <li>MySQL</li>
-          <li>PostgreSQL</li>
-          <li>MongoDB</li>
+      <div class="job-entry">
+        <h3>System and Network Administrator – Anticimex Group</h3>
+        <p class="job-date">JUN 2025 – PRESENT</p>
+        <ul>
+          <li>
+            Sole System & Network Administrator for Spain, owning end-to-end responsibility for
+            infrastructure reliability, availability, security, and operational continuity.
+          </li>
+          <li>
+            Manage Azure IaaS environments including Virtual Machines, networking components,
+            Load Balancers, and Storage Accounts.
+          </li>
+          <li>
+            Design and deploy Python-based Azure Function Apps to process data from Smart IoT devices.
+          </li>
+          <li>
+            Led nationwide deployment of <strong>Zscaler Zero Trust architecture</strong>, including ZIA,
+            ZPA, and identity-based access controls.
+          </li>
+          <li>
+            Manage VMware environments, monitoring platforms, Fortinet policies, and root-cause analysis
+            for high-impact incidents.
+          </li>
         </ul>
-      </section>
-
-      <div class="education-language-grid">
-        <section class="section simple-card">
-          <h2 data-i18n="education.title">Education</h2>
-
-          <ul>
-            <li data-i18n="education.higher">
-              <strong>Higher Level Computer Science:</strong>
-              Systems and Network Administration + Cybersecurity (ASIX-CIBER) — Salesians Sarrià School CESF
-            </li>
-            <li data-i18n="education.medium">
-              <strong>Medium Level Computer Science:</strong>
-              Administration of Microcomputers Systems and Networks — Salesians Sarrià School
-            </li>
-            <li data-i18n="education.eso">
-              <strong>Compulsory Secondary Education (ESO):</strong>
-              Santa Teresa Lisieux School
-            </li>
-          </ul>
-        </section>
-
-        <section class="section simple-card">
-          <h2 data-i18n="languages.title">Languages</h2>
-
-          <ul>
-            <li data-i18n="languages.spanish"><strong>Spanish:</strong> Native</li>
-            <li data-i18n="languages.catalan"><strong>Catalan:</strong> Native</li>
-            <li data-i18n="languages.english"><strong>English:</strong> B2 First Certificate</li>
-          </ul>
-        </section>
       </div>
 
-      <footer class="site-footer">
-        <div>
-          <strong>Aleix Moya</strong>
-          <span data-i18n="footer.tagline"> · Barcelona · Azure / Zero Trust / Infrastructure</span>
+      <div class="job-entry">
+        <h3>IT Specialist – Alinghi Red Bull Racing</h3>
+        <p class="job-date">2023 – MAY 2025</p>
+        <ul>
+          <li>
+            Administered Windows and Linux servers, ensuring stability, performance, and proactive monitoring.
+          </li>
+          <li>
+            Led the end-to-end design and deployment of a <strong>Cisco network architecture</strong>
+            in a newly constructed building.
+          </li>
+          <li>
+            Designed VLAN architecture and subnetting schemes aligned with departmental and security requirements.
+          </li>
+          <li>
+            Managed VMware vSphere, VMware Horizon, Intune, Exchange, SharePoint, Active Directory, and Entra ID.
+          </li>
+          <li>
+            Automated operational tasks with PowerShell and Bash and acted as the main technical contact
+            for partners and providers.
+          </li>
+        </ul>
+      </div>
 
-          <span class="footer-social">
-            <a href="https://linkedin.com/in/aleix-m-aa7u7/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-              <i class="fab fa-linkedin"></i>
-            </a>
-          </span>
-        </div>
+      <div class="job-entry">
+        <h3>Senior Systems Technician OnSite – Seidor</h3>
+        <p class="job-date">2022 – 2023</p>
+        <ul>
+          <li>
+            Delivered Level 2 and Level 3 support at ESTEVE headquarters in a regulated pharmaceutical environment.
+          </li>
+          <li>
+            Resolved complex hardware, software, and network incidents through structured troubleshooting
+            and root-cause analysis.
+          </li>
+          <li>
+            Maintained infrastructure stability, backup integrity, documentation, and service continuity.
+          </li>
+        </ul>
+      </div>
 
-        <div data-i18n="footer.updated">Last updated: April 2026</div>
-      </footer>
-    </div>
+      <div class="job-entry">
+        <h3>Junior Technical Consultant – MCR Solutions</h3>
+        <p class="job-date">2020 – 2022</p>
+        <ul>
+          <li>
+            Worked in a hybrid BI and systems role, translating business requirements into ETL processes
+            and reporting solutions.
+          </li>
+          <li>
+            Built data workflows and dashboards using <strong>Power BI</strong>, <strong>Jedox</strong>,
+            and <strong>Google Data Studio</strong>.
+          </li>
+          <li>
+            Improved data quality, reporting usability, and integration performance across client environments.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><i class="fas fa-award" aria-hidden="true"></i> Architecture & Operations Focus</h2>
+      <ul>
+        <li>
+          <strong>Infrastructure Engineering:</strong> Windows Server, Linux administration, capacity planning,
+          service continuity, and reliability operations.
+        </li>
+        <li>
+          <strong>Hybrid Cloud:</strong> Azure IaaS lifecycle management, storage, networking, serverless processing,
+          and on-prem ↔ Azure integration.
+        </li>
+        <li>
+          <strong>Networking & Security:</strong> TCP/IP, VLANs, switching, routing, firewall policy design,
+          segmentation, and least-privilege access.
+        </li>
+        <li>
+          <strong>Automation & Observability:</strong> PowerShell, Bash, Python, PRTG, Zabbix, Grafana, Prometheus,
+          ELK, and proactive monitoring.
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2><i class="fas fa-graduation-cap" aria-hidden="true"></i> Education</h2>
+      <ul>
+        <li>
+          <strong>Higher Level Computer Science:</strong> Systems and Network Administration + Cybersecurity
+          (ASIX-CIBER) — Salesians Sarrià School CESF
+        </li>
+        <li>
+          <strong>Medium Level Computer Science:</strong> Administration of Microcomputers Systems and Networks
+          — Salesians Sarrià School
+        </li>
+        <li>
+          <strong>Compulsory Secondary Education (ESO):</strong> Santa Teresa Lisieux School
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2><i class="fas fa-language" aria-hidden="true"></i> Languages</h2>
+      <ul>
+        <li><strong>Spanish:</strong> Native</li>
+        <li><strong>Catalan:</strong> Native</li>
+        <li><strong>English:</strong> B2 First Certificate</li>
+      </ul>
+    </section>
   </main>
-
-  <script>
-    const translations = {
-      en: {
-        "language.title": "Language",
-        "sidebar.location": "Barcelona, Spain",
-
-        "terminal.whoami": "Aleix Moya — System & Network Administrator",
-        "terminal.stack": "Azure · Zero Trust · Networking · Automation · Hybrid Cloud",
-        "terminal.status": "Building secure, reliable and automated infrastructure.",
-
-        "summary.title": "Professional Summary",
-        "summary.text": "System and Network Administrator with 6+ years of experience designing, implementing and operating secure, scalable and automated infrastructure across on-premises and cloud environments. Specialized in Azure, Zero Trust architecture, identity security and network engineering.",
-
-        "stats.yearsIt": "Years IT",
-        "stats.since2019": "Since 2019",
-        "stats.infraNetworking": "Years Infrastructure & Networking",
-        "stats.since2021": "Since 2021",
-        "stats.rollout": "Rollout",
-        "stats.zeroTrustNetwork": "Zero Trust Network Access",
-        "stats.automation": "Automation",
-        "stats.iacPipelines": "IaC · Pipelines · Monitoring",
-
-        "cta.linkedin": "LinkedIn Profile",
-
-        "timeline.title": "Career Timeline",
-        "timeline.anticimex.role": "System and Network Administrator",
-        "timeline.anticimex.description": "Managing Azure infrastructure, networking, security and automation solutions across hybrid environments.",
-        "timeline.alinghi.role": "IT Specialist",
-        "timeline.alinghi.description": "Supported global IT operations, cloud services and secure connectivity for high-performance environments.",
-        "timeline.seidor.role": "Senior Systems Technician OnSite",
-        "timeline.seidor.description": "On-site infrastructure support, system administration and endpoint management.",
-        "timeline.mcr.role": "Junior Technical Consultant",
-        "timeline.mcr.description": "Delivered IT support, system deployment and network solutions to enterprise clients.",
-
-        "stack.title": "Current Core Stack",
-        "stack.cloud.title": "Cloud",
-        "stack.cloud.description": "Microsoft Azure · Virtual Networks · Load Balancers · Azure Functions · Storage · Compute",
-        "stack.security.title": "Identity & Security",
-        "stack.security.description": "Microsoft Entra ID · Zscaler ZIA/ZPA · Zero Trust · Fortinet · Conditional Access",
-        "stack.infrastructure.title": "Infrastructure",
-        "stack.infrastructure.description": "Windows Server · Linux · VMware · Hyper-V · VPN · DNS · DHCP · Load Balancing",
-        "stack.automation.title": "Automation & Observability",
-        "stack.automation.description": "PowerShell · Bash · Python · PRTG · Zabbix · Grafana · Prometheus · ELK",
-
-        "projects.title": "Featured Projects",
-        "projects.zeroTrust.title": "Zero Trust Rollout",
-        "projects.zeroTrust.description": "Nationwide deployment of Zscaler ZIA and ZPA across Spain, including policy design, segmentation and secure private application access.",
-        "projects.iot.title": "Azure IoT Data Platform",
-        "projects.iot.description": "Serverless Python processing pipelines using Azure Functions, Blob Storage and structured Bronze/Silver/Gold data layers.",
-        "projects.cisco.title": "Cisco Network Build",
-        "projects.cisco.description": "Designed VLANs, subnetting, switching and segmentation for a greenfield building deployment from zero.",
-
-        "skills.title": "Technical Skills",
-
-        "education.title": "Education",
-        "education.higher": "<strong>Higher Level Computer Science:</strong> Systems and Network Administration + Cybersecurity (ASIX-CIBER) — Salesians Sarrià School CESF",
-        "education.medium": "<strong>Medium Level Computer Science:</strong> Administration of Microcomputers Systems and Networks — Salesians Sarrià School",
-        "education.eso": "<strong>Compulsory Secondary Education (ESO):</strong> Santa Teresa Lisieux School",
-
-        "languages.title": "Languages",
-        "languages.spanish": "<strong>Spanish:</strong> Native",
-        "languages.catalan": "<strong>Catalan:</strong> Native",
-        "languages.english": "<strong>English:</strong> B2 First Certificate",
-
-        "footer.tagline": " · Barcelona · Azure / Zero Trust / Infrastructure",
-        "footer.updated": "Last updated: April 2026"
-      },
-
-      es: {
-        "language.title": "Idioma",
-        "sidebar.location": "Barcelona, España",
-
-        "terminal.whoami": "Aleix Moya — Administrador de Sistemas y Redes",
-        "terminal.stack": "Azure · Zero Trust · Redes · Automatización · Cloud Híbrido",
-        "terminal.status": "Construyendo infraestructura segura, fiable y automatizada.",
-
-        "summary.title": "Resumen Profesional",
-        "summary.text": "Administrador de Sistemas y Redes con más de 6 años de experiencia diseñando, implementando y operando infraestructura segura, escalable y automatizada en entornos on-premises y cloud. Especializado en Azure, arquitectura Zero Trust, seguridad de identidad e ingeniería de redes.",
-
-        "stats.yearsIt": "Años en IT",
-        "stats.since2019": "Desde 2019",
-        "stats.infraNetworking": "Años en Infraestructura y Redes",
-        "stats.since2021": "Desde 2021",
-        "stats.rollout": "Despliegue",
-        "stats.zeroTrustNetwork": "Acceso de Red Zero Trust",
-        "stats.automation": "Automatización",
-        "stats.iacPipelines": "IaC · Pipelines · Monitorización",
-
-        "cta.linkedin": "Perfil de LinkedIn",
-
-        "timeline.title": "Trayectoria Profesional",
-        "timeline.anticimex.role": "Administrador de Sistemas y Redes",
-        "timeline.anticimex.description": "Gestión de infraestructura Azure, redes, seguridad y soluciones de automatización en entornos híbridos.",
-        "timeline.alinghi.role": "Especialista IT",
-        "timeline.alinghi.description": "Soporte a operaciones IT globales, servicios cloud y conectividad segura para entornos de alto rendimiento.",
-        "timeline.seidor.role": "Técnico Senior de Sistemas OnSite",
-        "timeline.seidor.description": "Soporte de infraestructura onsite, administración de sistemas y gestión de endpoints.",
-        "timeline.mcr.role": "Consultor Técnico Junior",
-        "timeline.mcr.description": "Soporte IT, despliegue de sistemas y soluciones de red para clientes enterprise.",
-
-        "stack.title": "Stack Técnico Principal",
-        "stack.cloud.title": "Cloud",
-        "stack.cloud.description": "Microsoft Azure · Redes Virtuales · Load Balancers · Azure Functions · Storage · Compute",
-        "stack.security.title": "Identidad y Seguridad",
-        "stack.security.description": "Microsoft Entra ID · Zscaler ZIA/ZPA · Zero Trust · Fortinet · Conditional Access",
-        "stack.infrastructure.title": "Infraestructura",
-        "stack.infrastructure.description": "Windows Server · Linux · VMware · Hyper-V · VPN · DNS · DHCP · Load Balancing",
-        "stack.automation.title": "Automatización y Observabilidad",
-        "stack.automation.description": "PowerShell · Bash · Python · PRTG · Zabbix · Grafana · Prometheus · ELK",
-
-        "projects.title": "Proyectos Destacados",
-        "projects.zeroTrust.title": "Despliegue Zero Trust",
-        "projects.zeroTrust.description": "Despliegue nacional de Zscaler ZIA y ZPA en España, incluyendo diseño de políticas, segmentación y acceso privado seguro a aplicaciones.",
-        "projects.iot.title": "Plataforma Azure IoT Data",
-        "projects.iot.description": "Pipelines serverless en Python con Azure Functions, Blob Storage y capas de datos Bronze/Silver/Gold.",
-        "projects.cisco.title": "Diseño de Red Cisco",
-        "projects.cisco.description": "Diseño de VLANs, subnetting, switching y segmentación para el despliegue de red de un edificio desde cero.",
-
-        "skills.title": "Habilidades Técnicas",
-
-        "education.title": "Formación",
-        "education.higher": "<strong>Grado Superior de Informática:</strong> Administración de Sistemas Informáticos en Red + Ciberseguridad (ASIX-CIBER) — Salesians Sarrià School CESF",
-        "education.medium": "<strong>Grado Medio de Informática:</strong> Sistemas Microinformáticos y Redes — Salesians Sarrià School",
-        "education.eso": "<strong>Educación Secundaria Obligatoria (ESO):</strong> Santa Teresa Lisieux School",
-
-        "languages.title": "Idiomas",
-        "languages.spanish": "<strong>Español:</strong> Nativo",
-        "languages.catalan": "<strong>Catalán:</strong> Nativo",
-        "languages.english": "<strong>Inglés:</strong> B2 First Certificate",
-
-        "footer.tagline": " · Barcelona · Azure / Zero Trust / Infraestructura",
-        "footer.updated": "Última actualización: abril de 2026"
-      },
-
-      ca: {
-        "language.title": "Idioma",
-        "sidebar.location": "Barcelona, Espanya",
-
-        "terminal.whoami": "Aleix Moya — Administrador de Sistemes i Xarxes",
-        "terminal.stack": "Azure · Zero Trust · Xarxes · Automatització · Cloud Híbrid",
-        "terminal.status": "Construint infraestructura segura, fiable i automatitzada.",
-
-        "summary.title": "Resum Professional",
-        "summary.text": "Administrador de Sistemes i Xarxes amb més de 6 anys d’experiència dissenyant, implementant i operant infraestructura segura, escalable i automatitzada en entorns on-premises i cloud. Especialitzat en Azure, arquitectura Zero Trust, seguretat d’identitat i enginyeria de xarxes.",
-
-        "stats.yearsIt": "Anys en IT",
-        "stats.since2019": "Des de 2019",
-        "stats.infraNetworking": "Anys en Infraestructura i Xarxes",
-        "stats.since2021": "Des de 2021",
-        "stats.rollout": "Desplegament",
-        "stats.zeroTrustNetwork": "Accés de Xarxa Zero Trust",
-        "stats.automation": "Automatització",
-        "stats.iacPipelines": "IaC · Pipelines · Monitoratge",
-
-        "cta.linkedin": "Perfil de LinkedIn",
-
-        "timeline.title": "Trajectòria Professional",
-        "timeline.anticimex.role": "Administrador de Sistemes i Xarxes",
-        "timeline.anticimex.description": "Gestió d’infraestructura Azure, xarxes, seguretat i solucions d’automatització en entorns híbrids.",
-        "timeline.alinghi.role": "Especialista IT",
-        "timeline.alinghi.description": "Suport a operacions IT globals, serveis cloud i connectivitat segura per a entorns d’alt rendiment.",
-        "timeline.seidor.role": "Tècnic Sènior de Sistemes OnSite",
-        "timeline.seidor.description": "Suport d’infraestructura onsite, administració de sistemes i gestió d’endpoints.",
-        "timeline.mcr.role": "Consultor Tècnic Junior",
-        "timeline.mcr.description": "Suport IT, desplegament de sistemes i solucions de xarxa per a clients enterprise.",
-
-        "stack.title": "Stack Tècnic Principal",
-        "stack.cloud.title": "Cloud",
-        "stack.cloud.description": "Microsoft Azure · Xarxes Virtuals · Load Balancers · Azure Functions · Storage · Compute",
-        "stack.security.title": "Identitat i Seguretat",
-        "stack.security.description": "Microsoft Entra ID · Zscaler ZIA/ZPA · Zero Trust · Fortinet · Conditional Access",
-        "stack.infrastructure.title": "Infraestructura",
-        "stack.infrastructure.description": "Windows Server · Linux · VMware · Hyper-V · VPN · DNS · DHCP · Load Balancing",
-        "stack.automation.title": "Automatització i Observabilitat",
-        "stack.automation.description": "PowerShell · Bash · Python · PRTG · Zabbix · Grafana · Prometheus · ELK",
-
-        "projects.title": "Projectes Destacats",
-        "projects.zeroTrust.title": "Desplegament Zero Trust",
-        "projects.zeroTrust.description": "Desplegament nacional de Zscaler ZIA i ZPA a Espanya, incloent disseny de polítiques, segmentació i accés privat segur a aplicacions.",
-        "projects.iot.title": "Plataforma Azure IoT Data",
-        "projects.iot.description": "Pipelines serverless en Python amb Azure Functions, Blob Storage i capes de dades Bronze/Silver/Gold.",
-        "projects.cisco.title": "Disseny de Xarxa Cisco",
-        "projects.cisco.description": "Disseny de VLANs, subnetting, switching i segmentació per al desplegament de xarxa d’un edifici des de zero.",
-
-        "skills.title": "Habilitats Tècniques",
-
-        "education.title": "Formació",
-        "education.higher": "<strong>Grau Superior d’Informàtica:</strong> Administració de Sistemes Informàtics en Xarxa + Ciberseguretat (ASIX-CIBER) — Salesians Sarrià School CESF",
-        "education.medium": "<strong>Grau Mitjà d’Informàtica:</strong> Sistemes Microinformàtics i Xarxes — Salesians Sarrià School",
-        "education.eso": "<strong>Educació Secundària Obligatòria (ESO):</strong> Santa Teresa Lisieux School",
-
-        "languages.title": "Idiomes",
-        "languages.spanish": "<strong>Castellà:</strong> Nadiu",
-        "languages.catalan": "<strong>Català:</strong> Nadiu",
-        "languages.english": "<strong>Anglès:</strong> B2 First Certificate",
-
-        "footer.tagline": " · Barcelona · Azure / Zero Trust / Infraestructura",
-        "footer.updated": "Última actualització: abril de 2026"
-      },
-
-      fr: {
-        "language.title": "Langue",
-        "sidebar.location": "Barcelone, Espagne",
-
-        "terminal.whoami": "Aleix Moya — Administrateur Systèmes et Réseaux",
-        "terminal.stack": "Azure · Zero Trust · Réseaux · Automatisation · Cloud Hybride",
-        "terminal.status": "Construction d’infrastructures sécurisées, fiables et automatisées.",
-
-        "summary.title": "Résumé Professionnel",
-        "summary.text": "Administrateur Systèmes et Réseaux avec plus de 6 ans d’expérience dans la conception, l’implémentation et l’exploitation d’infrastructures sécurisées, évolutives et automatisées en environnements on-premises et cloud. Spécialisé en Azure, architecture Zero Trust, sécurité des identités et ingénierie réseau.",
-
-        "stats.yearsIt": "Années en IT",
-        "stats.since2019": "Depuis 2019",
-        "stats.infraNetworking": "Années Infrastructure & Réseaux",
-        "stats.since2021": "Depuis 2021",
-        "stats.rollout": "Déploiement",
-        "stats.zeroTrustNetwork": "Accès Réseau Zero Trust",
-        "stats.automation": "Automatisation",
-        "stats.iacPipelines": "IaC · Pipelines · Supervision",
-
-        "cta.linkedin": "Profil LinkedIn",
-
-        "timeline.title": "Parcours Professionnel",
-        "timeline.anticimex.role": "Administrateur Systèmes et Réseaux",
-        "timeline.anticimex.description": "Gestion de l’infrastructure Azure, des réseaux, de la sécurité et des solutions d’automatisation dans des environnements hybrides.",
-        "timeline.alinghi.role": "Spécialiste IT",
-        "timeline.alinghi.description": "Support des opérations IT globales, des services cloud et de la connectivité sécurisée pour des environnements à haute performance.",
-        "timeline.seidor.role": "Technicien Systèmes Senior OnSite",
-        "timeline.seidor.description": "Support d’infrastructure onsite, administration systèmes et gestion des endpoints.",
-        "timeline.mcr.role": "Consultant Technique Junior",
-        "timeline.mcr.description": "Support IT, déploiement de systèmes et solutions réseau pour des clients enterprise.",
-
-        "stack.title": "Stack Technique Principal",
-        "stack.cloud.title": "Cloud",
-        "stack.cloud.description": "Microsoft Azure · Réseaux Virtuels · Load Balancers · Azure Functions · Storage · Compute",
-        "stack.security.title": "Identité et Sécurité",
-        "stack.security.description": "Microsoft Entra ID · Zscaler ZIA/ZPA · Zero Trust · Fortinet · Conditional Access",
-        "stack.infrastructure.title": "Infrastructure",
-        "stack.infrastructure.description": "Windows Server · Linux · VMware · Hyper-V · VPN · DNS · DHCP · Load Balancing",
-        "stack.automation.title": "Automatisation et Observabilité",
-        "stack.automation.description": "PowerShell · Bash · Python · PRTG · Zabbix · Grafana · Prometheus · ELK",
-
-        "projects.title": "Projets Clés",
-        "projects.zeroTrust.title": "Déploiement Zero Trust",
-        "projects.zeroTrust.description": "Déploiement national de Zscaler ZIA et ZPA en Espagne, incluant la conception des politiques, la segmentation et l’accès privé sécurisé aux applications.",
-        "projects.iot.title": "Plateforme Azure IoT Data",
-        "projects.iot.description": "Pipelines serverless en Python avec Azure Functions, Blob Storage et couches de données Bronze/Silver/Gold.",
-        "projects.cisco.title": "Conception Réseau Cisco",
-        "projects.cisco.description": "Conception de VLANs, subnetting, switching et segmentation pour le déploiement réseau d’un bâtiment depuis zéro.",
-
-        "skills.title": "Compétences Techniques",
-
-        "education.title": "Formation",
-        "education.higher": "<strong>Formation Supérieure en Informatique :</strong> Administration des Systèmes et Réseaux + Cybersécurité (ASIX-CIBER) — Salesians Sarrià School CESF",
-        "education.medium": "<strong>Formation Intermédiaire en Informatique :</strong> Systèmes Micro-informatiques et Réseaux — Salesians Sarrià School",
-        "education.eso": "<strong>Enseignement Secondaire Obligatoire (ESO) :</strong> Santa Teresa Lisieux School",
-
-        "languages.title": "Langues",
-        "languages.spanish": "<strong>Espagnol :</strong> Natif",
-        "languages.catalan": "<strong>Catalan :</strong> Natif",
-        "languages.english": "<strong>Anglais :</strong> B2 First Certificate",
-
-        "footer.tagline": " · Barcelone · Azure / Zero Trust / Infrastructure",
-        "footer.updated": "Dernière mise à jour : avril 2026"
-      }
-    };
-
-    function setLanguage(lang) {
-      const dictionary = translations[lang] || translations.en;
-
-      document.documentElement.lang = lang;
-      localStorage.setItem("preferredLanguage", lang);
-
-      document.querySelectorAll("[data-i18n]").forEach((element) => {
-        const key = element.getAttribute("data-i18n");
-
-        if (dictionary[key]) {
-          element.innerHTML = dictionary[key];
-        }
-      });
-
-      document.querySelectorAll(".language-button").forEach((button) => {
-        button.classList.toggle("active", button.getAttribute("data-lang") === lang);
-      });
-    }
-
-    document.querySelectorAll(".language-button").forEach((button) => {
-      button.addEventListener("click", () => {
-        setLanguage(button.getAttribute("data-lang"));
-      });
-    });
-
-    const savedLanguage = localStorage.getItem("preferredLanguage") || "en";
-    setLanguage(savedLanguage);
-  </script>
-
-  <script>
-    (function () {
-      const container = document.getElementById('binaryRain');
-      if (!container) return;
-
-      function randomBinary(length) {
-        let out = '';
-
-        for (let i = 0; i < length; i++) {
-          out += Math.random() > 0.5 ? '1' : '0';
-
-          if (i < length - 1) {
-            out += '\n';
-          }
-        }
-
-        return out;
-      }
-
-      function buildBinaryRain() {
-        container.innerHTML = '';
-
-        const containerWidth = container.offsetWidth || 246;
-        const containerHeight = container.offsetHeight || 520;
-        const columnSpacing = 16;
-        const columnCount = Math.max(10, Math.floor(containerWidth / columnSpacing));
-
-        for (let i = 0; i < columnCount; i++) {
-          const col = document.createElement('span');
-          const charCount = Math.max(24, Math.floor(containerHeight / 13) + 14);
-
-          col.className = 'binary-column';
-
-          if (Math.random() > 0.74) {
-            col.classList.add('bright');
-          } else if (Math.random() > 0.48) {
-            col.classList.add('dim');
-          }
-
-          col.textContent = randomBinary(charCount);
-          col.style.left = `${i * columnSpacing + Math.random() * 7}px`;
-          col.style.animationDuration = `${7 + Math.random() * 8}s`;
-          col.style.animationDelay = `${Math.random() * 7}s`;
-          col.style.opacity = `${0.35 + Math.random() * 0.65}`;
-
-          container.appendChild(col);
-        }
-      }
-
-      buildBinaryRain();
-
-      let resizeTimer;
-
-      window.addEventListener('resize', function () {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(buildBinaryRain, 180);
-      });
-
-      setInterval(function () {
-        const columns = container.querySelectorAll('.binary-column');
-
-        columns.forEach(function (col) {
-          if (Math.random() > 0.55) {
-            const approxHeight = container.offsetHeight || 520;
-            const charCount = Math.max(24, Math.floor(approxHeight / 13) + 14);
-
-            col.textContent = randomBinary(charCount);
-          }
-        });
-      }, 1800);
-    })();
-  </script>
 </body>
 </html>
